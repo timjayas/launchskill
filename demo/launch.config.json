@@ -1,0 +1,25 @@
+{
+  "preset": "rebrand-editorial",
+  "bpm": 116,
+  "brandTitle": "Rebrand MCP",
+  "brandWordmark": "Rebrand",
+  "mcpBadge": "Rebrand",
+  "ctaUrl": "rebrand.gallery/mcp",
+  "submitBlue": "#2563EB",
+  "accentColor": "#EC4899",
+  "promptText": "Show me the best AI brand identities",
+  "searchStatus": "Searching brand identities...",
+  "libraryCountLabel": "34,340",
+  "followUpPrompt": "I like this style, can you show me similar shots?",
+  "pivotPrompt": "Show me brands that feel technical",
+  "synthesisPrompt": "Combine these into visual exploration",
+  "headlineLine1": "The first brand-identity",
+  "headlineLine2Prefix": "library your",
+  "headlineLine2Suffix": "can browse",
+  "scenes": [
+    "macro-prompt-strobe",
+    "card-to-chip-dock",
+    "z-scatter-theme-flip",
+    "inline-logo-slot-headline"
+  ]
+}

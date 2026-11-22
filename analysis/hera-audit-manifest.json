@@ -1,0 +1,1238 @@
+{
+  "video": {
+    "source": "https://whatships.com/videos/hera-canvas/",
+    "author": "@heravideoapp",
+    "upload_date": "2026-11-02",
+    "resolution": "1280x720",
+    "native_fps": 60,
+    "total_frames": 2534,
+    "duration_sec": 42.23,
+    "video_stream": "h264 (avc1), yuv420p(bt709, progressive), 1280x720 [16:9], 925 kb/s, 60 fps",
+    "audio_stream": "aac (mp4a), 48000 Hz, stereo, 128 kb/s",
+    "estimated_bpm": 156.5,
+    "bpm_candidates": [
+      {
+        "bpm": 156.5,
+        "score": 3.9e-05
+      },
+      {
+        "bpm": 157.0,
+        "score": 3.9e-05
+      },
+      {
+        "bpm": 157.5,
+        "score": 3.8e-05
+      },
+      {
+        "bpm": 158.0,
+        "score": 3.8e-05
+      },
+      {
+        "bpm": 104.5,
+        "score": 3.6e-05
+      },
+      {
+        "bpm": 155.5,
+        "score": 3.6e-05
+      },
+      {
+        "bpm": 156.0,
+        "score": 3.6e-05
+      },
+      {
+        "bpm": 158.5,
+        "score": 3.5e-05
+      },
+      {
+        "bpm": 159.0,
+        "score": 3.5e-05
+      },
+      {
+        "bpm": 104.0,
+        "score": 3.4e-05
+      }
+    ],
+    "quarter_second_frames": 171
+  },
+  "cuts": [
+    {
+      "index": 1,
+      "frame_60fps": 0,
+      "time_sec": 0.0,
+      "diff_mad": 999.0,
+      "file": "hc_001_00.00s_f0000.jpg"
+    },
+    {
+      "index": 2,
+      "frame_60fps": 180,
+      "time_sec": 3.0,
+      "diff_mad": 34.57,
+      "file": "hc_002_03.00s_f0180.jpg"
+    },
+    {
+      "index": 3,
+      "frame_60fps": 195,
+      "time_sec": 3.25,
+      "diff_mad": 62.93,
+      "file": "hc_003_03.25s_f0195.jpg"
+    },
+    {
+      "index": 4,
+      "frame_60fps": 210,
+      "time_sec": 3.5,
+      "diff_mad": 47.77,
+      "file": "hc_004_03.50s_f0210.jpg"
+    },
+    {
+      "index": 5,
+      "frame_60fps": 225,
+      "time_sec": 3.75,
+      "diff_mad": 67.46,
+      "file": "hc_005_03.75s_f0225.jpg"
+    },
+    {
+      "index": 6,
+      "frame_60fps": 240,
+      "time_sec": 4.0,
+      "diff_mad": 72.38,
+      "file": "hc_006_04.00s_f0240.jpg"
+    },
+    {
+      "index": 7,
+      "frame_60fps": 255,
+      "time_sec": 4.25,
+      "diff_mad": 41.1,
+      "file": "hc_007_04.25s_f0255.jpg"
+    },
+    {
+      "index": 8,
+      "frame_60fps": 270,
+      "time_sec": 4.5,
+      "diff_mad": 23.17,
+      "file": "hc_008_04.50s_f0270.jpg"
+    },
+    {
+      "index": 9,
+      "frame_60fps": 285,
+      "time_sec": 4.75,
+      "diff_mad": 19.9,
+      "file": "hc_009_04.75s_f0285.jpg"
+    },
+    {
+      "index": 10,
+      "frame_60fps": 315,
+      "time_sec": 5.25,
+      "diff_mad": 27.79,
+      "file": "hc_010_05.25s_f0315.jpg"
+    },
+    {
+      "index": 11,
+      "frame_60fps": 330,
+      "time_sec": 5.5,
+      "diff_mad": 19.46,
+      "file": "hc_011_05.50s_f0330.jpg"
+    },
+    {
+      "index": 12,
+      "frame_60fps": 345,
+      "time_sec": 5.75,
+      "diff_mad": 24.67,
+      "file": "hc_012_05.75s_f0345.jpg"
+    },
+    {
+      "index": 13,
+      "frame_60fps": 360,
+      "time_sec": 6.0,
+      "diff_mad": 56.32,
+      "file": "hc_013_06.00s_f0360.jpg"
+    },
+    {
+      "index": 14,
+      "frame_60fps": 375,
+      "time_sec": 6.25,
+      "diff_mad": 52.05,
+      "file": "hc_014_06.25s_f0375.jpg"
+    },
+    {
+      "index": 15,
+      "frame_60fps": 390,
+      "time_sec": 6.5,
+      "diff_mad": 34.54,
+      "file": "hc_015_06.50s_f0390.jpg"
+    },
+    {
+      "index": 16,
+      "frame_60fps": 405,
+      "time_sec": 6.75,
+      "diff_mad": 46.14,
+      "file": "hc_016_06.75s_f0405.jpg"
+    },
+    {
+      "index": 17,
+      "frame_60fps": 540,
+      "time_sec": 9.0,
+      "diff_mad": 215.76,
+      "file": "hc_017_09.00s_f0540.jpg"
+    },
+    {
+      "index": 18,
+      "frame_60fps": 945,
+      "time_sec": 15.75,
+      "diff_mad": 194.46,
+      "file": "hc_018_15.75s_f0945.jpg"
+    },
+    {
+      "index": 19,
+      "frame_60fps": 1020,
+      "time_sec": 17.0,
+      "diff_mad": 214.6,
+      "file": "hc_019_17.00s_f1020.jpg"
+    },
+    {
+      "index": 20,
+      "frame_60fps": 1245,
+      "time_sec": 20.75,
+      "diff_mad": 173.25,
+      "file": "hc_020_20.75s_f1245.jpg"
+    },
+    {
+      "index": 21,
+      "frame_60fps": 1260,
+      "time_sec": 21.0,
+      "diff_mad": 44.48,
+      "file": "hc_021_21.00s_f1260.jpg"
+    },
+    {
+      "index": 22,
+      "frame_60fps": 1275,
+      "time_sec": 21.25,
+      "diff_mad": 30.76,
+      "file": "hc_022_21.25s_f1275.jpg"
+    },
+    {
+      "index": 23,
+      "frame_60fps": 1320,
+      "time_sec": 22.0,
+      "diff_mad": 29.14,
+      "file": "hc_023_22.00s_f1320.jpg"
+    },
+    {
+      "index": 24,
+      "frame_60fps": 1335,
+      "time_sec": 22.25,
+      "diff_mad": 24.8,
+      "file": "hc_024_22.25s_f1335.jpg"
+    },
+    {
+      "index": 25,
+      "frame_60fps": 1350,
+      "time_sec": 22.5,
+      "diff_mad": 26.93,
+      "file": "hc_025_22.50s_f1350.jpg"
+    },
+    {
+      "index": 26,
+      "frame_60fps": 1365,
+      "time_sec": 22.75,
+      "diff_mad": 29.64,
+      "file": "hc_026_22.75s_f1365.jpg"
+    },
+    {
+      "index": 27,
+      "frame_60fps": 1380,
+      "time_sec": 23.0,
+      "diff_mad": 27.37,
+      "file": "hc_027_23.00s_f1380.jpg"
+    },
+    {
+      "index": 28,
+      "frame_60fps": 1395,
+      "time_sec": 23.25,
+      "diff_mad": 29.29,
+      "file": "hc_028_23.25s_f1395.jpg"
+    },
+    {
+      "index": 29,
+      "frame_60fps": 1410,
+      "time_sec": 23.5,
+      "diff_mad": 40.56,
+      "file": "hc_029_23.50s_f1410.jpg"
+    },
+    {
+      "index": 30,
+      "frame_60fps": 1425,
+      "time_sec": 23.75,
+      "diff_mad": 47.09,
+      "file": "hc_030_23.75s_f1425.jpg"
+    },
+    {
+      "index": 31,
+      "frame_60fps": 1440,
+      "time_sec": 24.0,
+      "diff_mad": 43.55,
+      "file": "hc_031_24.00s_f1440.jpg"
+    },
+    {
+      "index": 32,
+      "frame_60fps": 1455,
+      "time_sec": 24.25,
+      "diff_mad": 51.65,
+      "file": "hc_032_24.25s_f1455.jpg"
+    },
+    {
+      "index": 33,
+      "frame_60fps": 1470,
+      "time_sec": 24.5,
+      "diff_mad": 74.95,
+      "file": "hc_033_24.50s_f1470.jpg"
+    },
+    {
+      "index": 34,
+      "frame_60fps": 1530,
+      "time_sec": 25.5,
+      "diff_mad": 215.24,
+      "file": "hc_034_25.50s_f1530.jpg"
+    },
+    {
+      "index": 35,
+      "frame_60fps": 1635,
+      "time_sec": 27.25,
+      "diff_mad": 21.36,
+      "file": "hc_035_27.25s_f1635.jpg"
+    },
+    {
+      "index": 36,
+      "frame_60fps": 1665,
+      "time_sec": 27.75,
+      "diff_mad": 23.8,
+      "file": "hc_036_27.75s_f1665.jpg"
+    },
+    {
+      "index": 37,
+      "frame_60fps": 1740,
+      "time_sec": 29.0,
+      "diff_mad": 203.85,
+      "file": "hc_037_29.00s_f1740.jpg"
+    },
+    {
+      "index": 38,
+      "frame_60fps": 1815,
+      "time_sec": 30.25,
+      "diff_mad": 213.38,
+      "file": "hc_038_30.25s_f1815.jpg"
+    },
+    {
+      "index": 39,
+      "frame_60fps": 2100,
+      "time_sec": 35.0,
+      "diff_mad": 112.03,
+      "file": "hc_039_35.00s_f2100.jpg"
+    },
+    {
+      "index": 40,
+      "frame_60fps": 2115,
+      "time_sec": 35.25,
+      "diff_mad": 83.58,
+      "file": "hc_040_35.25s_f2115.jpg"
+    },
+    {
+      "index": 41,
+      "frame_60fps": 2130,
+      "time_sec": 35.5,
+      "diff_mad": 74.97,
+      "file": "hc_041_35.50s_f2130.jpg"
+    },
+    {
+      "index": 42,
+      "frame_60fps": 2145,
+      "time_sec": 35.75,
+      "diff_mad": 70.9,
+      "file": "hc_042_35.75s_f2145.jpg"
+    },
+    {
+      "index": 43,
+      "frame_60fps": 2160,
+      "time_sec": 36.0,
+      "diff_mad": 74.09,
+      "file": "hc_043_36.00s_f2160.jpg"
+    },
+    {
+      "index": 44,
+      "frame_60fps": 2175,
+      "time_sec": 36.25,
+      "diff_mad": 78.11,
+      "file": "hc_044_36.25s_f2175.jpg"
+    },
+    {
+      "index": 45,
+      "frame_60fps": 2190,
+      "time_sec": 36.5,
+      "diff_mad": 77.2,
+      "file": "hc_045_36.50s_f2190.jpg"
+    },
+    {
+      "index": 46,
+      "frame_60fps": 2205,
+      "time_sec": 36.75,
+      "diff_mad": 94.8,
+      "file": "hc_046_36.75s_f2205.jpg"
+    }
+  ],
+  "frame_mads": [
+    {
+      "time_sec": 0.0,
+      "frame_60fps": 0,
+      "mad": 999.0
+    },
+    {
+      "time_sec": 0.25,
+      "frame_60fps": 15,
+      "mad": 0.017314814814814814
+    },
+    {
+      "time_sec": 0.5,
+      "frame_60fps": 30,
+      "mad": 0.46370370370370373
+    },
+    {
+      "time_sec": 0.75,
+      "frame_60fps": 45,
+      "mad": 4.326203703703704
+    },
+    {
+      "time_sec": 1.0,
+      "frame_60fps": 60,
+      "mad": 1.8052546296296297
+    },
+    {
+      "time_sec": 1.25,
+      "frame_60fps": 75,
+      "mad": 3.530740740740741
+    },
+    {
+      "time_sec": 1.5,
+      "frame_60fps": 90,
+      "mad": 3.6276851851851855
+    },
+    {
+      "time_sec": 1.75,
+      "frame_60fps": 105,
+      "mad": 2.584513888888889
+    },
+    {
+      "time_sec": 2.0,
+      "frame_60fps": 120,
+      "mad": 1.4256250000000001
+    },
+    {
+      "time_sec": 2.25,
+      "frame_60fps": 135,
+      "mad": 1.3875
+    },
+    {
+      "time_sec": 2.5,
+      "frame_60fps": 150,
+      "mad": 2.6079166666666667
+    },
+    {
+      "time_sec": 2.75,
+      "frame_60fps": 165,
+      "mad": 1.453287037037037
+    },
+    {
+      "time_sec": 3.0,
+      "frame_60fps": 180,
+      "mad": 34.56928240740741
+    },
+    {
+      "time_sec": 3.25,
+      "frame_60fps": 195,
+      "mad": 62.929907407407406
+    },
+    {
+      "time_sec": 3.5,
+      "frame_60fps": 210,
+      "mad": 47.76643518518518
+    },
+    {
+      "time_sec": 3.75,
+      "frame_60fps": 225,
+      "mad": 67.46229166666667
+    },
+    {
+      "time_sec": 4.0,
+      "frame_60fps": 240,
+      "mad": 72.37664351851852
+    },
+    {
+      "time_sec": 4.25,
+      "frame_60fps": 255,
+      "mad": 41.10476851851852
+    },
+    {
+      "time_sec": 4.5,
+      "frame_60fps": 270,
+      "mad": 23.171666666666667
+    },
+    {
+      "time_sec": 4.75,
+      "frame_60fps": 285,
+      "mad": 19.90247685185185
+    },
+    {
+      "time_sec": 5.0,
+      "frame_60fps": 300,
+      "mad": 4.821550925925926
+    },
+    {
+      "time_sec": 5.25,
+      "frame_60fps": 315,
+      "mad": 27.78787037037037
+    },
+    {
+      "time_sec": 5.5,
+      "frame_60fps": 330,
+      "mad": 19.462546296296296
+    },
+    {
+      "time_sec": 5.75,
+      "frame_60fps": 345,
+      "mad": 24.672314814814815
+    },
+    {
+      "time_sec": 6.0,
+      "frame_60fps": 360,
+      "mad": 56.319027777777784
+    },
+    {
+      "time_sec": 6.25,
+      "frame_60fps": 375,
+      "mad": 52.048750000000005
+    },
+    {
+      "time_sec": 6.5,
+      "frame_60fps": 390,
+      "mad": 34.54168981481481
+    },
+    {
+      "time_sec": 6.75,
+      "frame_60fps": 405,
+      "mad": 46.136365740740736
+    },
+    {
+      "time_sec": 7.0,
+      "frame_60fps": 420,
+      "mad": 4.357893518518519
+    },
+    {
+      "time_sec": 7.25,
+      "frame_60fps": 435,
+      "mad": 2.4997685185185183
+    },
+    {
+      "time_sec": 7.5,
+      "frame_60fps": 450,
+      "mad": 1.8365972222222222
+    },
+    {
+      "time_sec": 7.75,
+      "frame_60fps": 465,
+      "mad": 1.8411111111111111
+    },
+    {
+      "time_sec": 8.0,
+      "frame_60fps": 480,
+      "mad": 2.319652777777778
+    },
+    {
+      "time_sec": 8.25,
+      "frame_60fps": 495,
+      "mad": 2.140740740740741
+    },
+    {
+      "time_sec": 8.5,
+      "frame_60fps": 510,
+      "mad": 1.2079629629629631
+    },
+    {
+      "time_sec": 8.75,
+      "frame_60fps": 525,
+      "mad": 1.4090509259259258
+    },
+    {
+      "time_sec": 9.0,
+      "frame_60fps": 540,
+      "mad": 215.76023148148147
+    },
+    {
+      "time_sec": 9.25,
+      "frame_60fps": 555,
+      "mad": 7.312824074074075
+    },
+    {
+      "time_sec": 9.5,
+      "frame_60fps": 570,
+      "mad": 6.63113425925926
+    },
+    {
+      "time_sec": 9.75,
+      "frame_60fps": 585,
+      "mad": 5.83988425925926
+    },
+    {
+      "time_sec": 10.0,
+      "frame_60fps": 600,
+      "mad": 3.9563888888888887
+    },
+    {
+      "time_sec": 10.25,
+      "frame_60fps": 615,
+      "mad": 1.4580092592592593
+    },
+    {
+      "time_sec": 10.5,
+      "frame_60fps": 630,
+      "mad": 2.243425925925926
+    },
+    {
+      "time_sec": 10.75,
+      "frame_60fps": 645,
+      "mad": 1.8996296296296296
+    },
+    {
+      "time_sec": 11.0,
+      "frame_60fps": 660,
+      "mad": 8.465046296296297
+    },
+    {
+      "time_sec": 11.25,
+      "frame_60fps": 675,
+      "mad": 7.519351851851852
+    },
+    {
+      "time_sec": 11.5,
+      "frame_60fps": 690,
+      "mad": 13.088726851851852
+    },
+    {
+      "time_sec": 11.75,
+      "frame_60fps": 705,
+      "mad": 12.647407407407407
+    },
+    {
+      "time_sec": 12.0,
+      "frame_60fps": 720,
+      "mad": 10.76951388888889
+    },
+    {
+      "time_sec": 12.25,
+      "frame_60fps": 735,
+      "mad": 10.711712962962963
+    },
+    {
+      "time_sec": 12.5,
+      "frame_60fps": 750,
+      "mad": 13.92775462962963
+    },
+    {
+      "time_sec": 12.75,
+      "frame_60fps": 765,
+      "mad": 7.448356481481482
+    },
+    {
+      "time_sec": 13.0,
+      "frame_60fps": 780,
+      "mad": 8.247800925925926
+    },
+    {
+      "time_sec": 13.25,
+      "frame_60fps": 795,
+      "mad": 12.414351851851853
+    },
+    {
+      "time_sec": 13.5,
+      "frame_60fps": 810,
+      "mad": 8.898449074074074
+    },
+    {
+      "time_sec": 13.75,
+      "frame_60fps": 825,
+      "mad": 10.066296296296295
+    },
+    {
+      "time_sec": 14.0,
+      "frame_60fps": 840,
+      "mad": 9.562407407407408
+    },
+    {
+      "time_sec": 14.25,
+      "frame_60fps": 855,
+      "mad": 8.229768518518519
+    },
+    {
+      "time_sec": 14.5,
+      "frame_60fps": 870,
+      "mad": 10.61974537037037
+    },
+    {
+      "time_sec": 14.75,
+      "frame_60fps": 885,
+      "mad": 8.818680555555556
+    },
+    {
+      "time_sec": 15.0,
+      "frame_60fps": 900,
+      "mad": 10.099166666666667
+    },
+    {
+      "time_sec": 15.25,
+      "frame_60fps": 915,
+      "mad": 11.219467592592594
+    },
+    {
+      "time_sec": 15.5,
+      "frame_60fps": 930,
+      "mad": 12.091643518518518
+    },
+    {
+      "time_sec": 15.75,
+      "frame_60fps": 945,
+      "mad": 194.46243055555556
+    },
+    {
+      "time_sec": 16.0,
+      "frame_60fps": 960,
+      "mad": 3.315115740740741
+    },
+    {
+      "time_sec": 16.25,
+      "frame_60fps": 975,
+      "mad": 1.9241435185185185
+    },
+    {
+      "time_sec": 16.5,
+      "frame_60fps": 990,
+      "mad": 2.1119675925925923
+    },
+    {
+      "time_sec": 16.75,
+      "frame_60fps": 1005,
+      "mad": 1.6062268518518519
+    },
+    {
+      "time_sec": 17.0,
+      "frame_60fps": 1020,
+      "mad": 214.59738425925926
+    },
+    {
+      "time_sec": 17.25,
+      "frame_60fps": 1035,
+      "mad": 1.0063657407407407
+    },
+    {
+      "time_sec": 17.5,
+      "frame_60fps": 1050,
+      "mad": 0.6581944444444444
+    },
+    {
+      "time_sec": 17.75,
+      "frame_60fps": 1065,
+      "mad": 0.5196759259259259
+    },
+    {
+      "time_sec": 18.0,
+      "frame_60fps": 1080,
+      "mad": 0.4259722222222222
+    },
+    {
+      "time_sec": 18.25,
+      "frame_60fps": 1095,
+      "mad": 6.285625
+    },
+    {
+      "time_sec": 18.5,
+      "frame_60fps": 1110,
+      "mad": 7.458726851851853
+    },
+    {
+      "time_sec": 18.75,
+      "frame_60fps": 1125,
+      "mad": 7.389027777777777
+    },
+    {
+      "time_sec": 19.0,
+      "frame_60fps": 1140,
+      "mad": 9.022291666666666
+    },
+    {
+      "time_sec": 19.25,
+      "frame_60fps": 1155,
+      "mad": 5.0662268518518525
+    },
+    {
+      "time_sec": 19.5,
+      "frame_60fps": 1170,
+      "mad": 3.4583101851851854
+    },
+    {
+      "time_sec": 19.75,
+      "frame_60fps": 1185,
+      "mad": 1.7320601851851851
+    },
+    {
+      "time_sec": 20.0,
+      "frame_60fps": 1200,
+      "mad": 1.983101851851852
+    },
+    {
+      "time_sec": 20.25,
+      "frame_60fps": 1215,
+      "mad": 2.446226851851852
+    },
+    {
+      "time_sec": 20.5,
+      "frame_60fps": 1230,
+      "mad": 3.301712962962963
+    },
+    {
+      "time_sec": 20.75,
+      "frame_60fps": 1245,
+      "mad": 173.25439814814817
+    },
+    {
+      "time_sec": 21.0,
+      "frame_60fps": 1260,
+      "mad": 44.47671296296296
+    },
+    {
+      "time_sec": 21.25,
+      "frame_60fps": 1275,
+      "mad": 30.762824074074075
+    },
+    {
+      "time_sec": 21.5,
+      "frame_60fps": 1290,
+      "mad": 14.612222222222222
+    },
+    {
+      "time_sec": 21.75,
+      "frame_60fps": 1305,
+      "mad": 14.797037037037036
+    },
+    {
+      "time_sec": 22.0,
+      "frame_60fps": 1320,
+      "mad": 29.141898148148147
+    },
+    {
+      "time_sec": 22.25,
+      "frame_60fps": 1335,
+      "mad": 24.800324074074073
+    },
+    {
+      "time_sec": 22.5,
+      "frame_60fps": 1350,
+      "mad": 26.92525462962963
+    },
+    {
+      "time_sec": 22.75,
+      "frame_60fps": 1365,
+      "mad": 29.644537037037036
+    },
+    {
+      "time_sec": 23.0,
+      "frame_60fps": 1380,
+      "mad": 27.36712962962963
+    },
+    {
+      "time_sec": 23.25,
+      "frame_60fps": 1395,
+      "mad": 29.288703703703703
+    },
+    {
+      "time_sec": 23.5,
+      "frame_60fps": 1410,
+      "mad": 40.55800925925926
+    },
+    {
+      "time_sec": 23.75,
+      "frame_60fps": 1425,
+      "mad": 47.08585648148148
+    },
+    {
+      "time_sec": 24.0,
+      "frame_60fps": 1440,
+      "mad": 43.54888888888888
+    },
+    {
+      "time_sec": 24.25,
+      "frame_60fps": 1455,
+      "mad": 51.64636574074074
+    },
+    {
+      "time_sec": 24.5,
+      "frame_60fps": 1470,
+      "mad": 74.94608796296296
+    },
+    {
+      "time_sec": 24.75,
+      "frame_60fps": 1485,
+      "mad": 7.496805555555556
+    },
+    {
+      "time_sec": 25.0,
+      "frame_60fps": 1500,
+      "mad": 1.8679398148148147
+    },
+    {
+      "time_sec": 25.25,
+      "frame_60fps": 1515,
+      "mad": 1.9698611111111113
+    },
+    {
+      "time_sec": 25.5,
+      "frame_60fps": 1530,
+      "mad": 215.2416898148148
+    },
+    {
+      "time_sec": 25.75,
+      "frame_60fps": 1545,
+      "mad": 2.360416666666667
+    },
+    {
+      "time_sec": 26.0,
+      "frame_60fps": 1560,
+      "mad": 4.3961805555555555
+    },
+    {
+      "time_sec": 26.25,
+      "frame_60fps": 1575,
+      "mad": 1.9768055555555553
+    },
+    {
+      "time_sec": 26.5,
+      "frame_60fps": 1590,
+      "mad": 10.168402777777777
+    },
+    {
+      "time_sec": 26.75,
+      "frame_60fps": 1605,
+      "mad": 8.269398148148149
+    },
+    {
+      "time_sec": 27.0,
+      "frame_60fps": 1620,
+      "mad": 13.318078703703703
+    },
+    {
+      "time_sec": 27.25,
+      "frame_60fps": 1635,
+      "mad": 21.362662037037037
+    },
+    {
+      "time_sec": 27.5,
+      "frame_60fps": 1650,
+      "mad": 10.38525462962963
+    },
+    {
+      "time_sec": 27.75,
+      "frame_60fps": 1665,
+      "mad": 23.80122685185185
+    },
+    {
+      "time_sec": 28.0,
+      "frame_60fps": 1680,
+      "mad": 7.433032407407407
+    },
+    {
+      "time_sec": 28.25,
+      "frame_60fps": 1695,
+      "mad": 2.714537037037037
+    },
+    {
+      "time_sec": 28.5,
+      "frame_60fps": 1710,
+      "mad": 3.14974537037037
+    },
+    {
+      "time_sec": 28.75,
+      "frame_60fps": 1725,
+      "mad": 6.1939120370370375
+    },
+    {
+      "time_sec": 29.0,
+      "frame_60fps": 1740,
+      "mad": 203.847337962963
+    },
+    {
+      "time_sec": 29.25,
+      "frame_60fps": 1755,
+      "mad": 3.525069444444444
+    },
+    {
+      "time_sec": 29.5,
+      "frame_60fps": 1770,
+      "mad": 1.8814814814814813
+    },
+    {
+      "time_sec": 29.75,
+      "frame_60fps": 1785,
+      "mad": 2.386064814814815
+    },
+    {
+      "time_sec": 30.0,
+      "frame_60fps": 1800,
+      "mad": 2.194212962962963
+    },
+    {
+      "time_sec": 30.25,
+      "frame_60fps": 1815,
+      "mad": 213.37590277777778
+    },
+    {
+      "time_sec": 30.5,
+      "frame_60fps": 1830,
+      "mad": 3.188263888888889
+    },
+    {
+      "time_sec": 30.75,
+      "frame_60fps": 1845,
+      "mad": 2.9865509259259255
+    },
+    {
+      "time_sec": 31.0,
+      "frame_60fps": 1860,
+      "mad": 3.668402777777778
+    },
+    {
+      "time_sec": 31.25,
+      "frame_60fps": 1875,
+      "mad": 4.797129629629629
+    },
+    {
+      "time_sec": 31.5,
+      "frame_60fps": 1890,
+      "mad": 11.480578703703705
+    },
+    {
+      "time_sec": 31.75,
+      "frame_60fps": 1905,
+      "mad": 9.420462962962963
+    },
+    {
+      "time_sec": 32.0,
+      "frame_60fps": 1920,
+      "mad": 3.999282407407408
+    },
+    {
+      "time_sec": 32.25,
+      "frame_60fps": 1935,
+      "mad": 3.125763888888889
+    },
+    {
+      "time_sec": 32.5,
+      "frame_60fps": 1950,
+      "mad": 3.9497222222222224
+    },
+    {
+      "time_sec": 32.75,
+      "frame_60fps": 1965,
+      "mad": 2.961967592592593
+    },
+    {
+      "time_sec": 33.0,
+      "frame_60fps": 1980,
+      "mad": 2.4425694444444446
+    },
+    {
+      "time_sec": 33.25,
+      "frame_60fps": 1995,
+      "mad": 2.384050925925926
+    },
+    {
+      "time_sec": 33.5,
+      "frame_60fps": 2010,
+      "mad": 2.216134259259259
+    },
+    {
+      "time_sec": 33.75,
+      "frame_60fps": 2025,
+      "mad": 2.1346064814814816
+    },
+    {
+      "time_sec": 34.0,
+      "frame_60fps": 2040,
+      "mad": 4.078356481481482
+    },
+    {
+      "time_sec": 34.25,
+      "frame_60fps": 2055,
+      "mad": 5.530949074074074
+    },
+    {
+      "time_sec": 34.5,
+      "frame_60fps": 2070,
+      "mad": 6.721134259259259
+    },
+    {
+      "time_sec": 34.75,
+      "frame_60fps": 2085,
+      "mad": 11.091226851851852
+    },
+    {
+      "time_sec": 35.0,
+      "frame_60fps": 2100,
+      "mad": 112.03300925925926
+    },
+    {
+      "time_sec": 35.25,
+      "frame_60fps": 2115,
+      "mad": 83.58187500000001
+    },
+    {
+      "time_sec": 35.5,
+      "frame_60fps": 2130,
+      "mad": 74.97361111111111
+    },
+    {
+      "time_sec": 35.75,
+      "frame_60fps": 2145,
+      "mad": 70.90025462962963
+    },
+    {
+      "time_sec": 36.0,
+      "frame_60fps": 2160,
+      "mad": 74.09289351851852
+    },
+    {
+      "time_sec": 36.25,
+      "frame_60fps": 2175,
+      "mad": 78.11377314814814
+    },
+    {
+      "time_sec": 36.5,
+      "frame_60fps": 2190,
+      "mad": 77.20314814814814
+    },
+    {
+      "time_sec": 36.75,
+      "frame_60fps": 2205,
+      "mad": 94.79655092592593
+    },
+    {
+      "time_sec": 37.0,
+      "frame_60fps": 2220,
+      "mad": 12.140162037037037
+    },
+    {
+      "time_sec": 37.25,
+      "frame_60fps": 2235,
+      "mad": 4.51037037037037
+    },
+    {
+      "time_sec": 37.5,
+      "frame_60fps": 2250,
+      "mad": 1.776851851851852
+    },
+    {
+      "time_sec": 37.75,
+      "frame_60fps": 2265,
+      "mad": 1.2977083333333335
+    },
+    {
+      "time_sec": 38.0,
+      "frame_60fps": 2280,
+      "mad": 1.5179629629629627
+    },
+    {
+      "time_sec": 38.25,
+      "frame_60fps": 2295,
+      "mad": 2.2750925925925927
+    },
+    {
+      "time_sec": 38.5,
+      "frame_60fps": 2310,
+      "mad": 2.2846759259259257
+    },
+    {
+      "time_sec": 38.75,
+      "frame_60fps": 2325,
+      "mad": 2.6195833333333334
+    },
+    {
+      "time_sec": 39.0,
+      "frame_60fps": 2340,
+      "mad": 1.7968981481481479
+    },
+    {
+      "time_sec": 39.25,
+      "frame_60fps": 2355,
+      "mad": 1.7408101851851852
+    },
+    {
+      "time_sec": 39.5,
+      "frame_60fps": 2370,
+      "mad": 1.7633333333333334
+    },
+    {
+      "time_sec": 39.75,
+      "frame_60fps": 2385,
+      "mad": 1.650625
+    },
+    {
+      "time_sec": 40.0,
+      "frame_60fps": 2400,
+      "mad": 0.7806712962962963
+    },
+    {
+      "time_sec": 40.25,
+      "frame_60fps": 2415,
+      "mad": 1.3731481481481482
+    },
+    {
+      "time_sec": 40.5,
+      "frame_60fps": 2430,
+      "mad": 0.9793981481481482
+    },
+    {
+      "time_sec": 40.75,
+      "frame_60fps": 2445,
+      "mad": 0.8090509259259259
+    },
+    {
+      "time_sec": 41.0,
+      "frame_60fps": 2460,
+      "mad": 3.6837962962962965
+    },
+    {
+      "time_sec": 41.25,
+      "frame_60fps": 2475,
+      "mad": 3.494444444444444
+    },
+    {
+      "time_sec": 41.5,
+      "frame_60fps": 2490,
+      "mad": 5.025925925925926
+    },
+    {
+      "time_sec": 41.75,
+      "frame_60fps": 2505,
+      "mad": 3.823148148148148
+    },
+    {
+      "time_sec": 42.0,
+      "frame_60fps": 2520,
+      "mad": 4.0319212962962965
+    },
+    {
+      "time_sec": 42.25,
+      "frame_60fps": 2535,
+      "mad": 3.3108564814814816
+    },
+    {
+      "time_sec": 42.5,
+      "frame_60fps": 2550,
+      "mad": 1.078449074074074
+    }
+  ]
+}

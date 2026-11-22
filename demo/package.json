@@ -1,0 +1,49 @@
+{
+  "name": "launchskill-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runnable Remotion + React Three Fiber examples for the launchskill Antigravity skill",
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "compositions": "remotion compositions",
+    "qa:t3code": "node ../skills/launchskill/scripts/qa-frames.mjs --comp T3CodeLaunch --fps 30 --duration 507 --heroes 22,88,140,192,272,348,395,418,472 --cuts 51,114,304,380,431 --out out/qa-t3code --gl angle",
+    "render:t3code": "remotion render T3CodeLaunch out/t3-code-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --audio-codec=aac --audio-bitrate=192k --gl=angle",
+    "qa:spotify-studio": "node ../skills/launchskill/scripts/qa-frames.mjs --comp SpotifyStudioLaunch --fps 30 --duration 780 --heroes 0,165,240,355,485,575,650,745 --cuts 105,270,450,600,690 --out out/qa-spotify-studio --gl angle",
+    "render:spotify-studio": "remotion render SpotifyStudioLaunch out/spotify-studio-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --audio-codec=aac --audio-bitrate=192k --gl=angle",
+    "qa:antigravity": "node ../skills/launchskill/scripts/qa-frames.mjs --comp AntigravityLaunch --fps 30 --duration 720 --heroes 0,145,295,435,558,675 --cuts 90,210,360,510,615 --out out/qa-antigravity --gl angle",
+    "render:antigravity": "remotion render AntigravityLaunch out/antigravity-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --audio-codec=aac --audio-bitrate=192k --gl=angle",
+    "qa:hera": "remotion still HeraAdCanvasLaunch out/hc-qa-01-hook.png --frame=42 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-02-canvas.png --frame=255 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-03-brandkit.png --frame=445 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-04-transmute.png --frame=685 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-05-static-motion.png --frame=960 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-06-zoom.png --frame=1025 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-07-panorama.png --frame=1100 --gl=angle && remotion still HeraAdCanvasLaunch out/hc-qa-08-cta.png --frame=1205 --gl=angle",
+    "render:hera": "remotion render HeraAdCanvasLaunch out/hera-ad-canvas-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "qa:motionfly": "remotion still MotionflyAgenticLaunch out/mf-qa-01-hook.png --frame=24 --gl=angle && remotion still MotionflyAgenticLaunch out/mf-qa-02-dock.png --frame=142 --gl=angle && remotion still MotionflyAgenticLaunch out/mf-qa-03-tree.png --frame=402 --gl=angle && remotion still MotionflyAgenticLaunch out/mf-qa-04-timeline.png --frame=555 --gl=angle && remotion still MotionflyAgenticLaunch out/mf-qa-05-swarm.png --frame=706 --gl=angle && remotion still MotionflyAgenticLaunch out/mf-qa-06-cta.png --frame=808 --gl=angle",
+    "render:motionfly": "remotion render MotionflyAgenticLaunch out/motionfly-agentic-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "qa:spotify": "remotion still SpotifyLaunch out/spotify-qa-08-curtain.png --frame=687 --gl=angle && remotion still SpotifyLaunch out/spotify-qa-09-emblem.png --frame=702 --gl=angle && remotion still SpotifyLaunch out/spotify-qa-10-finale.png --frame=752 --gl=angle",
+    "render:spotify": "remotion render SpotifyLaunch out/spotify-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --audio-codec=aac --audio-bitrate=192k --gl=angle",
+    "qa:rebrand": "remotion still RebrandEditorialLaunch out/rb-01-macro.png --frame=104 --gl=angle && remotion still RebrandEditorialLaunch out/rb-02-strobe.png --frame=168 --gl=angle && remotion still RebrandEditorialLaunch out/rb-03-dock.png --frame=268 --gl=angle && remotion still RebrandEditorialLaunch out/rb-04-darkflip.png --frame=520 --gl=angle && remotion still RebrandEditorialLaunch out/rb-05-logoslot.png --frame=700 --gl=angle",
+    "render:rebrand": "remotion render RebrandEditorialLaunch out/rebrand-editorial-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "qa:kinetic": "remotion still KineticStudioLaunch out/qa-01-orbit.png --frame=52 --gl=angle && remotion still KineticStudioLaunch out/qa-02-wipe.png --frame=174 --gl=angle && remotion still KineticStudioLaunch out/qa-03-slot.png --frame=240 --gl=angle && remotion still KineticStudioLaunch out/qa-04-wire.png --frame=520 --gl=angle && remotion still KineticStudioLaunch out/qa-05-climax.png --frame=626 --gl=angle",
+    "render:kinetic": "remotion render KineticStudioLaunch out/kinetic-studio-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "render:gemini": "remotion render Gemini4NeonLaunch out/gemini-4-neon-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "render:saas": "remotion render SaasLaunch out/saas-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "render:feature": "remotion render AppFeatureHighlight out/app-feature-highlight.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "render:reveal": "remotion render SimpleProductReveal out/simple-product-reveal.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "render:bottle": "remotion render WaterBottleLaunch out/water-bottle-launch.mp4 --codec=h264 --pixel-format=yuv420p --crf=18 --gl=angle",
+    "still:hook": "remotion still SaasLaunch out/preview-hook.png --frame=24 --gl=angle",
+    "still:hero": "remotion still SaasLaunch out/preview-hero.png --frame=180 --gl=angle"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.17.10",
+    "@remotion/cli": "4.0.545",
+    "@remotion/three": "4.0.545",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.545",
+    "three": "^0.170.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/three": "^0.170.0",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaunchSkill — Multi-Archetype Interactive Motion Lab</title>
+  <link rel="stylesheet" href="../patterns/styles.css" />
+</head>
+<body>
+  <header class="lab-header">
+    <div class="lab-brand">
+      <div class="lab-logo-mark">M</div>
+      <span class="lab-title">LaunchSkill Interactive Lab</span>
+      <span class="lab-subtitle">18 isolated GSAP studies (Fuser + Rebrand MCP + Motionfly MCP + Hera Canvas) · Scrub frame-by-frame &amp; break the timing</span>
+    </div>
+    <div class="lab-header-actions">
+      <button type="button" id="btn-guides" class="pill-toggle">⊕ Foveal &amp; Safe-Zone Guides</button>
+      <span class="pill-toggle" style="cursor:default; pointer-events:none;">Keys: Space · ←/→ (-1f/+1f) · R</span>
+    </div>
+  </header>
+
+  <main class="lab-shell">
+    <!-- Left Sidebar: Multi-Archetype Pattern Library -->
+    <aside class="lab-sidebar">
+      <div id="pattern-list"></div>
+
+      <div class="director-card">
+        <h4>Director's Note</h4>
+        <p id="director-note"></p>
+      </div>
+    </aside>
+
+    <!-- Center: 16:9 Stage + Frame-by-Frame Scrubber -->
+    <section class="lab-center">
+      <div class="stage-viewport-wrap" id="stage-viewport-wrap">
+        <div class="stage-scaler" id="stage-scaler">
+          <div id="stage-root"></div>
+          <div class="guide-overlay" id="guide-overlay">
+            <div class="guide-crosshair-h"></div>
+            <div class="guide-crosshair-v"></div>
+            <div class="guide-center-ring"></div>
+            <div class="guide-safe-zone"></div>
+            <span class="guide-badge">Foveal Anchor (50%, 50%) + Safe Zone</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="transport-dock">
+        <div class="scrubber-row">
+          <div class="marker-rail" id="marker-rail"></div>
+          <input
+            type="range"
+            id="scrubber"
+            class="scrubber-input"
+            min="0"
+            max="1000"
+            value="0"
+            step="1"
+            aria-label="Timeline scrubber"
+          />
+        </div>
+
+        <div class="transport-controls">
+          <div class="btn-group">
+            <button type="button" id="btn-play" class="t-btn primary">⏸ Pause</button>
+            <button type="button" id="btn-prev" class="t-btn" title="Step back 1 frame">−1f</button>
+            <button type="button" id="btn-next" class="t-btn" title="Step forward 1 frame">+1f</button>
+            <button type="button" id="btn-reset" class="t-btn">↺ Reset</button>
+            <button type="button" id="btn-loop" class="t-btn active">Loop</button>
+          </div>
+
+          <div class="timecode-readout" id="timecode"><strong>f000</strong> / 000 · 0.00s</div>
+
+          <div class="btn-group">
+            <button type="button" class="t-btn" data-speed="0.25">0.25×</button>
+            <button type="button" class="t-btn" data-speed="0.5">0.5×</button>
+            <button type="button" class="t-btn active" data-speed="1">1×</button>
+            <span style="width:6px;"></span>
+            <button type="button" class="t-btn active" data-fps="24">24p</button>
+            <button type="button" class="t-btn" data-fps="30">30p</button>
+            <button type="button" class="t-btn" data-fps="60">60p</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Inspector: Live Timing Controls & Diagnostics -->
+    <aside class="lab-inspector">
+      <div class="sidebar-label" style="padding:0;">Timing Calibration</div>
+      <div class="preset-row">
+        <button type="button" id="preset-senior" class="preset-btn senior active">✨ Senior (Reference)</button>
+        <button type="button" id="preset-amateur" class="preset-btn amateur">⚠ Amateur (Broken)</button>
+      </div>
+
+      <!-- Live Easing Curve Visualizer -->
+      <div class="curve-box">
+        <div class="curve-box-head">
+          <span>Active Ease Curve</span>
+          <code id="curve-code">expo.out</code>
+        </div>
+        <svg class="curve-svg" viewBox="0 0 240 76">
+          <line x1="12" y1="62" x2="228" y2="14" stroke="#262632" stroke-width="1" stroke-dasharray="3 3" />
+          <rect x="12" y="14" width="216" height="48" fill="none" stroke="#22222c" stroke-width="1" />
+          <path id="curve-path" d="" fill="none" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" />
+          <circle id="curve-dot" cx="12" cy="62" r="4" fill="#ffffff" stroke="#ec4899" stroke-width="2" />
+        </svg>
+      </div>
+
+      <!-- Easing Family Selector -->
+      <div class="control-group">
+        <div class="control-head">
+          <label>Easing Curve</label>
+        </div>
+        <div class="ease-grid">
+          <button type="button" class="ease-btn active" data-ease="expo">expo (Snappy)</button>
+          <button type="button" class="ease-btn" data-ease="power3">power3 (Soft)</button>
+          <button type="button" class="ease-btn" data-ease="back">back (Spring)</button>
+          <button type="button" class="ease-btn" data-ease="linear">linear (Flat)</button>
+        </div>
+      </div>
+
+      <!-- Duration Multiplier -->
+      <div class="control-group">
+        <div class="control-head">
+          <label for="slider-duration">Duration Scale</label>
+          <span class="control-val" id="val-duration">1.00×</span>
+        </div>
+        <input type="range" id="slider-duration" min="0.35" max="2.4" step="0.05" value="1.0" />
+      </div>
+
+      <!-- Stagger Delay -->
+      <div class="control-group">
+        <div class="control-head">
+          <label for="slider-stagger">Stagger Delay</label>
+          <span class="control-val" id="val-stagger">50 ms</span>
+        </div>
+        <input type="range" id="slider-stagger" min="0" max="240" step="5" value="50" />
+      </div>
+
+      <!-- Overshoot / Spring Pop -->
+      <div class="control-group">
+        <div class="control-head">
+          <label for="slider-overshoot">Overshoot / Pop</label>
+          <span class="control-val" id="val-overshoot">0.35</span>
+        </div>
+        <input type="range" id="slider-overshoot" min="0" max="2.8" step="0.05" value="0.35" />
+      </div>
+
+      <!-- Velocity Motion Blur -->
+      <div class="control-group">
+        <div class="control-head">
+          <label for="slider-blur">Motion Blur Intensity</label>
+          <span class="control-val" id="val-blur">1.0×</span>
+        </div>
+        <input type="range" id="slider-blur" min="0" max="2.4" step="0.1" value="1.0" />
+      </div>
+
+      <!-- Live Creative Director Critique Box -->
+      <div class="diagnostic-box">
+        <h4>What Breaks? · Live Diagnostics</h4>
+        <ul class="diagnostic-list" id="diagnostic-list"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Local offline-safe GSAP 3 + 18 Isolated Editable Pattern Modules (Fuser + Rebrand MCP + Motionfly MCP + Hera Canvas) -->
+  <script src="../patterns/vendor/gsap.min.js"></script>
+  <script src="../patterns/components/PromptPillMorph.js"></script>
+  <script src="../patterns/components/VerticalSlotCarousel.js"></script>
+  <script src="../patterns/components/CursorSliderLiveFX.js"></script>
+  <script src="../patterns/components/CoverFlowCardFan.js"></script>
+  <script src="../patterns/components/NodeConnectionDataflow.js"></script>
+  <script src="../patterns/components/SpatialCanvasCameraRig.js"></script>
+  <script src="../patterns/components/MacroPromptStrobe.js"></script>
+  <script src="../patterns/components/CardToChipDock.js"></script>
+  <script src="../patterns/components/ZScatterThemeFlip.js"></script>
+  <script src="../patterns/components/InlineLogoSlotSwap.js"></script>
+  <script src="../patterns/components/LegacyStackDock.js"></script>
+  <script src="../patterns/components/AgentExecutionTree.js"></script>
+  <script src="../patterns/components/TimelineAssemblyReveal.js"></script>
+  <script src="../patterns/components/MultiplayerCursorSwarm.js"></script>
+  <script src="../patterns/components/MultiArtboardAdGrid.js"></script>
+  <script src="../patterns/components/BrandKitRadialBloom.js"></script>
+  <script src="../patterns/components/ReferenceAdTransmute.js"></script>
+  <script src="../patterns/components/StaticToMotionAdZoom.js"></script>
+  <script src="../patterns/app.js"></script>
+</body>
+</html>

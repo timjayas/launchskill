@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Audio & generated/BYO media assets
+demo/public/audio/*.mp3
+demo/public/audio/*.wav
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.flac
+
+# Video renders & third-party reference videos
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+
+# Build, render & QA outputs
+out/
+demo/out/
+dist/
+build/
+coverage/
+.remotion/
+.cache/
+.next/
+
+# Local third-party analysis frames & contact sheets
+analysis/frames/
+analysis/*-frames/
+analysis/*contact-sheet*.png
+
+# Logs & OS/editor temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.swp
+*~

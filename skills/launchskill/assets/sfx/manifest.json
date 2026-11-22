@@ -1,0 +1,164 @@
+{
+  "version": "2.0",
+  "description": "14-asset studio foley pack specification for launchskill launch videos (48 kHz, 16-bit Stereo PCM). Tier-1 Default (100% code-generated & license-free): generate via scripts/generate-dsp-sfx.mjs. Optional Tier-2: swap any slot via scripts/generate-ai-sfx.mjs (ElevenLabs v2) or CC0 studio WAVs.",
+  "sampleRate": 48000,
+  "assets": [
+    {
+      "id": "click-01",
+      "file": "click-01.wav",
+      "group": "click",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.14,
+      "targetDb": -5.0,
+      "promptInfluence": 0.45,
+      "prompt": "single crisp minimal glass tactile UI button click, Apple macOS studio design, ultra clean dry close-mic recording, no reverb, no background noise"
+    },
+    {
+      "id": "click-02",
+      "file": "click-02.wav",
+      "group": "click",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.14,
+      "targetDb": -5.0,
+      "promptInfluence": 0.45,
+      "prompt": "single clean damped ceramic tactile trackpad tap, subtle modern software UI click, dry studio recording, no reverb"
+    },
+    {
+      "id": "click-03",
+      "file": "click-03.wav",
+      "group": "click",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.14,
+      "targetDb": -5.0,
+      "promptInfluence": 0.45,
+      "prompt": "single soft precision micro-switch click, luxury hardware tactile button press, clean dry close recording, zero echo"
+    },
+    {
+      "id": "key-01",
+      "file": "key-01.wav",
+      "group": "key",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.08,
+      "targetDb": -7.5,
+      "promptInfluence": 0.45,
+      "prompt": "single quiet damped low-profile laptop keystroke tap, subtle warm thock, dry studio mic, no reverb"
+    },
+    {
+      "id": "key-02",
+      "file": "key-02.wav",
+      "group": "key",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.08,
+      "targetDb": -7.5,
+      "promptInfluence": 0.45,
+      "prompt": "single soft muted mechanical keyboard key press, warm minimal tactile tick, dry close mic, zero room echo"
+    },
+    {
+      "id": "key-03",
+      "file": "key-03.wav",
+      "group": "key",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.08,
+      "targetDb": -7.5,
+      "promptInfluence": 0.45,
+      "prompt": "single gentle matte laptop key tap, subtle crisp muted transient, clean studio foley, dry"
+    },
+    {
+      "id": "key-04",
+      "file": "key-04.wav",
+      "group": "key",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.08,
+      "targetDb": -7.5,
+      "promptInfluence": 0.45,
+      "prompt": "single subtle low-volume aluminum keyboard keystroke click, soft acoustic thock, dry close recording"
+    },
+    {
+      "id": "whoosh-fast",
+      "file": "whoosh-fast.wav",
+      "group": "whoosh",
+      "durationSec": 0.5,
+      "trimMode": "preserve",
+      "maxLengthSec": 0.42,
+      "peakOffsetSec": 0.16,
+      "targetDb": -5.5,
+      "promptInfluence": 0.4,
+      "prompt": "tight fast clean organic air whoosh whip-pan transition, modern Apple product film motion graphics, silky smooth, no harsh static"
+    },
+    {
+      "id": "whoosh-deep",
+      "file": "whoosh-deep.wav",
+      "group": "whoosh",
+      "durationSec": 0.8,
+      "trimMode": "preserve",
+      "maxLengthSec": 0.72,
+      "peakOffsetSec": 0.32,
+      "targetDb": -5.0,
+      "promptInfluence": 0.4,
+      "prompt": "smooth deep cinematic camera zoom air breath whoosh, warm low-mid air movement, modern luxury tech trailer transition"
+    },
+    {
+      "id": "sub-hit-soft",
+      "file": "sub-hit-soft.wav",
+      "group": "impact",
+      "durationSec": 0.6,
+      "trimMode": "transient",
+      "maxLengthSec": 0.45,
+      "targetDb": -3.5,
+      "promptInfluence": 0.4,
+      "prompt": "warm muted deep sub-bass transition thump, clean tight low end, subtle studio edit cut hit, no distortion, short decay"
+    },
+    {
+      "id": "sub-hit-heavy",
+      "file": "sub-hit-heavy.wav",
+      "group": "impact",
+      "durationSec": 1.0,
+      "trimMode": "transient",
+      "maxLengthSec": 0.85,
+      "targetDb": -2.5,
+      "promptInfluence": 0.4,
+      "prompt": "deep clean cinematic sub-bass drop impact for dark mode reveal, rich smooth low end, modern minimal product trailer, no metallic crash"
+    },
+    {
+      "id": "riser-1s",
+      "file": "riser-1s.wav",
+      "group": "riser",
+      "durationSec": 1.2,
+      "trimMode": "preserve",
+      "maxLengthSec": 1.15,
+      "peakOffsetSec": 1.0,
+      "targetDb": -4.5,
+      "promptInfluence": 0.4,
+      "prompt": "clean minimal reverse air and warm analog synth swell riser building smoothly over 1 second to a crisp cutoff, modern tech launch video"
+    },
+    {
+      "id": "pop-subtle",
+      "file": "pop-subtle.wav",
+      "group": "ui",
+      "durationSec": 0.5,
+      "trimMode": "transient",
+      "maxLengthSec": 0.16,
+      "targetDb": -6.0,
+      "promptInfluence": 0.45,
+      "prompt": "single soft organic wooden bubble UI pop notification sound, warm subtle tactile badge reveal, dry studio recording, no reverb"
+    },
+    {
+      "id": "resolve-warm",
+      "file": "resolve-warm.wav",
+      "group": "resolve",
+      "durationSec": 1.4,
+      "trimMode": "transient",
+      "maxLengthSec": 1.35,
+      "targetDb": -8.0,
+      "promptInfluence": 0.4,
+      "prompt": "warm soft mid-register felt marimba two-note brand resolve, gentle attack, low-pass warmth, zero sharp treble bell, soft natural room tail"
+    }
+  ]
+}

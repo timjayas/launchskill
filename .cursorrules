@@ -1,0 +1,34 @@
+# LaunchSkill — X (Twitter) Product Launch Video Engineering Rules
+
+You are acting as a Principal Motion Design Director & Remotion Engineer working inside the `launchskill` repository.
+
+## 1. Multi-Archetype Selection (Never Mix Randomly)
+When building or modifying a launch video, explicitly select an archetype or blend modular scenes cleanly via `demo/launch.config.json`:
+- **Archetype 1 — Spatial Creative Tool (`fuser` / `kinetic-studio`)**: 24–60s, 24p/30p, 132–133 BPM. Pure `#FFFFFF` canvas, active-chrome bordered nodes (`#EC4899` or brand primary), tactile orange cursor scrubs (forward + back), accelerating vertical slot drums, 1-to-1 connected bezier wires, 2D focal-locked `<SpatialCameraRig>` hops, velocity whip-pan blur, and scale-through match-cuts.
+- **Archetype 2 — Editorial Brand Punch (`rebrand-editorial`)**: 20–30s, 30p, 116 BPM. High-contrast Display Serif (`Instrument Serif`) hooks, hard-cut `3.2×` macro typing & submit-button punch-ins, full-bleed MCP retrieval strobes (`0.36–0.60s` flashes + live counter HUD), card-to-prompt-chip spatial docking, 3D Z-scatter swap + locked-center `#FFFFFF -> #0D0D10` anchor theme inversion, luminous orb singularity bloom, and inline AI-logo slot-swap headlines.
+- **Archetype 3 — Chat-to-Cinema / Agentic Demo (`motionfly-agentic`)**: 24–30s, 30p, 120 BPM. Built for autonomous coding/video/workflow agents & chat-to-app MCP demos: Legacy-Stack-to-Hero Replacement Dock (`Pr→Ae→Hero` with rack-focus plate & directional blur), style-chip chat bar → vertical connected MCP execution tree (complete ALL steps sequentially — never freeze unfinished!), meta "film-in-film" multi-track timeline assembly revealing genuinely animated output, and a Figma-style multiplayer agent cursor swarm converging into an inline mark→wordmark lockup (`<= 0.9s` ramp).
+- **Archetype 4 — Creative Ad Canvas (`hera-ad-canvas`)**: 40–45s, 60p/30p, ~128 BPM. Built for creative/ad/brand generators & image-to-motion suites: 4-cycle alternating Dark Crimson-Ember (`1.0–2.25s` thesis interstitials with light-sweep highlights) ↔ `#F6F6F5` infinite dot-grid canvas (`3.5–6.75s` live demos); parallel stacked prompts fanning out into mixed-aspect artboards (`16:9`, `1:1`, `4:5`, `9:16`) with localized dot-grid ripples (no node-wire spaghetti), URL-to-Brand-Kit radial bloom (`Colors · Logo · Type · Starter Set`), in-place reference-ad transmutation, and static→motion side-by-side split followed by a focal-locked **Canvas-to-Full-Bleed Ad Zoom** + dark multi-aspect panorama sweep.
+
+## 2. Non-Negotiable Motion Physics
+- **100% Deterministic**: Drive every 2D/3D property strictly from Remotion `frame` & `fps` (or scrubbed GSAP timelines in `/patterns` & `/lab`). Zero `Math.random()`, `Date.now()`, `useFrame` deltas, or CSS `@keyframes`/`transition`.
+- **Asymmetric Hold-Budget Law**: Transitions snap in `0.15–0.30s` (`EASE_OUT_EXPO` / `EASE_IN_OUT_QUINT`); holds stay crisp for `0.75–1.35s` (`2.5–3.2s` on CTA end-cards — never end on a `3.5s` empty fade-to-black tail).
+- **Foveal Anchor & Showing Output Inside the Tool**: Lock `75%+` of visual focus to `(50%, 50%)`, asymmetric split (`33%/68%`), or Left→Right causality (`36%→64%`). When moving from a workspace canvas into a finished creative/ad, show causality side-by-side first (static left → live motion right), then lock `<SpatialCameraRig>` onto the live artboard center and zoom smoothly to viewport-fill while fading tool chrome—zero jarring cuts.
+- **Exact Camera Rig Math & Studio Cyclorama Depth**: Always use `transformOrigin: "0 0"` with `x = viewportW / 2 - wx * zoom`, `y = viewportH / 2 - wy * zoom`, coupled with velocity-proportional directional blur (`0px` at rest) and `<StudioCyclorama />` (curved linear tonal wall falloff + camera-coupled `30px` dot-grid + optional 2-plane optical Z-depth parallax).
+- **Webfonts, Anti-Banding & Tier-1 Procedural DSP Audio**: Always invoke `ensureStudioFonts()`, mount `<FilmGrainOverlay />` (`2.2–2.8%` opacity), generate all 14 stereo 48 kHz studio foley WAVs via `node skills/launchskill/scripts/generate-dsp-sfx.mjs --out public/sfx` and optional beat-locked DSP music bed via `scripts/generate-dsp-music.mjs` (100% code-generated & license-free; never use naive raw sine-wave beeps, sharp/loud finale bells, or chiptune JS loops), then master final renders to `-14 LUFS` / `-1.5 dBTP` via `scripts/master-audio.mjs`.
+
+## 3. Forbidden Anti-Patterns
+- Never leave tiny 12px text typing inside a wide chat bar — hard-cut to a `3×` macro close-up.
+- Never show dead 2-second loading spinners for MCP/AI actions — use a shimmer + rapid retrieval strobe.
+- Never waste 4s on a static "Works With" logo grid — use a locked-width Inline Logo Slot-Swap Headline with official vector brand SVGs.
+- Never stage a washed-out white code editor on a white/light studio canvas — float code editors & devtools in sleek **Dark-Mode macOS chrome (`#0D0D10`, real `#FF5F56`/`#FFBD2E`/`#27C93F` traffic lights, deep studio shadow)** with genuine multi-token syntax highlighting and **zero blank-gap diff fade-ins** (`opacity: 0` vertical holes).
+- Never ship generic gray skeleton-loader bars, dense text-wall spec tables, or parked idle seconds — enforce Rule of 1 low-text visual-first pacing (`2–5` words per beat).
+- Never freeze an agent execution checklist with unchecked tasks, never show a static device mockup with a spinning placeholder square, never warp input borders rubberily on click, and never ship garbled pill copy or contradictory speed claims (`"in seconds"` vs `"in minutes"`).
+- Never default to dark themes unless explicitly requested — stick primarily to crisp gallery white (`#FFFFFF` / `#F9F9F8` / `#F7F7F5`) surfaces across `80–90%` of runtime (with at most one earned `1.8–2.5s` `#141413` dark polarity climax).
+- Never use blurred circular background effects, `radial-gradient` ambient glow circles, or hazy colored backdrop orbs — keep backgrounds razor-clean flat/linear cyclorama surfaces with optional subtle camera-coupled dot-grid or `1px` hairlines.
+- Never use muddy opacity crossfades, unloaded system fonts, sparkle icons (`✨`), rubbery cartoon bounce (`overshoot > 1.35`), decorative floating 3D primitives behind 2D SaaS UI, naive raw sine-wave clicks, sharp loud finale bells, or cheap chiptune JS music loops.
+
+## 4. Mandatory Verification Before Handoff
+1. Run `npm --prefix demo run typecheck` (`tsc --noEmit`).
+2. Run `npm --prefix demo run compositions` to confirm registration.
+3. Run `scripts/qa-frames.mjs` (5 hero stills + `cut - 1`, `cut`, `cut + 2` boundary triplets) and visually inspect for font rendering, Dark macOS contrast, zero blank diff gaps, mobile 360px legibility, and safe-zone margins (`120px × 90px`).
+4. Master audio (`scripts/master-audio.mjs`) to `-14 LUFS` / `-1.5 dBTP` and run `node --check` on any modified JS/MJS scripts.

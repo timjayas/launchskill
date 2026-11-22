@@ -1,0 +1,779 @@
+{
+  "video": {
+    "resolution": "1920x1080",
+    "native_fps": 24,
+    "total_frames": 1447,
+    "duration_sec": 60.292
+  },
+  "keyframes": [
+    {
+      "index": 1,
+      "frame_24fps": 0,
+      "frame_60fps_equiv": 0,
+      "time_sec": 0.0,
+      "timestamp": "00:00.00",
+      "kind": "cut",
+      "diff_mad": 999.0,
+      "file": "kf_001_00m00.00s_f0000_cut.jpg"
+    },
+    {
+      "index": 2,
+      "frame_24fps": 35,
+      "frame_60fps_equiv": 88,
+      "time_sec": 1.458,
+      "timestamp": "00:01.46",
+      "kind": "mid",
+      "diff_mad": 4.29,
+      "file": "kf_002_00m01.46s_f0035_mid.jpg"
+    },
+    {
+      "index": 3,
+      "frame_24fps": 70,
+      "frame_60fps_equiv": 175,
+      "time_sec": 2.917,
+      "timestamp": "00:02.92",
+      "kind": "cut",
+      "diff_mad": 37.7,
+      "file": "kf_003_00m02.92s_f0070_cut.jpg"
+    },
+    {
+      "index": 4,
+      "frame_24fps": 115,
+      "frame_60fps_equiv": 288,
+      "time_sec": 4.792,
+      "timestamp": "00:04.79",
+      "kind": "mid",
+      "diff_mad": 0.52,
+      "file": "kf_004_00m04.79s_f0115_mid.jpg"
+    },
+    {
+      "index": 5,
+      "frame_24fps": 160,
+      "frame_60fps_equiv": 400,
+      "time_sec": 6.667,
+      "timestamp": "00:06.67",
+      "kind": "cut",
+      "diff_mad": 15.9,
+      "file": "kf_005_00m06.67s_f0160_cut.jpg"
+    },
+    {
+      "index": 6,
+      "frame_24fps": 190,
+      "frame_60fps_equiv": 475,
+      "time_sec": 7.917,
+      "timestamp": "00:07.92",
+      "kind": "mid",
+      "diff_mad": 1.88,
+      "file": "kf_006_00m07.92s_f0190_mid.jpg"
+    },
+    {
+      "index": 7,
+      "frame_24fps": 220,
+      "frame_60fps_equiv": 550,
+      "time_sec": 9.167,
+      "timestamp": "00:09.17",
+      "kind": "cut",
+      "diff_mad": 41.15,
+      "file": "kf_007_00m09.17s_f0220_cut.jpg"
+    },
+    {
+      "index": 8,
+      "frame_24fps": 239,
+      "frame_60fps_equiv": 598,
+      "time_sec": 9.958,
+      "timestamp": "00:09.96",
+      "kind": "cut",
+      "diff_mad": 31.41,
+      "file": "kf_008_00m09.96s_f0239_cut.jpg"
+    },
+    {
+      "index": 9,
+      "frame_24fps": 277,
+      "frame_60fps_equiv": 692,
+      "time_sec": 11.542,
+      "timestamp": "00:11.54",
+      "kind": "cut",
+      "diff_mad": 11.04,
+      "file": "kf_009_00m11.54s_f0277_cut.jpg"
+    },
+    {
+      "index": 10,
+      "frame_24fps": 305,
+      "frame_60fps_equiv": 762,
+      "time_sec": 12.708,
+      "timestamp": "00:12.71",
+      "kind": "cut",
+      "diff_mad": 10.09,
+      "file": "kf_010_00m12.71s_f0305_cut.jpg"
+    },
+    {
+      "index": 11,
+      "frame_24fps": 314,
+      "frame_60fps_equiv": 785,
+      "time_sec": 13.083,
+      "timestamp": "00:13.08",
+      "kind": "cut",
+      "diff_mad": 10.36,
+      "file": "kf_011_00m13.08s_f0314_cut.jpg"
+    },
+    {
+      "index": 12,
+      "frame_24fps": 337,
+      "frame_60fps_equiv": 842,
+      "time_sec": 14.042,
+      "timestamp": "00:14.04",
+      "kind": "cut",
+      "diff_mad": 35.28,
+      "file": "kf_012_00m14.04s_f0337_cut.jpg"
+    },
+    {
+      "index": 13,
+      "frame_24fps": 365,
+      "frame_60fps_equiv": 912,
+      "time_sec": 15.208,
+      "timestamp": "00:15.21",
+      "kind": "mid",
+      "diff_mad": 0.21,
+      "file": "kf_013_00m15.21s_f0365_mid.jpg"
+    },
+    {
+      "index": 14,
+      "frame_24fps": 393,
+      "frame_60fps_equiv": 982,
+      "time_sec": 16.375,
+      "timestamp": "00:16.38",
+      "kind": "cut",
+      "diff_mad": 37.29,
+      "file": "kf_014_00m16.38s_f0393_cut.jpg"
+    },
+    {
+      "index": 15,
+      "frame_24fps": 436,
+      "frame_60fps_equiv": 1090,
+      "time_sec": 18.167,
+      "timestamp": "00:18.17",
+      "kind": "cut",
+      "diff_mad": 22.59,
+      "file": "kf_015_00m18.17s_f0436_cut.jpg"
+    },
+    {
+      "index": 16,
+      "frame_24fps": 458,
+      "frame_60fps_equiv": 1145,
+      "time_sec": 19.083,
+      "timestamp": "00:19.08",
+      "kind": "cut",
+      "diff_mad": 25.21,
+      "file": "kf_016_00m19.08s_f0458_cut.jpg"
+    },
+    {
+      "index": 17,
+      "frame_24fps": 480,
+      "frame_60fps_equiv": 1200,
+      "time_sec": 20.0,
+      "timestamp": "00:20.00",
+      "kind": "cut",
+      "diff_mad": 17.37,
+      "file": "kf_017_00m20.00s_f0480_cut.jpg"
+    },
+    {
+      "index": 18,
+      "frame_24fps": 527,
+      "frame_60fps_equiv": 1318,
+      "time_sec": 21.958,
+      "timestamp": "00:21.96",
+      "kind": "cut",
+      "diff_mad": 19.19,
+      "file": "kf_018_00m21.96s_f0527_cut.jpg"
+    },
+    {
+      "index": 19,
+      "frame_24fps": 569,
+      "frame_60fps_equiv": 1422,
+      "time_sec": 23.708,
+      "timestamp": "00:23.71",
+      "kind": "mid",
+      "diff_mad": 0.92,
+      "file": "kf_019_00m23.71s_f0569_mid.jpg"
+    },
+    {
+      "index": 20,
+      "frame_24fps": 612,
+      "frame_60fps_equiv": 1530,
+      "time_sec": 25.5,
+      "timestamp": "00:25.50",
+      "kind": "cut",
+      "diff_mad": 34.67,
+      "file": "kf_020_00m25.50s_f0612_cut.jpg"
+    },
+    {
+      "index": 21,
+      "frame_24fps": 659,
+      "frame_60fps_equiv": 1648,
+      "time_sec": 27.458,
+      "timestamp": "00:27.46",
+      "kind": "mid",
+      "diff_mad": 15.31,
+      "file": "kf_021_00m27.46s_f0659_mid.jpg"
+    },
+    {
+      "index": 22,
+      "frame_24fps": 706,
+      "frame_60fps_equiv": 1765,
+      "time_sec": 29.417,
+      "timestamp": "00:29.42",
+      "kind": "cut",
+      "diff_mad": 10.4,
+      "file": "kf_022_00m29.42s_f0706_cut.jpg"
+    },
+    {
+      "index": 23,
+      "frame_24fps": 743,
+      "frame_60fps_equiv": 1858,
+      "time_sec": 30.958,
+      "timestamp": "00:30.96",
+      "kind": "cut",
+      "diff_mad": 18.45,
+      "file": "kf_023_00m30.96s_f0743_cut.jpg"
+    },
+    {
+      "index": 24,
+      "frame_24fps": 784,
+      "frame_60fps_equiv": 1960,
+      "time_sec": 32.667,
+      "timestamp": "00:32.67",
+      "kind": "cut",
+      "diff_mad": 37.47,
+      "file": "kf_024_00m32.67s_f0784_cut.jpg"
+    },
+    {
+      "index": 25,
+      "frame_24fps": 798,
+      "frame_60fps_equiv": 1995,
+      "time_sec": 33.25,
+      "timestamp": "00:33.25",
+      "kind": "cut",
+      "diff_mad": 21.13,
+      "file": "kf_025_00m33.25s_f0798_cut.jpg"
+    },
+    {
+      "index": 26,
+      "frame_24fps": 810,
+      "frame_60fps_equiv": 2025,
+      "time_sec": 33.75,
+      "timestamp": "00:33.75",
+      "kind": "cut",
+      "diff_mad": 30.53,
+      "file": "kf_026_00m33.75s_f0810_cut.jpg"
+    },
+    {
+      "index": 27,
+      "frame_24fps": 820,
+      "frame_60fps_equiv": 2050,
+      "time_sec": 34.167,
+      "timestamp": "00:34.17",
+      "kind": "cut",
+      "diff_mad": 29.7,
+      "file": "kf_027_00m34.17s_f0820_cut.jpg"
+    },
+    {
+      "index": 28,
+      "frame_24fps": 834,
+      "frame_60fps_equiv": 2085,
+      "time_sec": 34.75,
+      "timestamp": "00:34.75",
+      "kind": "cut",
+      "diff_mad": 29.84,
+      "file": "kf_028_00m34.75s_f0834_cut.jpg"
+    },
+    {
+      "index": 29,
+      "frame_24fps": 849,
+      "frame_60fps_equiv": 2122,
+      "time_sec": 35.375,
+      "timestamp": "00:35.38",
+      "kind": "cut",
+      "diff_mad": 38.03,
+      "file": "kf_029_00m35.38s_f0849_cut.jpg"
+    },
+    {
+      "index": 30,
+      "frame_24fps": 858,
+      "frame_60fps_equiv": 2145,
+      "time_sec": 35.75,
+      "timestamp": "00:35.75",
+      "kind": "cut",
+      "diff_mad": 42.61,
+      "file": "kf_030_00m35.75s_f0858_cut.jpg"
+    },
+    {
+      "index": 31,
+      "frame_24fps": 866,
+      "frame_60fps_equiv": 2165,
+      "time_sec": 36.083,
+      "timestamp": "00:36.08",
+      "kind": "cut",
+      "diff_mad": 60.73,
+      "file": "kf_031_00m36.08s_f0866_cut.jpg"
+    },
+    {
+      "index": 32,
+      "frame_24fps": 897,
+      "frame_60fps_equiv": 2242,
+      "time_sec": 37.375,
+      "timestamp": "00:37.38",
+      "kind": "mid",
+      "diff_mad": 0.06,
+      "file": "kf_032_00m37.38s_f0897_mid.jpg"
+    },
+    {
+      "index": 33,
+      "frame_24fps": 928,
+      "frame_60fps_equiv": 2320,
+      "time_sec": 38.667,
+      "timestamp": "00:38.67",
+      "kind": "cut",
+      "diff_mad": 79.01,
+      "file": "kf_033_00m38.67s_f0928_cut.jpg"
+    },
+    {
+      "index": 34,
+      "frame_24fps": 955,
+      "frame_60fps_equiv": 2388,
+      "time_sec": 39.792,
+      "timestamp": "00:39.79",
+      "kind": "cut",
+      "diff_mad": 29.47,
+      "file": "kf_034_00m39.79s_f0955_cut.jpg"
+    },
+    {
+      "index": 35,
+      "frame_24fps": 974,
+      "frame_60fps_equiv": 2435,
+      "time_sec": 40.583,
+      "timestamp": "00:40.58",
+      "kind": "cut",
+      "diff_mad": 24.36,
+      "file": "kf_035_00m40.58s_f0974_cut.jpg"
+    },
+    {
+      "index": 36,
+      "frame_24fps": 1002,
+      "frame_60fps_equiv": 2505,
+      "time_sec": 41.75,
+      "timestamp": "00:41.75",
+      "kind": "cut",
+      "diff_mad": 53.31,
+      "file": "kf_036_00m41.75s_f1002_cut.jpg"
+    },
+    {
+      "index": 37,
+      "frame_24fps": 1047,
+      "frame_60fps_equiv": 2618,
+      "time_sec": 43.625,
+      "timestamp": "00:43.62",
+      "kind": "cut",
+      "diff_mad": 50.91,
+      "file": "kf_037_00m43.62s_f1047_cut.jpg"
+    },
+    {
+      "index": 38,
+      "frame_24fps": 1077,
+      "frame_60fps_equiv": 2692,
+      "time_sec": 44.875,
+      "timestamp": "00:44.88",
+      "kind": "cut",
+      "diff_mad": 46.69,
+      "file": "kf_038_00m44.88s_f1077_cut.jpg"
+    },
+    {
+      "index": 39,
+      "frame_24fps": 1107,
+      "frame_60fps_equiv": 2768,
+      "time_sec": 46.125,
+      "timestamp": "00:46.12",
+      "kind": "mid",
+      "diff_mad": 0.0,
+      "file": "kf_039_00m46.12s_f1107_mid.jpg"
+    },
+    {
+      "index": 40,
+      "frame_24fps": 1138,
+      "frame_60fps_equiv": 2845,
+      "time_sec": 47.417,
+      "timestamp": "00:47.42",
+      "kind": "cut",
+      "diff_mad": 39.37,
+      "file": "kf_040_00m47.42s_f1138_cut.jpg"
+    },
+    {
+      "index": 41,
+      "frame_24fps": 1152,
+      "frame_60fps_equiv": 2880,
+      "time_sec": 48.0,
+      "timestamp": "00:48.00",
+      "kind": "cut",
+      "diff_mad": 51.18,
+      "file": "kf_041_00m48.00s_f1152_cut.jpg"
+    },
+    {
+      "index": 42,
+      "frame_24fps": 1181,
+      "frame_60fps_equiv": 2952,
+      "time_sec": 49.208,
+      "timestamp": "00:49.21",
+      "kind": "cut",
+      "diff_mad": 50.84,
+      "file": "kf_042_00m49.21s_f1181_cut.jpg"
+    },
+    {
+      "index": 43,
+      "frame_24fps": 1212,
+      "frame_60fps_equiv": 3030,
+      "time_sec": 50.5,
+      "timestamp": "00:50.50",
+      "kind": "cut",
+      "diff_mad": 46.55,
+      "file": "kf_043_00m50.50s_f1212_cut.jpg"
+    },
+    {
+      "index": 44,
+      "frame_24fps": 1222,
+      "frame_60fps_equiv": 3055,
+      "time_sec": 50.917,
+      "timestamp": "00:50.92",
+      "kind": "cut",
+      "diff_mad": 53.24,
+      "file": "kf_044_00m50.92s_f1222_cut.jpg"
+    },
+    {
+      "index": 45,
+      "frame_24fps": 1235,
+      "frame_60fps_equiv": 3088,
+      "time_sec": 51.458,
+      "timestamp": "00:51.46",
+      "kind": "cut",
+      "diff_mad": 14.5,
+      "file": "kf_045_00m51.46s_f1235_cut.jpg"
+    },
+    {
+      "index": 46,
+      "frame_24fps": 1257,
+      "frame_60fps_equiv": 3142,
+      "time_sec": 52.375,
+      "timestamp": "00:52.38",
+      "kind": "cut",
+      "diff_mad": 14.84,
+      "file": "kf_046_00m52.38s_f1257_cut.jpg"
+    },
+    {
+      "index": 47,
+      "frame_24fps": 1270,
+      "frame_60fps_equiv": 3175,
+      "time_sec": 52.917,
+      "timestamp": "00:52.92",
+      "kind": "cut",
+      "diff_mad": 27.64,
+      "file": "kf_047_00m52.92s_f1270_cut.jpg"
+    },
+    {
+      "index": 48,
+      "frame_24fps": 1305,
+      "frame_60fps_equiv": 3262,
+      "time_sec": 54.375,
+      "timestamp": "00:54.38",
+      "kind": "cut",
+      "diff_mad": 52.63,
+      "file": "kf_048_00m54.38s_f1305_cut.jpg"
+    },
+    {
+      "index": 49,
+      "frame_24fps": 1340,
+      "frame_60fps_equiv": 3350,
+      "time_sec": 55.833,
+      "timestamp": "00:55.83",
+      "kind": "cut",
+      "diff_mad": 51.1,
+      "file": "kf_049_00m55.83s_f1340_cut.jpg"
+    },
+    {
+      "index": 50,
+      "frame_24fps": 1375,
+      "frame_60fps_equiv": 3438,
+      "time_sec": 57.292,
+      "timestamp": "00:57.29",
+      "kind": "cut",
+      "diff_mad": 92.81,
+      "file": "kf_050_00m57.29s_f1375_cut.jpg"
+    },
+    {
+      "index": 51,
+      "frame_24fps": 1385,
+      "frame_60fps_equiv": 3462,
+      "time_sec": 57.708,
+      "timestamp": "00:57.71",
+      "kind": "cut",
+      "diff_mad": 114.31,
+      "file": "kf_051_00m57.71s_f1385_cut.jpg"
+    },
+    {
+      "index": 52,
+      "frame_24fps": 1446,
+      "frame_60fps_equiv": 3615,
+      "time_sec": 60.25,
+      "timestamp": "01:00.25",
+      "kind": "end",
+      "diff_mad": 0.0,
+      "file": "kf_052_01m00.25s_f1446_end.jpg"
+    }
+  ],
+  "audio": {
+    "sample_rate": 16000,
+    "duration_sec": 60.309,
+    "peak_rms": 0.157,
+    "mean_rms": 0.058,
+    "onset_count": 46,
+    "top_onsets": [
+      {
+        "frame": 363,
+        "time_sec": 15.125,
+        "rms": 0.098,
+        "flux": 0.053
+      },
+      {
+        "frame": 538,
+        "time_sec": 22.417,
+        "rms": 0.116,
+        "flux": 0.062
+      },
+      {
+        "frame": 549,
+        "time_sec": 22.875,
+        "rms": 0.145,
+        "flux": 0.057
+      },
+      {
+        "frame": 560,
+        "time_sec": 23.333,
+        "rms": 0.141,
+        "flux": 0.072
+      },
+      {
+        "frame": 571,
+        "time_sec": 23.792,
+        "rms": 0.146,
+        "flux": 0.051
+      },
+      {
+        "frame": 581,
+        "time_sec": 24.208,
+        "rms": 0.125,
+        "flux": 0.058
+      },
+      {
+        "frame": 592,
+        "time_sec": 24.667,
+        "rms": 0.128,
+        "flux": 0.052
+      },
+      {
+        "frame": 603,
+        "time_sec": 25.125,
+        "rms": 0.138,
+        "flux": 0.057
+      },
+      {
+        "frame": 614,
+        "time_sec": 25.583,
+        "rms": 0.144,
+        "flux": 0.066
+      },
+      {
+        "frame": 625,
+        "time_sec": 26.042,
+        "rms": 0.139,
+        "flux": 0.046
+      },
+      {
+        "frame": 635,
+        "time_sec": 26.458,
+        "rms": 0.137,
+        "flux": 0.056
+      },
+      {
+        "frame": 646,
+        "time_sec": 26.917,
+        "rms": 0.139,
+        "flux": 0.05
+      },
+      {
+        "frame": 657,
+        "time_sec": 27.375,
+        "rms": 0.149,
+        "flux": 0.056
+      },
+      {
+        "frame": 667,
+        "time_sec": 27.792,
+        "rms": 0.127,
+        "flux": 0.054
+      },
+      {
+        "frame": 678,
+        "time_sec": 28.25,
+        "rms": 0.136,
+        "flux": 0.059
+      },
+      {
+        "frame": 689,
+        "time_sec": 28.708,
+        "rms": 0.136,
+        "flux": 0.053
+      },
+      {
+        "frame": 700,
+        "time_sec": 29.167,
+        "rms": 0.14,
+        "flux": 0.058
+      },
+      {
+        "frame": 710,
+        "time_sec": 29.583,
+        "rms": 0.119,
+        "flux": 0.058
+      },
+      {
+        "frame": 721,
+        "time_sec": 30.042,
+        "rms": 0.134,
+        "flux": 0.046
+      },
+      {
+        "frame": 732,
+        "time_sec": 30.5,
+        "rms": 0.135,
+        "flux": 0.049
+      },
+      {
+        "frame": 742,
+        "time_sec": 30.917,
+        "rms": 0.108,
+        "flux": 0.05
+      },
+      {
+        "frame": 764,
+        "time_sec": 31.833,
+        "rms": 0.123,
+        "flux": 0.056
+      },
+      {
+        "frame": 775,
+        "time_sec": 32.292,
+        "rms": 0.141,
+        "flux": 0.068
+      },
+      {
+        "frame": 785,
+        "time_sec": 32.708,
+        "rms": 0.114,
+        "flux": 0.047
+      },
+      {
+        "frame": 882,
+        "time_sec": 36.75,
+        "rms": 0.125,
+        "flux": 0.07
+      },
+      {
+        "frame": 909,
+        "time_sec": 37.875,
+        "rms": 0.117,
+        "flux": 0.046
+      },
+      {
+        "frame": 952,
+        "time_sec": 39.667,
+        "rms": 0.138,
+        "flux": 0.051
+      },
+      {
+        "frame": 963,
+        "time_sec": 40.125,
+        "rms": 0.157,
+        "flux": 0.067
+      },
+      {
+        "frame": 994,
+        "time_sec": 41.417,
+        "rms": 0.111,
+        "flux": 0.049
+      },
+      {
+        "frame": 1011,
+        "time_sec": 42.125,
+        "rms": 0.139,
+        "flux": 0.054
+      },
+      {
+        "frame": 1037,
+        "time_sec": 43.208,
+        "rms": 0.149,
+        "flux": 0.074
+      },
+      {
+        "frame": 1048,
+        "time_sec": 43.667,
+        "rms": 0.128,
+        "flux": 0.062
+      },
+      {
+        "frame": 1053,
+        "time_sec": 43.875,
+        "rms": 0.136,
+        "flux": 0.084
+      },
+      {
+        "frame": 1080,
+        "time_sec": 45.0,
+        "rms": 0.147,
+        "flux": 0.074
+      },
+      {
+        "frame": 1096,
+        "time_sec": 45.667,
+        "rms": 0.151,
+        "flux": 0.077
+      },
+      {
+        "frame": 1123,
+        "time_sec": 46.792,
+        "rms": 0.135,
+        "flux": 0.058
+      },
+      {
+        "frame": 1133,
+        "time_sec": 47.208,
+        "rms": 0.106,
+        "flux": 0.048
+      },
+      {
+        "frame": 1138,
+        "time_sec": 47.417,
+        "rms": 0.103,
+        "flux": 0.053
+      },
+      {
+        "frame": 1165,
+        "time_sec": 48.542,
+        "rms": 0.13,
+        "flux": 0.061
+      },
+      {
+        "frame": 1219,
+        "time_sec": 50.792,
+        "rms": 0.127,
+        "flux": 0.055
+      }
+    ]
+  }
+}

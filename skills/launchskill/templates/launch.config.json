@@ -1,0 +1,26 @@
+{
+  "preset": "rebrand-editorial",
+  "temperament": "editorial-fluid",
+  "bpm": 116,
+  "brandTitle": "Archive MCP",
+  "brandWordmark": "Archive",
+  "mcpBadge": "Archive",
+  "ctaUrl": "archive.design/mcp",
+  "submitAccent": "#2563EB",
+  "accentColor": "#0F766E",
+  "promptText": "Show me the best technical design systems",
+  "searchStatus": "Searching curated systems...",
+  "libraryCountLabel": "34,340",
+  "followUpPrompt": "I like this grid, can you show similar layouts?",
+  "pivotPrompt": "Show me systems that feel dark and precise",
+  "synthesisPrompt": "Combine these into a token specification",
+  "headlineLine1": "The first design-system",
+  "headlineLine2Prefix": "library your",
+  "headlineLine2Suffix": "can browse",
+  "scenes": [
+    "macro-prompt-strobe",
+    "card-to-chip-dock",
+    "z-scatter-theme-flip",
+    "inline-logo-slot-headline"
+  ]
+}
