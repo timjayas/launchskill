@@ -28,7 +28,7 @@ export interface AntigravitySpatialPipelineSceneProps {
 
 /**
  * Shot 3 (Beats 14 -> 24, 5.0s): CREATIVE SPATIAL CANVAS — Accelerating Slot-Drum -> Wired 3-Node Dataflow
- * Completely replaces the static checklist with two kinetic motionskill signature patterns on pure light canvas:
+ * Completely replaces the static checklist with two kinetic launchskill signature patterns on pure light canvas:
  *   - Phase A (0.00s -> 2.35s): Asymmetric Split (36% live preview card / 64% masked vertical slot-machine drum
  *     with true vertical DirectionalMotionBlur snapping through 3 readable detents then accelerating into "Ship PR")
  *   - Phase B (2.35s -> 5.00s): Crisp horizontal whip-pan into a 3-Node Wired Spatial Dataflow

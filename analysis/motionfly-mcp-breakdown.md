@@ -7,7 +7,7 @@
 
 ---
 
-## Executive Diff Thesis: What Motionfly MCP Teaches (and Where MotionSkill Must Beat It)
+## Executive Diff Thesis: What Motionfly MCP Teaches (and Where LaunchSkill Must Beat It)
 
 Where **Fuser — Tool Node** (`1:00`, `24p`, `133 BPM`) defines **Spatial Creative Tool Choreography** and **Rebrand MCP** (`0:29`, `30p`, `116 BPM`) defines **Editorial Brand Punch & Retrieval Strobes**, **Motionfly MCP** (`0:30`, `30p`, `120 BPM`) is a direct benchmark for **One-Shot Chat-to-Cinema / Agentic Production**: a film generated in one shot from Claude/Chat via MCP that *shows its own creation pipeline*.
 
@@ -54,7 +54,7 @@ These **4 distinct chat-to-cinema / agentic motion idioms** are **not** covered 
 ### 3. Meta "Film-Inside-a-Film" Timeline Assembly Reveal (`17.25s – 19.25s`)
 - **Mechanics:** Transition directly from the completed agent execution tree into a sleek studio preview frame / mini multi-track timeline (`Video · Motion · VO · Audio` tracks snapping into place with a live playhead) revealing the **live generated deliverable** actually animating inside its device/frame.
 - **Why It Works:** Completes the causal promise of `"Prompt → Agent → Live Output"`—proving the tool actually shipped an animated artifact rather than a static wireframe.
-- **Upgrade Over Reference:** Motionfly's actual phone preview (`17.25–19.25s`) failed here because only a black square spun on a static checklist. Our MotionSkill upgrade combines **live multi-track timeline assembly** underneath a **genuinely animated product preview** (checking off tasks / scrubbing live UI) inside a clean focal-locked stage.
+- **Upgrade Over Reference:** Motionfly's actual phone preview (`17.25–19.25s`) failed here because only a black square spun on a static checklist. Our LaunchSkill upgrade combines **live multi-track timeline assembly** underneath a **genuinely animated product preview** (checking off tasks / scrubbing live UI) inside a clean focal-locked stage.
 
 ### 4. Multiplayer Agent Cursor Swarm + Caret Type-Over (`21.50s – 25.00s`)
 - **Mechanics:** Anchor a crisp 2-line two-tone editorial thesis dead-center (`Line 1` rock-solid ink, `Line 2` live natural-cadence caret type-over) while 3–4 Figma-style color-coded **agent role cursors** (`Script`, `3D Stage`, `Voiceover`, `Audio Mix`) glide along smooth deterministic Bézier micro-arcs around the safe-zone perimeter, converging inward on the beat into the final brand emblem.
@@ -70,9 +70,9 @@ These **4 distinct chat-to-cinema / agentic motion idioms** are **not** covered 
 2. **Unified 3-Act Narrative Arc (`Hook/Pain → Chat/Agent Pipeline → Proof/CTA`):** Even at `30s`, every shot follows clear causal order: *Why* (legacy tools) → *How* (1 prompt + agent checklist) → *What* (live preview + breadth ring) → *Speed & CTA*.
 3. **Recurring Emblem Motif:** The rounded black 4-diamond Motionfly mark acts as a visual glue object at `05.75s` (iris wipe), `09.25s` (floating header), `25.00s` (spin match-cut), and `28.25s` (final lockup).
 
-### 7 "One-Shot AI Tells" MotionSkill Will Explicitly Outperform
+### 7 "One-Shot AI Tells" LaunchSkill Will Explicitly Outperform
 
-| # | AI Tell Observed in Motionfly MCP | Timestamp | Why It Breaks Studio Polish | MotionSkill Competitive Rule |
+| # | AI Tell Observed in Motionfly MCP | Timestamp | Why It Breaks Studio Polish | LaunchSkill Competitive Rule |
 |---|---|---|---|---|
 | **1** | **Weak Frame-0 Presence** | `00:00.00` | Single tiny word `"One"` on blank white screen fails the X muted scroll-stop test | Frame 0 must already show `>= 40%` of the focal hook at `>= 88px` (`progress >= 0.45`). |
 | **2** | **Text-Morph Collision Glitch** | `08.25s` | `"Introducing"` collides illegibly (`Vbfi`) into `"Motionfly"` mid-transition | Never cross-morph mismatched character strings in place; use masked baseline swaps or `0f` beat cuts. |

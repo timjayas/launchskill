@@ -2,7 +2,7 @@
 
 ## Security Architecture & Script Scope
 
-MotionSkill (`launchskill`) is designed to run **offline by default** with zero hidden telemetry, zero bundled secrets, and zero `shell: true` command execution.
+LaunchSkill (`launchskill`) is designed to run **offline by default** with zero hidden telemetry, zero bundled secrets, and zero `shell: true` command execution.
 
 Every executable script lives in [`skills/launchskill/scripts/`](./skills/launchskill/scripts/) and uses only Node.js built-in modules:
 
@@ -20,7 +20,7 @@ Every executable script lives in [`skills/launchskill/scripts/`](./skills/launch
 
 ## API Keys & Credentials
 
-- No API keys are required to use MotionSkill. All procedural foley and music beds synthesize locally via pure Node.js DSP.
+- No API keys are required to use LaunchSkill. All procedural foley and music beds synthesize locally via pure Node.js DSP.
 - Optional ElevenLabs foley generation (`generate-ai-sfx.mjs`) reads `ELEVENLABS_API_KEY` strictly from your local process environment.
 - Keys are **never** written to disk, logged to stdout/stderr, or sent anywhere other than `https://api.elevenlabs.io/v1/sound-generation`.
 - Never commit `.env` files, personal tokens, or licensed third-party media to version control (all `.env*`, `*.mp3`, `*.wav`, and `*.mp4` files are excluded in `.gitignore`).

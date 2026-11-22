@@ -44,7 +44,7 @@ Where **Fuser — Tool Node** (`1:00`, `24 fps`, `133 BPM`) is a masterclass in 
 
 ## 2. Net-New Animation Styles (Diff vs. Fuser Tool Node)
 
-These **6 distinct motion idioms** do **not** exist in our Fuser breakdown and directly expand our MotionSkill vocabulary:
+These **6 distinct motion idioms** do **not** exist in our Fuser breakdown and directly expand our LaunchSkill vocabulary:
 
 ### 1. Hard-Cut Macro Typing & Button Punch-In (`03.20s`, `20.80s`)
 - **Mechanics:** Instead of smoothly zooming a whole dashboard for 1.5s, hard-cut directly (`0 frames` transition) from a wide chat bar to a **`3.2×–3.5×` extreme close-up** of the text cursor typing or the blue `↑` submit button being clicked, then hard-cut back out.
@@ -86,7 +86,7 @@ These **6 distinct motion idioms** do **not** exist in our Fuser breakdown and d
 
 ## 3. Sub-30s Pacing Audit: Rebrand MCP (`0:29`) vs. Fuser (`1:00`)
 
-| Dimension | Fuser — Tool Node (`1:00`) | Rebrand MCP (`0:29`) | Takeaway for MotionSkill |
+| Dimension | Fuser — Tool Node (`1:00`) | Rebrand MCP (`0:29`) | Takeaway for LaunchSkill |
 | :--- | :--- | :--- | :--- |
 | **Native Frame Rate** | `24 fps` (cinematic whip-blur feel) | **`30 fps`** (crisp UI & cursor clarity) | Use `24p` for whip-heavy creative reels; `30p` for editorial UI/MCP reels |
 | **Tempo / BPM** | `133 BPM` (`0.45s/beat` driving drop at `22s`) | **`116 BPM`** (`0.52s/beat` steady pulse from `00:00`) | Sub-30s edits cannot wait 22s for energy—hook rhythm immediately |

@@ -1,4 +1,4 @@
-# MotionSkill (`launchskill`)
+# LaunchSkill
 
 Open-source **Agent Skill + Modular Remotion 4 Studio Kit + Interactive 18-Pattern Motion Lab** for generating studio-grade **15–60 second 16:9 product launch videos optimized for X (Twitter)**.
 
@@ -10,10 +10,10 @@ Works across AI coding agents supporting the open [Agent Skills](https://agentsk
 
 ```bash
 # Install into your current project
-npx skills add timjayas/motionskill
+npx skills add timjayas/launchskill
 
 # Or install globally across your coding agents
-npx skills add timjayas/motionskill -g
+npx skills add timjayas/launchskill -g
 ```
 
 ---
@@ -29,15 +29,15 @@ npx skills add timjayas/motionskill -g
 ## 30-Second Quickstart
 
 ### 1. Trigger the Skill in Your Coding Agent
-After installing via `npx skills add timjayas/motionskill`, prompt your agent with just three inputs (**Product Name**, **1-sentence mechanism**, and **1–3 key features**):
+After installing via `npx skills add timjayas/launchskill`, prompt your agent with just three inputs (**Product Name**, **1-sentence mechanism**, and **1–3 key features**):
 
 > **Example Prompt:**
 > *"Use the `launchskill` skill to create a 24-second 16:9 X launch video in Remotion for **PulseDB** — instant Postgres branching for every pull request. Highlight 3 capabilities: (1) 1-click PR branch spin-up in 400ms, (2) live schema diff inside a Dark-Mode macOS terminal, and (3) automatic teardown on merge. Use pure light studio polarity, `#2563EB` accent, offline procedural DSP audio, and run the QA contact sheet before final export."*
 
 ### 2. Run the Included Remotion 4 Demo Kit Locally
 ```bash
-git clone https://github.com/timjayas/motionskill.git
-cd motionskill/demo
+git clone https://github.com/timjayas/launchskill.git
+cd launchskill/demo
 npm install
 
 # Generate offline 48 kHz studio foley + beat-locked DSP music bed
@@ -58,7 +58,7 @@ Open [`lab/index.html`](./lab/index.html) directly in Chrome, Edge, or Safari (1
 
 ## Studio Audio: Offline Procedural DSP vs. Optional BYO / AI Audio
 
-MotionSkill ships **100% license-free and offline by default** — zero bundled copyright audio, zero API keys required:
+LaunchSkill ships **100% license-free and offline by default** — zero bundled copyright audio, zero API keys required:
 
 | Mode | Command | Network / API Key | Use Case |
 | :--- | :--- | :---: | :--- |
@@ -85,7 +85,7 @@ Switch presets in [`demo/launch.config.json`](./demo/launch.config.json) or let 
 ## Repository Structure
 
 ```text
-motionskill/
+launchskill/
 ├── README.md
 ├── LICENSE                                     # MIT License
 ├── SECURITY.md                                 # Script audit, offline defaults & disclosure policy
