@@ -17,6 +17,14 @@ Generate agency-grade **15–60 second** `16:9` launch videos engineered for the
 
 ---
 
+## 0. Mandatory Creative Director Protocol (Visual-First Motion Design — Zero Template or Text Slop)
+
+**NEVER reskin an existing composition scene-for-scene**, and **NEVER make a launch video text-heavy like a manual**. Viewers must be amazed at first glance through **design, illustration, and transitions**—not by reading sentences. Follow the **Visual-First Laws** in [creative-direction-and-motion-psychology.md](./references/creative-direction-and-motion-psychology.md):
+1. **Ban Chat Bubbles & Prompt Boxes**: Never show a chat bubble or prompt bar typing out a long sentence (the #1 tell of AI wrapper slop). Communicate voice/intent via sculptural sonic waveforms, glowing cores, and direct visual transformation.
+2. **Ban Wireframe Skeleton Grids & Background Watermark Words**: Never put `1px` wireframe/skeleton grid lines or giant faint background title words (`"LIVE"`, `"VISION"`, `"ACTION"`) behind the subject—they create visual distraction. Keep backdrops clean and seamless.
+3. **Show via Tactile Illustration & Visual Widgets (Max 1–3 Words per Beat)**: Never render explanatory side paragraphs, multi-line subtitles, or dense text tables. Communicate actions visually: e.g., an animated watch dial whose hands physically sweep `7:00 → 8:00`, a layered architectural camera viewfinder with optical laser scan + color-swatch extraction, or a topographic map drawing a glowing route curve to a bouncing pin.
+4. **Through-Line Object Permanence & 2.5D Choreography**: Carry one persistent hero object across the entire edit via container morphs, 2.5D tilted perspective (`rotateX/Y/Z` + coupled glass sheen), `+88px` exploded Z-axis visual cards, and portal zoom-through match cuts.
+
 ## 1. Gather Minimal Inputs & Optional X Launch Benchmarking
 
 Only **three inputs** are required: **Product Name**, **Short Description** (1 sentence), and **Key Feature(s)** (1–3 real capabilities, plus optional real screenshots/screen recordings). Lead hooks with a **concrete 4–7 word mechanism** (`<Product> — <concrete reality>`, e.g., *"a real Android phone in your Codespace"*), never vague slogans.
@@ -72,6 +80,9 @@ Only **three inputs** are required: **Product Name**, **Short Description** (1 s
 | "Pivot mood dramatically or land an iconic finale" | **Z-Scatter + Anchor Theme-Flip**, **Directional Whip-Pan**, or **Peak-Velocity Match-Cut** | [pacing-and-transitions.md](./references/pacing-and-transitions.md) |
 
 **Detailed Reference Guides (Progressive Disclosure — Read Only What You Need):**
+- Creative Direction, Motion Psychology & Anti-Template Choreography: [creative-direction-and-motion-psychology.md](./references/creative-direction-and-motion-psychology.md)
+- Quantitative Motion Benchmarks & 10 Signature Patterns (Distilled from Curated Reference Reels): [benchmarks.md](./references/benchmarks.md)
+- Objective Pass/Block Review Gates (10 Non-Negotiable Audit Standards): [review-gates.md](./references/review-gates.md)
 - Tokens, Brand Derivation & All 9 Presets: [art-direction-presets.md](./references/art-direction-presets.md)
 - Canonical Physics, Secondary Settle, Directional Blur, Fonts & Fast Grain: [motion-design-system.md](./references/motion-design-system.md)
 - Beat-Grids, Blueprints A–H & FPS-Agnostic Transitions: [pacing-and-transitions.md](./references/pacing-and-transitions.md)
@@ -95,7 +106,8 @@ Only **three inputs** are required: **Product Name**, **Short Description** (1 s
 ## 5. Self-Contained Scaffolding, Studio Audio & Visual QA Workflow
 
 All shared primitives, starter configs, audio pack specs, examples, and zero-dependency scripts live **inside this skill folder** (replace `<skill-dir>` below with your installed skill path, e.g. `skills/launchskill` or `.agents/skills/launchskill`):
-- **Core Primitives & Config**: [templates/motion.ts](./templates/motion.ts) · [templates/StudioPrimitives.tsx](./templates/StudioPrimitives.tsx) · [templates/launch.config.json](./templates/launch.config.json) · [templates/scenes/](./templates/scenes/)
+- **Core Primitives, Widgets & Config**: [templates/motion.ts](./templates/motion.ts) · [templates/StudioPrimitives.tsx](./templates/StudioPrimitives.tsx) · [templates/widgets/VisualWidgets.tsx](./templates/widgets/VisualWidgets.tsx) · [templates/launch.config.json](./templates/launch.config.json) · [templates/scenes/](./templates/scenes/)
+- **Motion DNA Extractor (Reverse-Engineer Reference MP4s)**: `node <skill-dir>/scripts/extract-motion-dna.mjs --in ref.mp4 --out analysis/motion-dna.json`
 - **Curated Audio Kit Spec**: [assets/sfx/manifest.json](./assets/sfx/manifest.json) · [assets/sfx/README.md](./assets/sfx/README.md)
 - **Self-Contained Examples**: [kinetic-studio-launch.tsx](./examples/kinetic-studio-launch.tsx) · [rebrand-editorial-launch.tsx](./examples/rebrand-editorial-launch.tsx) · [saas-launch.tsx](./examples/saas-launch.tsx) · [app-feature-highlight.tsx](./examples/app-feature-highlight.tsx) · [simple-product-reveal.tsx](./examples/simple-product-reveal.tsx)
 

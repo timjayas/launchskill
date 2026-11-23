@@ -1,12 +1,27 @@
-# Micro-Interactions, Camera Rig, Real Media & Canvas Recipes
+# Micro-Interactions, Visual-First Widgets, 2.5D Hardware & Camera Recipes
 
-Static dashboards and generic KPI bar charts scream "template." High-craft X launch videos **show real product behavior**—real screen recordings staged with cinema camera tracking, typing prompts, gliding cursors with causal hover/click feedback, macro camera zooms, and multi-artboard canvas choreography.
+Static dashboards, chat bubbles typing long sentences, and 15-row text tables scream "AI template slop." High-craft X launch videos **amaze viewers at first glance through design, illustration, and physical transformation**—never by forcing them to read a user manual.
 
-All recipes below are **100% deterministic and FPS-agnostic** (using `sec(seconds, fps)` and canonical springs from [templates/motion.ts](../templates/motion.ts)).
+All recipes below are **100% deterministic and FPS-agnostic** (using `sec(seconds, fps)` and canonical primitives from [templates/motion.ts](../templates/motion.ts) and [templates/StudioPrimitives.tsx](../templates/StudioPrimitives.tsx)).
 
 ---
 
-## 1. The 2D Macro Camera Rig (Essential for SaaS & UI Videos)
+## 0. The Text-to-Visual Widget Translation Matrix (Replace Text Manuals With Visual Motion)
+
+**Rule #1 of Launch Video Design:** Before putting any text block, chat bubble, or feature table on screen, translate the concept into a **self-explanatory visual illustration or tactile widget** (capping typography at **1–3 words max** per beat):
+
+| Product Capability | ❌ Generic AI Text/Chat Slop (Forbidden) | ✅ Visual-First Motion Design Widget (Use This Instead) |
+| :--- | :--- | :--- |
+| **Voice / AI Intent / Prompt** | A chat bubble or prompt input bar typing a 15-word sentence (*"Just landed in Tokyo — which track is the Narita Express..."*) | **Sculptural Sonic Iris Capsule (`<LiveVoiceSpectrum />`)**: A glowing center emblem flanked by a 24-bar harmonic equalizer that physically morphs its container geometry (`interpolateBoxGeometry`) into the device screen. |
+| **Time / Scheduling / Calendar** | A text row or message thread saying *"Rescheduled Dinner with Maya from 7:00 PM to 8:00 PM"* | **Sweeping Watch/Clock Dial (`<TactileClockDialWidget />`)**: A circular analog/digital clock face where the hands physically sweep from `7:00` to `8:00` and lock emerald green (`LOCKED ✓`). |
+| **Camera Vision / Image Analysis** | A stick-figure raw SVG wireframe drawing or a 10-line text summary card | **Optical Lens Viewfinder + `+88px` Z-Exploded Visual Swatch Card**: A layered architectural/landscape illustration inside a rotating optical focus ring with a sweeping laser scan beam that explodes a miniature visual swatch card forward (`translateZ(+88px)`) out of the glass. |
+| **Location / Navigation / Places** | A text badge saying *"Google Maps · Found Koffee Mameya 6 min away"* | **Topographic Vector Route Map**: Stylized architectural city blocks where a glowing S-curve polyline draws itself (`strokeDashoffset`) to a bouncing emerald destination pin. |
+| **Multi-App Sync / Orchestration** | Fake iMessage chat bubbles or a dense 6-row text checklist | **3-Ring Rotating Orbital Constellation**: Counter-rotating dashed orbital rings with glowing nodes around a pulsing core that dives straight into a **Portal Zoom-Through Match Cut**. |
+| **Studio Backdrop** | `1px` wireframe skeleton box grids or giant faint background watermark words (`"LIVE"`, `"VISION"`) | **`<SeamlessStudioBackdrop />`**: Clean, breathable tonal studio space where 100% of contrast belongs to the sculptural 2.5D foreground objects. |
+
+---
+
+## 1. The 2D Macro Camera Rig & 2.5D `<PerspectiveDeviceStage />`
 
 Keep software UI **flat and orthogonal (`rotate = 0`)** and move a deterministic studio camera rig over it: push smoothly onto one meaningful interactive detail (`1.0 → 1.85×`), hold while the interaction plays, then pull back to reveal full system context.
 
