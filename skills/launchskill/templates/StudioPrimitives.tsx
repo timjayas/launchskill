@@ -10,10 +10,12 @@ import {
 } from "remotion";
 import {
   computeCameraTransform,
+  computeHarmonicStagger,
   durSec,
   EASE_OUT_EXPO,
   FONT_MONO,
   FONT_SANS,
+  FONT_SERIF,
   sec,
 } from "./motion";
 
@@ -748,3 +750,298 @@ export const StudioCyclorama: React.FC<{
     </AbsoluteFill>
   );
 };
+
+// ============================================================================
+// 12. Visual-First 2.5D & Illustrative Motion Primitives (Zero Chat-Bubble Slop)
+//     - <SeamlessStudioBackdrop /> : Pure tonal studio space (zero skeleton grid, zero watermark words)
+//     - <PerspectiveDeviceStage /> : 2.5D CSS preserve-3d rig + coupled glass sheen + +88px Z-exploded overlay
+//     - <MaskedWords />            : Baseline-masked kinetic word reveal (1-3 words max per beat)
+//     - <LiveVoiceSpectrum />      : Sculptural harmonic equalizer (replaces chat bubbles & typed prompts)
+//     - <TactileClockDial />       : Sweeping circular watch dial (replaces text schedules)
+// ============================================================================
+export const SeamlessStudioBackdrop: React.FC<{
+  dark?: boolean;
+  lightGradient?: string;
+  darkGradient?: string;
+}> = ({
+  dark = false,
+  lightGradient = "linear-gradient(165deg, #FFFFFF 0%, #F7F9FC 58%, #EEF2F8 100%)",
+  darkGradient = "linear-gradient(165deg, #0E131F 0%, #090C14 55%, #05070B 100%)",
+}) => (
+  <AbsoluteFill
+    style={{
+      background: dark ? darkGradient : lightGradient,
+      overflow: "hidden",
+      pointerEvents: "none",
+    }}
+  />
+);
+
+export const PerspectiveDeviceStage: React.FC<{
+  x?: number;
+  y?: number;
+  scale?: number;
+  rotateX?: number;
+  rotateY?: number;
+  rotateZ?: number;
+  width?: number;
+  height?: number;
+  radius?: number;
+  darkScreen?: boolean;
+  /** 0 = morphing sonic/visual capsule, 1 = full hardware bezel */
+  chromeProgress?: number;
+  explodedZ?: number;
+  explodedOverlay?: React.ReactNode;
+  children: React.ReactNode;
+}> = ({
+  x = 0,
+  y = 0,
+  scale = 1,
+  rotateX = 0,
+  rotateY = 0,
+  rotateZ = 0,
+  width = 440,
+  height = 888,
+  radius = 54,
+  darkScreen = true,
+  chromeProgress = 1,
+  explodedZ = 88,
+  explodedOverlay,
+  children,
+}) => {
+  const shadowX = Math.round(-rotateY * 2.1);
+  const shadowY = Math.round(38 + rotateX * 1.7);
+  const sheenOffset = -rotateY * 15 + rotateX * 6;
+  const bezelPad = Math.round(4 + chromeProgress * 9);
+  const innerRadius = Math.max(20, radius - bezelPad + 2);
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        perspective: 1500,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        pointerEvents: "none",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          width,
+          height,
+          transformStyle: "preserve-3d",
+          transform: `translate3d(${x}px, ${y}px, 0) scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 12,
+            borderRadius: radius,
+            backgroundColor: "rgba(9, 13, 24, 0.34)",
+            filter: "blur(36px)",
+            transform: `translate3d(${shadowX}px, ${shadowY}px, -45px)`,
+            opacity: 0.75 + chromeProgress * 0.25,
+          }}
+        />
+
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            borderRadius: radius,
+            padding: bezelPad,
+            boxSizing: "border-box",
+            background: "linear-gradient(140deg, #384152 0%, #181D27 46%, #0B0E14 100%)",
+            boxShadow:
+              "inset 0 1.5px 1px rgba(255,255,255,0.34), inset 0 -1.5px 2px rgba(0,0,0,0.65), 0 18px 42px rgba(9, 13, 24, 0.25)",
+            border: "1px solid rgba(255,255,255,0.18)",
+            transform: "translateZ(0px)",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              borderRadius: innerRadius,
+              backgroundColor: darkScreen ? "#0C1018" : "#F8FAFC",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>{children}</div>
+
+            {/* Coupled Specular Studio Glass Light Sweep */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                pointerEvents: "none",
+                zIndex: 35,
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-35%",
+                  bottom: "-35%",
+                  left: "50%",
+                  width: 230,
+                  transform: `translate3d(${sheenOffset - 60}px, 0, 0) rotate(23deg)`,
+                  background:
+                    "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.11) 50%, rgba(255,255,255,0) 100%)",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {explodedOverlay && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              transform: `translateZ(${explodedZ}px)`,
+              transformStyle: "preserve-3d",
+              pointerEvents: "none",
+            }}
+          >
+            {explodedOverlay}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export const MaskedWords: React.FC<{
+  words: Array<{ text: string; color?: string; italic?: boolean }>;
+  startFrame?: number;
+  fontSize?: number;
+  defaultColor?: string;
+  align?: "left" | "center";
+}> = ({
+  words,
+  startFrame = 0,
+  fontSize = 84,
+  defaultColor = "#0B0F17",
+  align = "left",
+}) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "baseline",
+        justifyContent: align === "center" ? "center" : "flex-start",
+        columnGap: Math.round(fontSize * 0.23),
+        rowGap: Math.round(fontSize * 0.08),
+      }}
+    >
+      {words.map((w, idx) => {
+        const delay = computeHarmonicStagger(idx, 0.055, fps, 0.8);
+        const p = interpolate(
+          frame,
+          [startFrame + delay, startFrame + delay + durSec(0.26, fps)],
+          [0, 1],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: EASE_OUT_EXPO }
+        );
+        const yPct = (1 - p) * 108;
+        const rot = (1 - p) * 4;
+
+        return (
+          <span
+            key={idx}
+            style={{
+              display: "inline-block",
+              overflow: "hidden",
+              paddingBottom: "0.15em",
+              marginBottom: "-0.15em",
+            }}
+          >
+            <span
+              style={{
+                display: "inline-block",
+                transform: `translate3d(0, ${yPct}%, 0) rotate(${rot}deg)`,
+                transformOrigin: "left bottom",
+                fontFamily: w.italic ? FONT_SERIF : FONT_SANS,
+                fontStyle: w.italic ? "italic" : "normal",
+                fontWeight: w.italic ? 400 : 750,
+                fontSize: w.italic ? Math.round(fontSize * 1.08) : fontSize,
+                letterSpacing: w.italic ? "-0.015em" : "-0.045em",
+                lineHeight: 1.02,
+                color: w.color ?? defaultColor,
+              }}
+            >
+              {w.text}
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
+export const LiveVoiceSpectrum: React.FC<{
+  energy?: number;
+  bars?: number;
+  height?: number;
+  accentColor?: string;
+  secondaryColor?: string;
+}> = ({
+  energy = 1,
+  bars = 24,
+  height = 64,
+  accentColor = "#1A73E8",
+  secondaryColor = "#60A5FA",
+}) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 6,
+        height,
+      }}
+    >
+      {Array.from({ length: bars }, (_, i) => {
+        const norm = (i / (bars - 1)) * 2 - 1;
+        const envelope = Math.exp(-norm * norm * 2.2);
+        const f1 = Math.sin(t * 11.5 + i * 0.62);
+        const f2 = Math.cos(t * 7.1 - i * 0.45);
+        const wave = 0.5 + 0.5 * (f1 * 0.58 + f2 * 0.42);
+        const barH = Math.max(8, Math.round((8 + wave * (height - 10) * envelope) * energy));
+        const isCore = Math.abs(norm) < 0.42;
+
+        return (
+          <div
+            key={i}
+            style={{
+              width: 6,
+              height: barH,
+              borderRadius: 999,
+              backgroundColor: isCore ? accentColor : secondaryColor,
+              opacity: isCore ? 1 : 0.65,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
