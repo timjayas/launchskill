@@ -876,5 +876,345 @@ export const LiquidGlassCapsule: React.FC<{
   );
 };
 
+// ============================================================================
+// 11. <MagneticBadgeSplitWidget /> — Distilled from `imagineart-pinterest` (8.3s–8.5s)
+//     Single input pill splits horizontally in 0.2s (6 frames) into two linked
+//     badges (`[Workflow] 🔗 [Pinterest]`) with glowing golden Bezier node wires.
+// ============================================================================
+export const MagneticBadgeSplitWidget: React.FC<{
+  splitProgress: number;
+  wireProgress?: number;
+  leftLabel?: string;
+  rightLabel?: string;
+  accentColor?: string;
+}> = ({
+  splitProgress,
+  wireProgress = 0,
+  leftLabel = "Workflow",
+  rightLabel = "Pinterest",
+  accentColor = "#A855F7",
+}) => {
+  const s = Math.max(0, Math.min(1, splitProgress));
+  const w = Math.max(0, Math.min(1, wireProgress));
+  const gap = interpolate(s, [0, 1], [0, 56]);
+  const badgeRadius = interpolate(s, [0, 1], [14, 18]);
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px 36px",
+      }}
+    >
+      {/* Golden-Amber Bezier Node Wires (ImagineArt 15.6s–16.0s) */}
+      {w > 0.01 && (
+        <svg
+          width="520"
+          height="160"
+          viewBox="0 0 520 160"
+          fill="none"
+          style={{ position: "absolute", pointerEvents: "none", overflow: "visible" }}
+        >
+          {[-48, -16, 16, 48].map((offsetY, idx) => {
+            const len = 240;
+            return (
+              <path
+                key={idx}
+                d={`M 260 80 C 340 80, 380 ${80 + offsetY}, 480 ${80 + offsetY}`}
+                stroke="#F59E0B"
+                strokeWidth="2"
+                strokeOpacity={0.75}
+                strokeDasharray={len}
+                strokeDashoffset={len * (1 - w)}
+                strokeLinecap="round"
+              />
+            );
+          })}
+        </svg>
+      )}
+
+      {/* Left Badge */}
+      <div
+        style={{
+          padding: "14px 28px",
+          backgroundColor: "#FFFFFF",
+          color: "#090B10",
+          borderRadius: badgeRadius,
+          fontFamily: FONT_SANS,
+          fontSize: 22,
+          fontWeight: 700,
+          boxShadow: "0 18px 42px rgba(0,0,0,0.35)",
+          transform: `translate3d(${-gap * 0.5}px, 0, 0)`,
+        }}
+      >
+        {leftLabel}
+      </div>
+
+      {/* Center Magnetic Chain Link Icon (Snaps in during 0.2s split) */}
+      <div
+        style={{
+          position: "absolute",
+          width: 38,
+          height: 38,
+          borderRadius: 999,
+          backgroundColor: "#18181B",
+          border: `2px solid ${accentColor}`,
+          color: "#FFFFFF",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: FONT_MONO,
+          fontSize: 16,
+          fontWeight: 800,
+          transform: `scale(${s})`,
+          opacity: s,
+          zIndex: 3,
+        }}
+      >
+        🔗
+      </div>
+
+      {/* Right Badge */}
+      <div
+        style={{
+          padding: "14px 28px",
+          backgroundColor: "#FFFFFF",
+          color: "#090B10",
+          borderRadius: badgeRadius,
+          fontFamily: FONT_SANS,
+          fontSize: 22,
+          fontWeight: 700,
+          boxShadow: "0 18px 42px rgba(0,0,0,0.35)",
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          transform: `translate3d(${gap * 0.5}px, 0, 0)`,
+        }}
+      >
+        <span
+          style={{
+            width: 14,
+            height: 14,
+            borderRadius: 99,
+            backgroundColor: "#E11D48",
+            display: "inline-block",
+          }}
+        />
+        {rightLabel}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// 12. <HairlinePhysicsLineageWidget /> — Distilled from `interface-lineage` (0:00–0:14)
+//     1px pill -> falling droplet + crown splash ripples -> elastic catenary sag
+//     -> right-to-left solid bar fill.
+// ============================================================================
+export const HairlinePhysicsLineageWidget: React.FC<{
+  phaseProgress: number; // 0..1 across the 4 continuous physical states
+  strokeColor?: string;
+}> = ({ phaseProgress, strokeColor = "#18181B" }) => {
+  const p = Math.max(0, Math.min(1, phaseProgress));
+
+  // State 1 (0.00–0.25): Pill outline + right dot detaching downward
+  // State 2 (0.25–0.50): Liquid crown splash + 3 concentric elliptical ripples
+  // State 3 (0.50–0.75): Elastic catenary wire sagging under rolling ball
+  // State 4 (0.75–1.00): Right-to-left solid black bar extrusion
+  const dropP = Math.max(0, Math.min(1, (p - 0.15) / 0.2));
+  const rippleP = Math.max(0, Math.min(1, (p - 0.25) / 0.25));
+  const catenaryP = Math.max(0, Math.min(1, (p - 0.5) / 0.25));
+  const fillP = Math.max(0, Math.min(1, (p - 0.75) / 0.25));
+
+  const sag = Math.sin(catenaryP * Math.PI) * 46;
+  const dotY = interpolate(dropP, [0, 1], [64, 156]);
+
+  return (
+    <svg width="520" height="240" viewBox="0 0 520 240" fill="none">
+      {/* State 1 & 2: Top 1.5px Pill Outline */}
+      {p < 0.55 && (
+        <rect
+          x="160"
+          y="42"
+          width="200"
+          height="44"
+          rx="22"
+          stroke={strokeColor}
+          strokeWidth="1.75"
+          opacity={1 - catenaryP}
+        />
+      )}
+
+      {/* Falling Ink Droplet */}
+      {p < 0.5 && (
+        <circle
+          cx={interpolate(dropP, [0, 1], [332, 260])}
+          cy={dotY}
+          r={7}
+          fill={strokeColor}
+        />
+      )}
+
+      {/* State 2 (3.3s–3.8s): Concentric Elliptical Ripples + Crown Splash Droplets */}
+      {rippleP > 0.01 && p < 0.6 && (
+        <g opacity={1 - catenaryP}>
+          {[1, 1.6, 2.3].map((mult, idx) => (
+            <ellipse
+              key={idx}
+              cx="260"
+              cy="164"
+              rx={28 * mult * rippleP}
+              ry={7 * mult * rippleP}
+              stroke={strokeColor}
+              strokeWidth="1.25"
+              strokeOpacity={Math.max(0, 1 - rippleP * 0.85)}
+            />
+          ))}
+          {/* 3 Rebound Crown Droplets (3.5s–3.7s) */}
+          {[-14, 0, 14].map((dx, idx) => (
+            <circle
+              key={`crown-${idx}`}
+              cx={260 + dx * rippleP}
+              cy={156 - Math.sin(rippleP * Math.PI) * (idx === 1 ? 26 : 18)}
+              r={2.5}
+              fill={strokeColor}
+            />
+          ))}
+        </g>
+      )}
+
+      {/* State 3 (7.1s–8.6s): Elastic Catenary Wire & Counter-Circle */}
+      {p >= 0.48 && p < 0.82 && (
+        <g>
+          <path
+            d={`M 90 130 Q 260 ${130 + sag} 430 130`}
+            stroke={strokeColor}
+            strokeWidth="2"
+            fill="none"
+          />
+          <circle cx="260" cy={122 + sag * 0.5} r="7" fill={strokeColor} />
+          <circle
+            cx="268"
+            cy={138 + sag * 0.5}
+            r="6"
+            stroke={strokeColor}
+            strokeWidth="1.5"
+          />
+        </g>
+      )}
+
+      {/* State 4 (10.8s–11.8s): Right-to-Left Solid Bar Fill */}
+      {p >= 0.75 && (
+        <g>
+          <rect
+            x="130"
+            y="108"
+            width="260"
+            height="36"
+            stroke={strokeColor}
+            strokeWidth="1.75"
+          />
+          <rect
+            x={130 + 260 * (1 - fillP)}
+            y="108"
+            width={260 * fillP}
+            height="36"
+            fill={strokeColor}
+          />
+        </g>
+      )}
+    </svg>
+  );
+};
+
+// ============================================================================
+// 13. <SlotWheelStatusSpinner /> — Distilled from `clanker-ui` (0.8s–1.6s & 4.2s–4.5s)
+//     8-segment radial spinner that swaps labels via a 0.2s vertical slot-wheel
+//     and collapses in 0.3s into a solid disc with a punched-out checkmark.
+// ============================================================================
+export const SlotWheelStatusSpinner: React.FC<{
+  labels: readonly [string, string];
+  swapProgress: number; // 0..1 (0.2s vertical slot-wheel roll)
+  completeProgress?: number; // 0..1 (0.3s spinner -> solid disc -> checkmark)
+  accentColor?: string;
+}> = ({
+  labels,
+  swapProgress,
+  completeProgress = 0,
+  accentColor = "#18181B",
+}) => {
+  const frame = useCurrentFrame();
+  const s = Math.max(0, Math.min(1, swapProgress));
+  const c = Math.max(0, Math.min(1, completeProgress));
+
+  return (
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 18 }}>
+      {/* 8-Segment Radial Spinner -> Solid Checkmark Disc */}
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        {c < 0.5 ? (
+          <g transform={`rotate(${frame * 6} 24 24)`}>
+            {Array.from({ length: 8 }, (_, i) => {
+              const angle = i * 45;
+              return (
+                <rect
+                  key={i}
+                  x="21.5"
+                  y="4"
+                  width="5"
+                  height="11"
+                  rx="2.5"
+                  fill={accentColor}
+                  opacity={0.25 + (i / 8) * 0.75}
+                  transform={`rotate(${angle} 24 24)`}
+                />
+              );
+            })}
+          </g>
+        ) : (
+          <g>
+            <circle cx="24" cy="24" r={16 + (c - 0.5) * 8} fill={accentColor} />
+            <path
+              d="M17 24.5L22 29.5L31.5 19.5"
+              stroke="#FFFFFF"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </g>
+        )}
+      </svg>
+
+      {/* 0.2s Vertical Slot-Wheel Clip Mask */}
+      <div
+        style={{
+          height: 44,
+          overflow: "hidden",
+          position: "relative",
+          fontFamily: FONT_SANS,
+          fontSize: 36,
+          fontWeight: 700,
+          letterSpacing: "-0.03em",
+          color: accentColor,
+        }}
+      >
+        <div
+          style={{
+            transform: `translate3d(0, ${-s * 44}px, 0)`,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <span style={{ height: 44, lineHeight: "44px" }}>{labels[0]}</span>
+          <span style={{ height: 44, lineHeight: "44px" }}>{labels[1]}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 
 
