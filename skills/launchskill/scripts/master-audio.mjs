@@ -15,7 +15,7 @@
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { findFfmpeg } from "./_ffmpeg.mjs";
+import { findFfmpeg, FFMPEG_INSTALL_HINT } from "./_ffmpeg.mjs";
 
 function parseArgs(argv) {
   const opts = {
@@ -96,7 +96,7 @@ function main() {
 
   const ffmpeg = findFfmpeg();
   if (!ffmpeg) {
-    console.error("FFmpeg not found on PATH or in node_modules/@remotion/compositor-*.");
+    console.error(FFMPEG_INSTALL_HINT);
     process.exit(1);
   }
 

@@ -15,7 +15,7 @@
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { findFfmpeg } from "./_ffmpeg.mjs";
+import { findFfmpeg, FFMPEG_INSTALL_HINT } from "./_ffmpeg.mjs";
 
 const ANALYSIS_RATE = 22050;
 const HOP_SIZE = 256; // ~11.6 ms per onset frame
@@ -75,7 +75,9 @@ function decodeWithFfmpeg(ffmpeg, inputPath) {
 function decodeWavNative(inputPath) {
   const buf = fs.readFileSync(inputPath);
   if (buf.toString("ascii", 0, 4) !== "RIFF" || buf.toString("ascii", 8, 12) !== "WAVE") {
-    throw new Error("Input is not a PCM WAV file and FFmpeg was not found to decode compressed audio.");
+    throw new Error(
+      `Input is not a PCM WAV file and FFmpeg is required to decode compressed audio (.mp3/.m4a).\n${FFMPEG_INSTALL_HINT}`
+    );
   }
   let offset = 12;
   let sampleRate = 48000;
@@ -100,7 +102,9 @@ function decodeWavNative(inputPath) {
   }
 
   if (dataStart < 0 || bitsPerSample !== 16) {
-    throw new Error("Native WAV fallback supports 16-bit PCM WAV; install FFmpeg for other formats.");
+    throw new Error(
+      `Native WAV fallback supports 16-bit PCM WAV only.\n${FFMPEG_INSTALL_HINT}`
+    );
   }
 
   const bytesPerFrame = channels * 2;

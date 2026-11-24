@@ -28,7 +28,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { findFfmpeg } from "./_ffmpeg.mjs";
+import { findFfmpeg, FFMPEG_INSTALL_HINT } from "./_ffmpeg.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_MANIFEST = path.resolve(__dirname, "..", "assets", "sfx", "manifest.json");
@@ -248,6 +248,9 @@ async function main() {
 
   console.log(`ElevenLabs AI SFX Plan (${jobs.length} asset${jobs.length === 1 ? "" : "s"} -> ${outDir})`);
   console.log(`  FFmpeg transient trim: ${ffmpeg ? `enabled (${ffmpeg.bin})` : "NOT FOUND (raw MP3 fallback)"}`);
+  if (!ffmpeg) {
+    console.warn(`\n${FFMPEG_INSTALL_HINT}\n`);
+  }
   for (const job of jobs) {
     console.log(
       `  - ${job.file.padEnd(18)} dur=${String(job.durationSec).padStart(4)}s  trim=${job.trimMode.padEnd(9)}  max=${String(job.maxLengthSec).padStart(4)}s  target=${job.targetDb}dBFS`

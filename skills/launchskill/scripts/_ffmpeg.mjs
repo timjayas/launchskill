@@ -36,6 +36,18 @@ function canExecute(bin, env) {
 }
 
 /**
+ * Cross-platform install hint displayed when FFmpeg is missing.
+ */
+export const FFMPEG_INSTALL_HINT = [
+  "FFmpeg not found on PATH or in node_modules/@remotion/compositor-*.",
+  "Install FFmpeg and retry:",
+  "  • macOS:         brew install ffmpeg",
+  "  • Ubuntu/Debian: sudo apt-get install ffmpeg",
+  "  • Windows:       winget install Gyan.FFmpeg",
+  "  • Or run inside a Remotion workspace (`npm install`) or set FFMPEG_PATH=/path/to/ffmpeg",
+].join("\n");
+
+/**
  * Returns `{ bin, env }` if a working FFmpeg binary is available, or `null`.
  */
 export function findFfmpeg() {
