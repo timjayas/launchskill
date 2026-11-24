@@ -16,13 +16,15 @@ Works across AI coding agents supporting the open [Agent Skills](https://agentsk
 
 > *(Unofficial concept demos built with LaunchSkill in Remotion to showcase brand-adaptive motion across two completely different aesthetics.)*
 
-### Spotify Concept Launch
+
+### T3Code Concept Launch (v0.5)
+
+https://github.com/user-attachments/assets/01b5fcde-ebb4-4e84-b500-23a6b59a50a6
+
+### Spotify Concept Launch (v0.1)
 
 https://github.com/user-attachments/assets/54215e09-77d9-49b4-bbdf-cc76593e05fb
 
-### T3Code Concept Launch
-
-https://github.com/user-attachments/assets/01b5fcde-ebb4-4e84-b500-23a6b59a50a6
 
 ---
 
