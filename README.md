@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-black)](https://agentskills.io)
 
-Brand-agnostic creative-coding **Agent Skill** for building **15–60 second 16:9 product launch films** in Remotion—100% in code, tuned for X (Twitter).
+Brand-agnostic creative-coding **Agent Skill** for building **10–30 second 16:9 product launch films** in Remotion 100% in code, tuned for X (Twitter).
 
 Works across AI coding agents supporting the open [Agent Skills](https://agentskills.io) spec (Claude Code, Cursor, Codex, Antigravity, Windsurf, Copilot, and more).
 
@@ -18,11 +18,11 @@ Works across AI coding agents supporting the open [Agent Skills](https://agentsk
 
 ### Spotify Concept Launch
 <!-- DRAG & DROP: Spotify concept demo .mp4 here on GitHub -->
-`[ Video placeholder: drag-and-drop spotify-music-launch-mastered.mp4 here on GitHub ]`
+`[ https://github.com/user-attachments/assets/54215e09-77d9-49b4-bbdf-cc76593e05fb ]`
 
 ### T3Code Concept Launch
 <!-- DRAG & DROP: T3Code concept demo .mp4 here on GitHub -->
-`[ Video placeholder: drag-and-drop t3code-editor-launch-mastered.mp4 here on GitHub ]`
+`[ https://github.com/user-attachments/assets/01b5fcde-ebb4-4e84-b500-23a6b59a50a6 ]`
 
 ---
 
