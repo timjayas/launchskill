@@ -1,143 +1,157 @@
 ---
 name: launchskill
 description: >-
-  Generates studio-grade 15-60 second 16:9 product launch videos optimized for X (Twitter)
-  using Remotion, multi-archetype motion grammar (Spatial Creative Tool, Editorial Brand Punch,
-  Chat-to-Cinema Agentic, Creative Ad Canvas), deterministic 2D macro camera rigs, directional
-  motion blur, offline procedural DSP studio foley & beat-synced audio mastering, and selective
-  React Three Fiber (@remotion/three) with offline studio IBL lighting. Use when creating a
-  product launch video, SaaS trailer, MCP/AI demo, creative ad canvas showcase, devtool drop,
-  or 3D reveal.
+  Brand-agnostic, creative-coding motion engine for 15-60 second 16:9 product launch films
+  optimized for X (Twitter) in Remotion. Starts by discovering the product's real brand
+  identity from the workspace/prompt (or inventing a bespoke domain-native world from scratch),
+  then applies pure motion Technique Playbooks (continuous SVG morphing, camera-tracked vector
+  drawing, decoupled 12fps/30fps tactile cutouts, or concrete software/hardware Product Cinema).
+  Enforces deterministic frame-clock physics, verified @remotion/google-fonts loading, offline
+  procedural DSP studio SFX (or optional BYO .mp3 mastered to -14 LUFS), and blind adversarial QA.
 license: MIT
 ---
 
-# X Product Launch Video Generator (Multi-Archetype Studio System)
+# LaunchSkill — Brand-Agnostic Creative-Coding Launch Film Engine
 
-Generate agency-grade **15–60 second** `16:9` launch videos engineered for the X (Twitter) feed: brand-first art direction, frame-0 scroll-stopping hooks, FPS-agnostic beat-locked pacing, real UI/media micro-interactions, exact focal-lock 2D camera rigs, directional velocity blur, camera-coupled `<StudioCyclorama />` depth, Tier-1 license-free procedural DSP studio foley + beat-synced `-14 LUFS` audio mastering, race-free webfonts, selective offline-IBL 3D via `@remotion/three`, and live Zod config customization.
+Build original, agency-grade **15–60 second** `16:9` product launch films written **100% in code** with Remotion. Every film is designed **from scratch around the user's real product and brand**—never pasted into a recycled color costume or rigid story template—powered by deterministic `useCurrentFrame()` physics, verified `@remotion/google-fonts` typography, offline procedural DSP SFX (with optional BYO `.mp3` sync & `-14 LUFS` mastering), and blind adversarial visual QA.
+
+> **THE ANTI-TEMPLATE RULE (NON-NEGOTIABLE):**
+> **Never default to Anthropic parchment/terracotta (`#F4F1EA` + `#D97757`), generic Swiss monochrome, or purple-blue SaaS gradients unless the user's actual brand or request calls for them.** Every film must derive its palette, typography, surface polarity, and visual metaphor from the target product's own identity and domain.
 
 ---
 
-## 0. Mandatory Creative Director Protocol (Visual-First Motion Design — Zero Template or Text Slop)
+## 0. Mandatory Stage 0 — Brand Discovery & `DIRECTION.md` Gate
 
-**NEVER reskin an existing composition scene-for-scene**, and **NEVER make a launch video text-heavy like a manual**. Viewers must be amazed at first glance through **design, illustration, and transitions**—not by reading sentences. Follow the **Visual-First Laws** in [creative-direction-and-motion-psychology.md](./references/creative-direction-and-motion-psychology.md):
-1. **Ban Chat Bubbles & Prompt Boxes**: Never show a chat bubble or prompt bar typing out a long sentence (the #1 tell of AI wrapper slop). Communicate voice/intent via sculptural sonic waveforms, glowing cores, and direct visual transformation.
-2. **Ban Wireframe Skeleton Grids & Background Watermark Words**: Never put `1px` wireframe/skeleton grid lines or giant faint background title words (`"LIVE"`, `"VISION"`, `"ACTION"`) behind the subject—they create visual distraction. Keep backdrops clean and seamless.
-3. **Show via Tactile Illustration & Visual Widgets (Max 1–3 Words per Beat)**: Never render explanatory side paragraphs, multi-line subtitles, or dense text tables. Communicate actions visually: e.g., an animated watch dial whose hands physically sweep `7:00 → 8:00`, a layered architectural camera viewfinder with optical laser scan + color-swatch extraction, or a topographic map drawing a glowing route curve to a bouncing pin.
-4. **Through-Line Object Permanence & 2.5D Choreography**: Carry one persistent hero object across the entire edit via container morphs, 2.5D tilted perspective (`rotateX/Y/Z` + coupled glass sheen), `+88px` exploded Z-axis visual cards, and portal zoom-through match cuts.
+**STOP before writing any `.tsx` file.** Every film MUST begin by discovering the product's real identity, locking **ONE** primary Technique Playbook below, and writing a concise **`DIRECTION.md`** in the project root (or composition folder).
 
-## 1. Gather Minimal Inputs & Optional X Launch Benchmarking
+### Step 0A — Discover the Real Brand First (Before Inventing Anything)
+1. **Inspect the workspace and user prompt first:** Check `README.md`, `package.json`, CSS/Tailwind theme tokens (`tailwind.config.*`, `globals.css`, design tokens), `public/logos/`, screenshots/recordings, or the user's description to extract their **real brand colors, fonts, surface polarity, logo geometry, audience, and core value proposition**.
+2. **If no repo or brand system exists yet:** Invent a **bespoke** palette (`CANVAS`, `PRIMARY_INK`, `ACCENT`, `MUTED`), a domain-authentic `@remotion/google-fonts` pairing, and **one original visual metaphor** tailored specifically to that product's category and emotional register.
 
-Only **three inputs** are required: **Product Name**, **Short Description** (1 sentence), and **Key Feature(s)** (1–3 real capabilities, plus optional real screenshots/screen recordings). Lead hooks with a **concrete 4–7 word mechanism** (`<Product> — <concrete reality>`, e.g., *"a real Android phone in your Codespace"*), never vague slogans.
-- *(Optional Pre-Production Research — opt-in network call)* Query 3,300+ curated X launch videos on What Ships (free public Remote MCP) for category hook & runtime benchmarks via [scripts/search-whatships.mjs](./scripts/search-whatships.mjs):
+### Step 0B — Choose ONE Primary Technique Playbook (Pure Craft, Zero Prescribed Aesthetics)
+
+Each file in `./styles/` is a **pure motion Technique Playbook**—it teaches *how to engineer elite motion in code*, NOT what colors, fonts, or stories to use:
+
+| Technique Playbook | Load File | Core Motion Craft | Best For | Primary Primitives |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Continuous SVG Morph** | [editorial-morph.md](./styles/editorial-morph.md) | Zero-hard-cut `interpolatePaths` silhouette morphing, smooth-min `LiquidMetaballStage` merges/polarity floods, `12fps` `OrganicBoilFilter` tactile life, baseline clip-mask type | Conceptual launches, AI models, brand manifestos, skills/agents, or any story where fluid physical transformation beats literal UI boxes | `MorphingShape`, `LiquidMetaballStage`, `OrganicBoilFilter`, `motion.ts` |
+| **2. Camera-Tracked Single Line** | [single-line-kinetic.md](./styles/single-line-kinetic.md) | One unbroken `CameraTrackedStroke` across a `2×–3×` world canvas with damped tip tracking, dynamic zoom contrast, trajectory-anchored copy, and one climax colour-flood downbeat | Workflows, creative tools, architecture/lineage stories, reasoning chains, or narratives built around continuous connection | `CameraTrackedStroke`, `OrganicBoilFilter`, `MorphingShape`, `motion.ts` |
+| **3. Decoupled Tactile Cutouts** | [paper-cutout.md](./styles/paper-cutout.md) | Stepped `12fps` object physics (`PaperCutoutLayer`) riding on a smooth `30fps` multi-plane parallax camera, hard directional elevation shadows, and physical sheet/aperture wipes | Craft-forward consumer drops, storytelling platforms, playful or physical-feeling brands that stand out against flat glass feeds | `PaperCutoutLayer`, `OrganicBoilFilter`, `MorphingShape`, `motion.ts` |
+| **4. Product Cinema (UI & Hardware)** | [product-cinema.md](./styles/product-cinema.md) | `<SpatialCameraRig>` macro UI zooms, 2.5D perspective device staging, real screen recordings/diffs, interactive micro-proof widgets, optional `@remotion/three` studio hardware | Concrete software demos, SaaS/devtools, mobile apps, agentic UIs, and physical hardware where real product interaction is the hero | `StudioPrimitives`, `VisualWidgets`, `templates/scenes/`, `benchmarks.md`, `motion.ts` |
+
+> **Technique Isolation Rule:** Load **ONLY** the Technique Playbook and primitives your `DIRECTION.md` commits to. When using an abstract technique playbook (`editorial-morph`, `single-line-kinetic`, or `paper-cutout`), **never** leak software UI chrome (`VisualWidgets.tsx`, terminals, NLE timelines, waveforms, rounded SaaS cards) into the film unless the product literally requires it and `DIRECTION.md` justifies it.
+
+### Step 0C — Required Commitments in `DIRECTION.md`
+1. **Brand Discovery Summary:** Exact source of the brand identity (workspace files inspected or bespoke domain derivation), audience, and core value prop.
+2. **The 15-Second Stranger Test:** Write the entire film in **3 plain sentences (`Hook → Proof → CTA`)**. If a muted stranger on X cannot explain what the product does after one watch, rewrite before coding.
+3. **Locked Technique Playbook:** Name the single playbook from `./styles/` and confirm clean primitive isolation.
+4. **Core Emotion & Frame-0 Hook (`0–2s`):** State what the viewer feels on Frame 0 (mid-action, never fade-from-black or a feature checklist).
+5. **Original Hero Motif & Visual Thread:** Invent **one bespoke physical object, silhouette, stroke, or UI artifact** native to *this* product that carries continuity from Frame 0 to the finale.
+6. **Derived Brand System & Copy Budget:** Exact hex tokens (`CANVAS`, `PRIMARY_INK`, `ACCENT`, `MUTED`), exact `@remotion/google-fonts` families (zero system fallbacks), and strict copy discipline (`<= 4 words/beat`).
+7. **Explicit Exclusion List:** Name the clichés and off-brand tropes forbidden in this film (including any unmotivated template costumes).
+
+---
+
+## 1. Minimal Inputs & Optional Pre-Production Research
+
+Only **three inputs** are required: **Product Name**, **Short Description** (1 sentence), and **Key Proof Point(s)** (1–3 concrete capabilities, plus optional real screenshots/recordings or repo path). Lead hooks with a concrete reality—never vague slogans.
+
+- *(Optional — opt-in network call)* Benchmark hooks & pacing against 3,300+ curated X launch films on What Ships via [scripts/search-whatships.mjs](./scripts/search-whatships.mjs):
   ```bash
   node <skill-dir>/scripts/search-whatships.mjs --query "<category or keyword>" --limit 6
   ```
-
-## 1.5 Mandatory Pre-Step: Brand Token & Motion Temperament Derivation
-
-**NEVER copy-paste signature colors, cursors, or props from reference videos** (e.g., default pink `#EC4899` node borders or orange `#F97316` cursors) unless they genuinely match the target product's brand. Before choosing an archetype, derive these **5 bespoke brand tokens** (full guide: [art-direction-presets.md](./references/art-direction-presets.md)):
-
-1. **Surface Polarity (Light-First Default + Dark macOS App Contrast)**: Default to **Pure Light Gallery White (`#FFFFFF` / `#F9F9F8` / `#F7F7F5`)** for `80–90%` of runtime (with one optional `1.8–2.5s` earned `#141413` dark climax beat); use dark surfaces as primary only when explicitly requested. **For code editors & devtools on a light canvas, always stage the desktop app inside sleek Dark-Mode macOS chrome (`#0D0D10`, real traffic lights, multi-token syntax highlighting, deep studio shadow)** for crisp figure-ground contrast — never a washed-out white code window on white. **Never use blurred circular/radial background glows or ambient orb washes.**
-2. **Single Primary Accent**: Extract 1 brand hue (or monochrome ink); never stack 3+ competing accents.
-3. **Corner-Radius Geometry**: Architectural (`0px` Swiss/viewfinder), Sharp (`8–12px` dev/infra), Studio (`18–24px` SaaS), or Soft (`26–34px` creative/consumer).
-4. **Typography Pairing**: `Inter` + `JetBrains Mono` (+ `Instrument Serif` / `Playfair Display` only when editorial warmth fits).
-5. **Motion Temperament**: Choose **`taut-mechanical`** (razor snaps, `6px` inner follow-through), **`editorial-fluid`** (calm glides, `1.1s` holds), or **`tactile-snappy`** (direct-manipulation pops, directional whip-pans).
+- *(Optional — local reference study)* Reverse-engineer pacing, cut cadence, and velocity curves from a local reference `.mp4` via [scripts/extract-motion-dna.mjs](./scripts/extract-motion-dna.mjs):
+  ```bash
+  node <skill-dir>/scripts/extract-motion-dna.mjs --in ref.mp4 --out analysis/motion-dna.json
+  ```
 
 ---
 
-## 2. Choose Launch Archetype (Map Your Brand Tokens Into Its Grammar)
+## 2. Creative-Coding Primitives & Required Packages
 
-| Archetype / Preset | Runtime / FPS / Tempo | Best For | Signature Motion Grammar |
+### Required Remotion Packages
+Install exact version-matched packages alongside `remotion` in your Remotion project:
+- **`@remotion/paths`** — Deterministic SVG path morphing (`interpolatePaths`), live stroke evolution (`evolvePath`), and camera nib tracking (`getPointAtLength`, `getLength`).
+- **`@remotion/google-fonts`** — Race-free, build-verified webfont loading so headless renders never silently fall back to Times New Roman, Georgia, or Arial.
+
+### Built-In Creative-Coding Primitives ([templates/primitives/index.ts](./templates/primitives/index.ts))
+All five primitives are 100% `useCurrentFrame()`-driven, strict TypeScript, and free of `Math.random()`, `Date.now()`, or CSS animations:
+
+| Primitive | File | Creative-Coding Mechanism | Primary Playbook |
 | :--- | :--- | :--- | :--- |
-| **1. Spatial Creative Tool** (`kinetic-studio`) | `24–60s` · `24p`/`30p` · `132 BPM` | Creative suites, node/canvas tools, tactile editors | Brand-framed nodes, radial orbital bursts, accelerating vertical slot drums, forward/back live slider scrubs, 1-to-1 wired dataflow, `<SpatialCameraRig>` hops + directional whip-pan blur |
-| **2. Editorial Brand Punch** (`rebrand-editorial`) | `20–30s` · `30p` · `116 BPM` | AI search/RAG agents, MCP libraries, sub-30s drops | Display Serif hooks, `3.2×` hard-cut macro typing punch-ins, full-bleed retrieval strobes, card-to-prompt-chip docking, 3D Z-scatter + anchor Light→Dark inversion, inline logo-slot headlines |
-| **3. Chat-to-Cinema Agentic** (`motionfly-agentic`) | `24–30s` · `30p` · `120 BPM` | Autonomous coding/video/workflow agents, MCP builders | Legacy-stack replacement dock, style-chip prompt → vertical connected MCP execution tree (all steps completing live), meta timeline assembly reveal, multiplayer cursor swarm convergence |
-| **4. Creative Ad Canvas** (`hera-ad-canvas`) | `40–45s` · `60p`/`30p` · `128 BPM` | Creative/ad/brand generators, multi-format canvases | 4-cycle Dark↔Light dot-grid heartbeat, parallel agent cursors spawning mixed-aspect artboards (`16:9`/`1:1`/`4:5`/`9:16`, zero wires), URL→Brand Kit radial bloom, in-place reference transmutation, static→motion split → full-bleed ad zoom |
-| **5. Editorial Gallery** (`editorial-gallery`) | `20–30s` · `30p` · `115–120 BPM` | Storytelling SaaS, AI apps | Studio paper `#F7F7F5` + obsidian `#09090B` dark chapter, two-tone ink contrast, inline mark reflow |
-| **6. Precision DevTool** (`precision-devtool`) | `16–22s` · `30p`/`60p` · `125 BPM` | DevTools, APIs, CLI, infra | Obsidian `#09090B`, `1px` silver hairlines, `⌘K` command palettes, live diffs, `tabular-nums` impact metrics |
-| **7. Hardware Studio** (`hardware-studio`) | `16–24s` · `30p` · `112–116 BPM` | Physical hardware, 3D marks | Single persistent `<ThreeCanvas>` + offline `RoomEnvironment` PMREM studio IBL + `1px` macro leader lines |
-| **8. Architectural Archive** (`architectural-archive`) | `20–30s` · `30p` · `120 BPM` | Design systems, directories, Swiss-editorial launches | Sharp `0px` corners, `1px` hairline grids, `+` crosshairs, `<ViewfinderFrame>` L-brackets, `<RollingOdometer>` counters, stark kinetic type slates (zero chat bars needed) |
+| **`MorphingShape`** | [MorphingShape.tsx](./templates/primitives/MorphingShape.tsx) | Continuous SVG silhouette morphing across keyframes via `interpolatePaths` | `editorial-morph`, `single-line-kinetic`, `paper-cutout` |
+| **`CameraTrackedStroke`** | [CameraTrackedStroke.tsx](./templates/primitives/CameraTrackedStroke.tsx) | Unbroken live vector drawing via `evolvePath` + `getPointAtLength` with smooth viewport camera tracking | `single-line-kinetic` |
+| **`OrganicBoilFilter`** | [OrganicBoilFilter.tsx](./templates/primitives/OrganicBoilFilter.tsx) | Seeded `12fps` on-twos `<feTurbulence>` + `<feDisplacementMap>` tactile edge boil + optional surface grain | `editorial-morph`, `single-line-kinetic`, `paper-cutout` |
+| **`LiquidMetaballStage`** | [LiquidMetaballStage.tsx](./templates/primitives/LiquidMetaballStage.tsx) | SVG `<feGaussianBlur>` + `<feColorMatrix>` smooth-min threshold matrix for organic shape merging & polarity floods | `editorial-morph` |
+| **`PaperCutoutLayer`** | [PaperCutoutLayer.tsx](./templates/primitives/PaperCutoutLayer.tsx) | Decoupled `12fps` stepped object physics inside a smooth `30fps`/`60fps` parallax camera plane with rim & hard drop shadow | `paper-cutout` |
 
-> **2D vs. 3D Rule:** Keep software UI orthogonal 2D + `<SpatialCameraRig>`; reserve `@remotion/three` strictly for physical hardware or sculptural 3D marks.
-
----
-
-## 3. Pattern Decision Matrix & References
-
-| Product Story | Recommended Pattern | Reference |
-| :--- | :--- | :--- |
-| "Stage a real screenshot or screen recording like cinema" | **`<SpatialCameraRig>` Zoom-Track + Speed-Ramped `<OffthreadVideo>` + Spotlight Callout** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show a wide tool library fast" | **Radial Orbital Burst** or **Accelerating Vertical Slot Drum** (true vertical blur) | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show prompt typing clearly on 360px mobile X" | **Hard-Cut `3.2×` Macro Typing Punch-In** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show AI search / MCP retrieval without spinners" | **Shimmer Status + 3-Beat Full-Bleed Retrieval Strobe + Tabular Counter HUD** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show multi-turn visual context / before-after proof" | **Card-to-Prompt-Chip Docking** or **Forward-and-Back Live Slider Scrub** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show autonomous multi-step build / meta output" | **Connected Vertical Agent Tree** (100% completed) + **Meta Timeline Assembly Reveal** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Show parallel multi-aspect ad generation / brand kit" | **Multi-Artboard Freeform Canvas** · **URL→Brand Kit Bloom** · **In-Place Reference Transmutation** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Bridge tool output cleanly into full-bleed commercial" | **Static→Motion Side-by-Side Split → Canvas-to-Full-Bleed Ad Zoom** + **Panorama Sweep** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Stage a code editor / devtool on a crisp light studio canvas" | **Dark-Mode macOS Window (`#0D0D10`) on `<StudioCyclorama />` + Multi-Token Syntax Diff (Zero Blank Gaps)** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Add subtle studio motion depth to clean light frames (zero blur orbs)" | **Camera-Coupled `<StudioCyclorama />` + 2-Plane Optical Z-Depth Parallax** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Hold attention without chat bars / stage tactile flat-lay or Swiss index" | **Kinetic Type Slate + `<ViewfinderFrame>` + `<RollingOdometer>`** or **Physical Desk Flat-Lay Zoom** | [micro-interactions.md](./references/micro-interactions.md) |
-| "Pivot mood dramatically or land an iconic finale" | **Z-Scatter + Anchor Theme-Flip**, **Directional Whip-Pan**, or **Peak-Velocity Match-Cut** | [pacing-and-transitions.md](./references/pacing-and-transitions.md) |
-
-**Detailed Reference Guides (Progressive Disclosure — Read Only What You Need):**
-- Creative Direction, Motion Psychology & Anti-Template Choreography: [creative-direction-and-motion-psychology.md](./references/creative-direction-and-motion-psychology.md)
-- Quantitative Motion Benchmarks & 10 Signature Patterns (Distilled from Curated Reference Reels): [benchmarks.md](./references/benchmarks.md)
-- Objective Pass/Block Review Gates (10 Non-Negotiable Audit Standards): [review-gates.md](./references/review-gates.md)
-- Tokens, Brand Derivation & All 9 Presets: [art-direction-presets.md](./references/art-direction-presets.md)
-- Canonical Physics, Secondary Settle, Directional Blur, Fonts & Fast Grain: [motion-design-system.md](./references/motion-design-system.md)
-- Beat-Grids, Blueprints A–H & FPS-Agnostic Transitions: [pacing-and-transitions.md](./references/pacing-and-transitions.md)
-- Interactive UI, Real Media & Canvas Recipes: [micro-interactions.md](./references/micro-interactions.md)
-- Offline Studio 3D IBL (`RoomEnvironment`): [r3f-remotion-guide.md](./references/r3f-remotion-guide.md)
-- Tier-1 Procedural DSP Foley, Beat-Drop Analysis & `-14 LUFS` Mastering: [sound-design-and-audio.md](./references/sound-design-and-audio.md)
-- X Export Specs & Cut-Boundary Contact-Sheet QA: [x-export-settings.md](./references/x-export-settings.md)
+**Shared Engineering Foundation (All Playbooks):**
+- FPS-agnostic timing, beat grids (`createBeatGrid`, `sec`, `durSec`), canonical easing & springs, and round-robin SFX helpers: [templates/motion.ts](./templates/motion.ts)
+- Starter configuration schema: [templates/launch.config.json](./templates/launch.config.json)
+- Audio mixing: use Remotion `<Audio>` + `<Sequence>` directly (or `<SoundTrackLayer />` from [templates/StudioPrimitives.tsx](./templates/StudioPrimitives.tsx)).
 
 ---
 
-## 4. Non-Negotiable Studio Invariants & Anti-Patterns
+## 3. Progressive Reference Map (Load Only What Applies)
 
-1. **Frame-0 Alive & 100% FPS-Agnostic**: Canvas is already mid-arrival at `frame = 0` (`progress >= 0.35`). Derive every timing cue from `createBeatGrid(bpm, fps)` or `sec(s, fps)`—zero raw 30fps magic integers.
-2. **Asymmetric Hold-Budget & Secondary Settle**: Snap transitions in `0.15–0.30s` (`EASE_OUT_EXPO` / `SPRING_EDITORIAL` `{ damping: 28, stiffness: 180, mass: 0.9 }`); hold readable UI rock-solid for `0.75–1.35s` (`2.5–3.2s` CTA hold). Inner content follows outer containers `+0.07–0.10s` later with `6–12px` travel.
-3. **True Directional Blur, Camera-Coupled Cyclorama & Fast Tiled Grain**: Use `<DirectionalMotionBlur blurX={...} blurY={...}>` (dropping strictly to `0` at rest), `<StudioCyclorama />` for subtle curved tonal falloff + camera-coupled `30px` dot-grid depth, and the pre-encoded `128×128` tiled `<FilmGrainOverlay />` (never slow full-HD `<feTurbulence>`).
-4. **Race-Free Fonts & Optical Typography**: Prefer `@remotion/google-fonts` or race-free `ensureStudioFonts()` (`link.onload` + `document.fonts.load`). Enforce `tabular-nums` on every counter/timer, scale tracking with size, and lock readable copy inside `120px × 90px` safe margins.
-5. **Zero Nondeterminism, Blur Circles, Skeleton Slop, Text Walls, or Naive Synth Audio**: Zero `Math.random()`, `Date.now()`, `useFrame` deltas, CSS `@keyframes`, **blurred radial-gradient circle / ambient glow orb backgrounds**, washed-out white-on-white code windows, blank-gap diff fade-ins (`opacity: 0` holes), generic gray skeleton-loader bars, dense text-wall spec tables, parked idle seconds, dark-by-default templates when light fits, muddy crossfades, floating 3D toruses behind 2D UI, sparkle icons (`✨`), cloned reference pink/orange defaults, unreadable 12px chat bars, half-finished agent checklists, empty fade-to-black tails, **naive/chiptune JS music loops**, harsh/loud finale bell chimes, or raw sine-wave clicks in final exports.
+### Universal Engineering Guides (All Playbooks)
+- **Creative Direction & Motion Psychology**: [creative-direction-and-motion-psychology.md](./references/creative-direction-and-motion-psychology.md)
+- **5 Universal Laws & Blind Adversarial Critic Checklist**: [review-gates.md](./references/review-gates.md)
+- **Empirical Timing & Pacing Physics (10-Film Benchmarks)**: [benchmarks.md](./references/benchmarks.md)
+- **Canonical Physics, Easing & FPS-Agnostic Timing**: [motion-design-system.md](./references/motion-design-system.md)
+- **Procedural DSP SFX, Optional BYO `.mp3` Sync & `-14 LUFS` Mastering**: [sound-design-and-audio.md](./references/sound-design-and-audio.md)
+- **X 1080p Export Specs & Cut-Boundary Visual QA**: [x-export-settings.md](./references/x-export-settings.md)
+
+### Technique Playbooks (Load ONLY Your Locked Playbook)
+- **Continuous SVG Morph**: [styles/editorial-morph.md](./styles/editorial-morph.md)
+- **Camera-Tracked Single Line**: [styles/single-line-kinetic.md](./styles/single-line-kinetic.md)
+- **Decoupled Tactile Cutouts**: [styles/paper-cutout.md](./styles/paper-cutout.md)
+- **Product Cinema (Software/Hardware UI)**: [styles/product-cinema.md](./styles/product-cinema.md) — owns [VisualWidgets.tsx](./templates/widgets/VisualWidgets.tsx), [templates/scenes/](./templates/scenes/), [micro-interactions.md](./references/micro-interactions.md), [art-direction-presets.md](./references/art-direction-presets.md), [pacing-and-transitions.md](./references/pacing-and-transitions.md), [r3f-remotion-guide.md](./references/r3f-remotion-guide.md), and the Product Cinema reference examples ([kinetic-studio-launch.tsx](./examples/kinetic-studio-launch.tsx), [rebrand-editorial-launch.tsx](./examples/rebrand-editorial-launch.tsx), [saas-launch.tsx](./examples/saas-launch.tsx), [app-feature-highlight.tsx](./examples/app-feature-highlight.tsx), [simple-product-reveal.tsx](./examples/simple-product-reveal.tsx)).
 
 ---
 
-## 5. Self-Contained Scaffolding, Studio Audio & Visual QA Workflow
+## 4. The 5 Universal Laws (Summary)
 
-All shared primitives, starter configs, audio pack specs, examples, and zero-dependency scripts live **inside this skill folder** (replace `<skill-dir>` below with your installed skill path, e.g. `skills/launchskill` or `.agents/skills/launchskill`):
-- **Core Primitives, Widgets & Config**: [templates/motion.ts](./templates/motion.ts) · [templates/StudioPrimitives.tsx](./templates/StudioPrimitives.tsx) · [templates/widgets/VisualWidgets.tsx](./templates/widgets/VisualWidgets.tsx) · [templates/launch.config.json](./templates/launch.config.json) · [templates/scenes/](./templates/scenes/)
-- **Motion DNA Extractor (Reverse-Engineer Reference MP4s)**: `node <skill-dir>/scripts/extract-motion-dna.mjs --in ref.mp4 --out analysis/motion-dna.json`
-- **Curated Audio Kit Spec**: [assets/sfx/manifest.json](./assets/sfx/manifest.json) · [assets/sfx/README.md](./assets/sfx/README.md)
-- **Self-Contained Examples**: [kinetic-studio-launch.tsx](./examples/kinetic-studio-launch.tsx) · [rebrand-editorial-launch.tsx](./examples/rebrand-editorial-launch.tsx) · [saas-launch.tsx](./examples/saas-launch.tsx) · [app-feature-highlight.tsx](./examples/app-feature-highlight.tsx) · [simple-product-reveal.tsx](./examples/simple-product-reveal.tsx)
+Every film—regardless of brand, aesthetic, or technique playbook—must pass all 5 laws and the **Blind Adversarial Critic Checklist** in [references/review-gates.md](./references/review-gates.md):
+1. **The 15-Second Stranger Test**: Clear 3-sentence story (`Hook → Proof → CTA`) readable muted in one watch; Frame 0 is alive; zero unrelated filler visuals.
+2. **Zero Internal Dev/QA Jargon On Screen**: Zero debug labels, frame counters, fake `97 SCORE` rings, `const res = await` filler, or placeholder text in any frame.
+3. **Anti-Template Originality & Kinetic Craft**: Derived from the target product's real brand (never recycled parchment/terracotta, Swiss monochrome, or purple-blue SaaS costumes), with genuine spatial choreography, scale/rhythm contrast, and generous negative space.
+4. **Frame-Clock Determinism + Verified Font Loading**: 100% `useCurrentFrame()` / `interpolate()` / `spring()`, zero `Math.random()` / `Date.now()` / CSS `@keyframes` / CSS `transition`, clean `tsc --noEmit`, and verified `@remotion/google-fonts` (zero system font fallback).
+5. **SFX-Only / BYO Audio Discipline**: Crisp procedural DSP SFX default or user-supplied `.mp3` mastered to `-14 LUFS` (`truePeak <= -1.0 dBTP`); zero code-generated synth/chiptune music beds or harsh raw sine beeps.
 
-1. **Prepare Studio Audio (100% Offline, License-Free Tier-1 Procedural DSP Foley & Music Bed)**:
-   - **Foley (Tier 1 Default — Zero API Key)**: Generate all 14 stereo 48 kHz studio DSP WAVs via [scripts/generate-dsp-sfx.mjs](./scripts/generate-dsp-sfx.mjs) (swept pink-noise whooshes + reverb, multi-layer tactile clicks/keys, pitch-enveloped sub-bass drops, warm felt-marimba resolve) directly into `public/sfx/`:
+---
+
+## 5. Self-Contained Audio, Visual QA & X Export Pipeline
+
+Replace `<skill-dir>` with your installed skill path (e.g. `skills/launchskill` or `.agents/skills/launchskill`).
+
+1. **Prepare Studio Audio (SFX-Only Default + Optional BYO `.mp3` — Zero Code-Generated Music)**
+   - **Tier 1 Default (Offline, Zero API Key, License-Free DSP SFX)**: Synthesize all 14 stereo 48 kHz studio SFX WAVs ([assets/sfx/manifest.json](./assets/sfx/manifest.json) · [assets/sfx/README.md](./assets/sfx/README.md)) via [scripts/generate-dsp-sfx.mjs](./scripts/generate-dsp-sfx.mjs):
      ```bash
      node <skill-dir>/scripts/generate-dsp-sfx.mjs --out public/sfx
      ```
-   - **Procedural DSP Music Bed (Tier 1 Default — Zero API Key)**: Generate a beat-locked stereo electronic/tech groove via [scripts/generate-dsp-music.mjs](./scripts/generate-dsp-music.mjs) (sidechained analog sub-bass, studio kick, brushed hats, filtered FM plucks + ping-pong delay, dark-climax drop-out, `Dmaj9` resolve) matched to your exact BPM & beat count:
-     ```bash
-     node <skill-dir>/scripts/generate-dsp-music.mjs --bpm 142 --beats 40 --out public/audio/bed-142bpm.wav
-     ```
-   - *(Optional Tier 2 AI Foley — opt-in via `ELEVENLABS_API_KEY`)* Generate custom physical-object foley via [scripts/generate-ai-sfx.mjs](./scripts/generate-ai-sfx.mjs):
+   - *(Optional Tier 2 AI Foley — opt-in via `ELEVENLABS_API_KEY`)* Generate bespoke physical foley via [scripts/generate-ai-sfx.mjs](./scripts/generate-ai-sfx.mjs):
      ```bash
      node <skill-dir>/scripts/generate-ai-sfx.mjs --pack studio --out public/sfx
      ```
-   - *(Optional Tier 2 Real Music Beat-Sync — offline)* When a licensed instrumental track is provided, extract exact BPM, first beat, and primary drop via [scripts/analyze-music.mjs](./scripts/analyze-music.mjs):
+   - *(Optional BYO Music — ONLY when the user supplies their own `.mp3` in `public/audio/`)* Extract BPM, first beat, and primary drop via [scripts/analyze-music.mjs](./scripts/analyze-music.mjs); otherwise render **crisp SFX only**:
      ```bash
-     node <skill-dir>/scripts/analyze-music.mjs --in public/audio/bed.mp3 --out src/audio-beats.json --fps 30
+     node <skill-dir>/scripts/analyze-music.mjs --in public/audio/track.mp3 --out src/audio-beats.json --fps 30
      ```
-2. **Typecheck & Verify Composition Registration**:
+
+2. **Typecheck & Verify Composition Registration**
    ```bash
    npx tsc --noEmit && npx remotion compositions
    ```
-3. **Run Motion-Boundary + Contact-Sheet Visual QA** via [scripts/qa-frames.mjs](./scripts/qa-frames.mjs) (renders 5 hero stills + `cut - 1`, `cut`, `cut + 2` boundary triplets + `out/qa/contact-sheet.html`):
+
+3. **Run Motion-Boundary Contact-Sheet QA & Blind Adversarial Audit**
+   Render hero stills + `cut - 1`, `cut`, `cut + 2` boundary triplets + `out/qa/contact-sheet.html` via [scripts/qa-frames.mjs](./scripts/qa-frames.mjs):
    ```bash
    node <skill-dir>/scripts/qa-frames.mjs --comp <Id> --fps 30 --duration <frames> --cuts <c1,c2,...>
    ```
-   Visually inspect every PNG against the 8-point rubric in [x-export-settings.md](./references/x-export-settings.md) and fix defects before export.
-4. **Export X-Optimized 1080p MP4 & Master Audio (`-14 LUFS`, Zero Video Re-Encode)** via [scripts/master-audio.mjs](./scripts/master-audio.mjs):
+   Inspect every PNG blindly against the **5 Universal Laws + Blind Adversarial Critic Checklist** in [references/review-gates.md](./references/review-gates.md), your locked Technique Playbook's gates, and [references/x-export-settings.md](./references/x-export-settings.md). Fix every `BLOCK` finding before export.
+
+4. **Export X-Optimized 1080p MP4 & Master Audio (`-14 LUFS`, Zero Video Re-Encode)**
    ```bash
    npx remotion render <CompositionId> out/launch-video.mp4 \
      --codec=h264 --pixel-format=yuv420p --crf=18 --audio-codec=aac --audio-bitrate=192k --gl=angle

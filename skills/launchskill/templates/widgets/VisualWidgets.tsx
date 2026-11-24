@@ -433,7 +433,16 @@ export const RadialTelemetryGaugeWidget: React.FC<{
 export const SyntaxTokenMorphWidget: React.FC<{
   morphProgress: number;
   fileName?: string;
-}> = ({ morphProgress, fileName = "agent.ts" }) => {
+  callTarget?: string;
+  oldDiffLine?: string;
+  newDiffLine?: string;
+}> = ({
+  morphProgress,
+  fileName = "agent.ts",
+  callTarget = "gemini",
+  oldDiffLine = "- mode: 'legacy-poll'",
+  newDiffLine = "+ mode: 'live-vision-v2'",
+}) => {
   const isVerified = morphProgress > 0.65;
 
   return (
@@ -486,7 +495,7 @@ export const SyntaxTokenMorphWidget: React.FC<{
         <div style={{ color: "#E4E4E7" }}>
           <span style={{ color: "#C084FC" }}>const </span>
           <span style={{ color: "#93C5FD" }}>res </span>= <span style={{ color: "#C084FC" }}>await </span>
-          <span style={{ color: "#60A5FA" }}>gemini</span>.run();
+          <span style={{ color: "#60A5FA" }}>{callTarget}</span>.run();
         </div>
 
         <div
@@ -501,7 +510,7 @@ export const SyntaxTokenMorphWidget: React.FC<{
             fontWeight: 600,
           }}
         >
-          {isVerified ? "+ mode: 'live-vision-v2'" : "- mode: 'legacy-poll'"}
+          {isVerified ? newDiffLine : oldDiffLine}
         </div>
 
         <div style={{ color: "#E4E4E7" }}>
@@ -896,7 +905,6 @@ export const MagneticBadgeSplitWidget: React.FC<{
 }) => {
   const s = Math.max(0, Math.min(1, splitProgress));
   const w = Math.max(0, Math.min(1, wireProgress));
-  const gap = interpolate(s, [0, 1], [0, 56]);
   const badgeRadius = interpolate(s, [0, 1], [14, 18]);
 
   return (
@@ -912,21 +920,28 @@ export const MagneticBadgeSplitWidget: React.FC<{
       {/* Golden-Amber Bezier Node Wires (ImagineArt 15.6s–16.0s) */}
       {w > 0.01 && (
         <svg
-          width="520"
+          width="240"
           height="160"
-          viewBox="0 0 520 160"
+          viewBox="0 0 240 160"
           fill="none"
-          style={{ position: "absolute", pointerEvents: "none", overflow: "visible" }}
+          style={{
+            position: "absolute",
+            right: -180,
+            top: "50%",
+            transform: "translateY(-50%)",
+            pointerEvents: "none",
+            overflow: "visible",
+          }}
         >
           {[-48, -16, 16, 48].map((offsetY, idx) => {
-            const len = 240;
+            const len = 220;
             return (
               <path
                 key={idx}
-                d={`M 260 80 C 340 80, 380 ${80 + offsetY}, 480 ${80 + offsetY}`}
+                d={`M 0 80 C 75 80, 120 ${80 + offsetY}, 210 ${80 + offsetY}`}
                 stroke="#F59E0B"
-                strokeWidth="2"
-                strokeOpacity={0.75}
+                strokeWidth="2.2"
+                strokeOpacity={0.82}
                 strokeDasharray={len}
                 strokeDashoffset={len * (1 - w)}
                 strokeLinecap="round"
@@ -946,22 +961,22 @@ export const MagneticBadgeSplitWidget: React.FC<{
           fontFamily: FONT_SANS,
           fontSize: 22,
           fontWeight: 700,
-          boxShadow: "0 18px 42px rgba(0,0,0,0.35)",
-          transform: `translate3d(${-gap * 0.5}px, 0, 0)`,
+          boxShadow: "0 18px 42px rgba(0,0,0,0.16)",
         }}
       >
         {leftLabel}
       </div>
 
-      {/* Center Magnetic Chain Link Icon (Snaps in during 0.2s split) */}
+      {/* Center Magnetic Chain Link Icon (Flex-Centered — Never Overlaps Either Badge) */}
       <div
         style={{
-          position: "absolute",
-          width: 38,
-          height: 38,
+          width: Math.round(s * 42),
+          marginLeft: Math.round(s * 14),
+          marginRight: Math.round(s * 14),
+          height: 42,
           borderRadius: 999,
           backgroundColor: "#18181B",
-          border: `2px solid ${accentColor}`,
+          border: s > 0.05 ? `2px solid ${accentColor}` : "none",
           color: "#FFFFFF",
           display: "flex",
           alignItems: "center",
@@ -971,7 +986,8 @@ export const MagneticBadgeSplitWidget: React.FC<{
           fontWeight: 800,
           transform: `scale(${s})`,
           opacity: s,
-          zIndex: 3,
+          overflow: "hidden",
+          flexShrink: 0,
         }}
       >
         🔗
@@ -987,11 +1003,10 @@ export const MagneticBadgeSplitWidget: React.FC<{
           fontFamily: FONT_SANS,
           fontSize: 22,
           fontWeight: 700,
-          boxShadow: "0 18px 42px rgba(0,0,0,0.35)",
+          boxShadow: "0 18px 42px rgba(0,0,0,0.16)",
           display: "flex",
           alignItems: "center",
           gap: 10,
-          transform: `translate3d(${gap * 0.5}px, 0, 0)`,
         }}
       >
         <span

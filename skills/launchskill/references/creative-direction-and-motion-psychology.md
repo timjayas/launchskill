@@ -27,6 +27,50 @@ A launch video is **motion design**, not a user manual. If a viewer has to *read
 
 ---
 
+## 0.5 The Autonomous Creative Brain: Design From Scratch (Ban the "Widget Buffet")
+
+> **Core Principle:** Pre-built widgets (`VisualWidgets.tsx`) are **physics references**, NOT a sticker pack to dump onto every screen. An expert motion director invents a **bespoke, unified visual world from scratch** tailored strictly to the product's actual story.
+
+1. **Ban the "Widget Buffet" (1 Focal Subject Per Beat + 75% Calm Negative Space):**
+   - Never stack 3+ unrelated template components (e.g., a spinner + a pill splitter + dangling yellow wires + a glass capsule) in the same shot. That creates visual chaos and forces the viewer to decode what they're looking at.
+   - **Rule:** Every shot gets **ONE primary focal subject** and **ONE clear semantic action** surrounded by **70–85% calm, matte negative space** (warm archival paper `#F7F7F5` or pure obsidian `#0A0A0C`).
+2. **Ban Dangling Decorative Wires & Orphan Geometry:**
+   - If you draw a connector line, arrow, or Bezier curve, it **MUST physically originate at Object A and terminate at Object B**. Never shoot decorative yellow or blue lines out into empty whitespace pointing at nothing.
+3. **Ban Forced 2.5D Tilt on Flat Editorial Typography:**
+   - Do **NOT** wrap every shot in `<LivingPerspectiveWorkstation />` tilting flat text `-18° → +18°` with a sweeping blue diagonal gradient behind it. That looks like a generic 3D PowerPoint template.
+   - Reserve 2.5D perspective strictly for genuine physical hardware (phones, laptops, layered 3D cards). Editorial typography (`Paper`, `Clanker UI`, `Interface Lineage`) belongs **optically flat, razor-sharp, and dead-centered on a calm matte canvas** — animated purely through timing, masking, scale, and physical continuity.
+4. **Ban Generic "AI Dashboard" Clichés:**
+   - Never drop a fake macOS traffic-light code box (`const res = await product.run()`) next to a fake `97 SCORE` radial donut gauge when the product isn't an IDE or analytics monitor.
+   - Instead, **invent bespoke domain-native visuals from scratch**:
+     - For a **video creation skill (`launchskill`)**: build a custom minimalist **video timeline with a live playhead scrubbing across real beat tracks (`HOOK`, `132 BPM`, `-14 LUFS`) and a live audio waveform**.
+     - For a **fintech / ledger app**: build a custom live balance settlement rail.
+     - For a **design tool**: build a custom vector canvas & live token inspector.
+5. **Optical Typography Continuity:**
+   - During a glyph-scramble or text morph, keep the **exact same font metrics / bounding width** (`fontVariantNumeric: "tabular-nums"` or smooth cross-dissolve inside a fixed optical anchor) so the word never jumps jaggedly from monospace to sans-serif mid-transition.
+6. **Ban "PowerPoint / Magic Move" Slow Box Resizing (Real Camera Choreography & Velocity Contrast):**
+   - Never build a 15-second film by resizing one centred box's `width` and `height` every 4 seconds at one uniform medium speed—that reads like a Keynote *Magic Move* deck, not cinema.
+   - Drive the frame with **real virtual camera choreography** (`scale(2.2)` macro close-ups off-centre → `180–250ms` exponential pull-back to `1.0×` wide → brisk `0.8–1.4s` kinetic proof cuts alternating with slow, continuous camera drift).
+   - **Show, don't label:** Never waste a climax beat on static labelled progress bars (`CAMERA / TYPE / AUDIO`); demonstrate the product's real output directly inside the locked visual world.
+7. **The 15-Second Stranger Test (Story Clarity Over Motion Tricks):**
+   - Before writing any animation, write the entire video's story in **3 plain sentences (`Hook → Product Proof → CTA`)**.
+   - **Never cut full-screen into an unrelated fake product or random numbers** just to hit a motion effect. If a muted stranger scrolling X can't explain what the product does after one watch, rewrite the story immediately.
+
+---
+
+## 0.6 Two Storytelling Lenses (Always Brand-Derived in `DIRECTION.md`)
+
+Our shared timing, physics, and QA engine ([benchmarks.md](./benchmarks.md), [review-gates.md](./review-gates.md)) powers **two storytelling lenses**. Pick **ONE** lens in Stage 0 and derive its palette, polarity, and typography **strictly from the target product's real brand** (never default to Anthropic parchment/terracotta, generic Swiss monochrome, or purple-blue SaaS gradients):
+
+| Dimension | **Lens A — Concrete Product Proof** | **Lens B — Abstract Visual Metaphor** |
+| :--- | :--- | :--- |
+| **Best For** | Concrete software demos, devtools, mobile apps, and hardware with tangible UI or physical workflows | Category-defining launches, AI models/skills/agents, brand manifestos, and creative concepts where visual metaphor beats literal UI screenshots |
+| **Palette & Polarity** | Derived directly from the product's real brand/repo (light, dark, warm, or chromatic) with strong figure-ground contrast | Derived directly from the product's real brand/domain (matte high-contrast ground + disciplined focal accent, `70–85%` calm space) |
+| **Typography** | Brand-authentic sans/mono/display pairing loaded deterministically via `@remotion/google-fonts` | Brand-authentic expressive display + clean supporting face loaded deterministically via `@remotion/google-fonts` |
+| **Signature Motion Grammar** | Macro-to-wide UI camera zooms (`2.2× ↔ 1.0×`), real cursor/click micro-interactions, live diffs, 2.5D hardware framing | Pure procedural SVG/code physical metaphors: continuous silhouette morphing, camera-tracked strokes, decoupled 12fps/30fps cutouts, viscous merges |
+| **Hard Rule** | Never cut full-screen into an unrelated fake product or clone another brand's costume | Never break the visual metaphor by dropping in a random SaaS dashboard, terminal window, or generic UI card |
+
+---
+
 ## 1. Honest Autopsy: Why `GeminiMobileLaunch` (and Standard AI Videos) Looked Like Cloned Template Slop
 
 When we inspect the first version of `GeminiMobileLaunch` against real viral X launch films, seven structural flaws jump out immediately:
