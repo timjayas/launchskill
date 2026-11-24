@@ -143,6 +143,265 @@ export const computeSecondarySettle = (
   };
 };
 
+export interface BoxGeometry {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  radius: number;
+}
+
+export const interpolateBoxGeometry = (
+  a: BoxGeometry,
+  b: BoxGeometry,
+  progress: number
+): BoxGeometry => ({
+  x: a.x + (b.x - a.x) * progress,
+  y: a.y + (b.y - a.y) * progress,
+  width: a.width + (b.width - a.width) * progress,
+  height: a.height + (b.height - a.height) * progress,
+  radius: a.radius + (b.radius - a.radius) * progress,
+});
+
+export const computeHarmonicStagger = (
+  index: number,
+  baseDelaySec: number,
+  fps: number,
+  exponent = 0.8
+): number => Math.round(Math.pow(Math.max(0, index), exponent) * sec(baseDelaySec, fps));
+
+// ============================================================================
+// 4.6 Master Motion Design Math (Disney / Ben Marriott / Ordinary Folk / Kowalski)
+// ============================================================================
+export type MassSpringTier = "micro" | "card" | "device" | "stage";
+
+export const getSpringForMass = (tier: MassSpringTier) => {
+  switch (tier) {
+    case "micro":
+      return { damping: 22, stiffness: 260, mass: 0.55 } as const;
+    case "card":
+      return SPRING_SNAPPY;
+    case "device":
+      return { damping: 30, stiffness: 135, mass: 1.25 } as const;
+    case "stage":
+      return { damping: 32, stiffness: 105, mass: 1.45 } as const;
+  }
+};
+
+export const computeAnticipationCurve = (
+  frame: number,
+  startFrame: number,
+  fps: number,
+  options?: { anticipationSec?: number; driveSec?: number; pullback?: number }
+): number => {
+  const antiFrames = durSec(options?.anticipationSec ?? 0.11, fps);
+  const driveFrames = durSec(options?.driveSec ?? 0.28, fps);
+  const pullback = options?.pullback ?? -0.11;
+
+  if (frame <= startFrame) return 0;
+  if (frame <= startFrame + antiFrames) {
+    return interpolate(frame, [startFrame, startFrame + antiFrames], [0, pullback], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: EASE_OUT_EXPO,
+    });
+  }
+  return interpolate(
+    frame,
+    [startFrame + antiFrames, startFrame + antiFrames + driveFrames],
+    [pullback, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: EASE_IN_OUT_QUINT,
+    }
+  );
+};
+
+export const computeVelocityDeformation = (
+  currentX: number,
+  currentY: number,
+  prevX: number,
+  prevY: number,
+  fps = 30,
+  sensitivity = 0.0022,
+  maxStretch = 0.09
+): { scaleX: number; scaleY: number } => {
+  const fpsScale = fps / 30;
+  const vx = Math.abs(currentX - prevX) * fpsScale;
+  const vy = Math.abs(currentY - prevY) * fpsScale;
+  const threshold = 2.0;
+
+  const sx = vx < threshold ? 0 : Math.min(maxStretch, (vx - threshold) * sensitivity);
+  const sy = vy < threshold ? 0 : Math.min(maxStretch, (vy - threshold) * sensitivity);
+
+  const netX = 1 + sx - sy * 0.45;
+  const netY = 1 + sy - sx * 0.45;
+
+  return {
+    scaleX: Number(netX.toFixed(4)),
+    scaleY: Number(netY.toFixed(4)),
+  };
+};
+
+export const interpolateQuadraticArc = (
+  progress: number,
+  from: { x: number; y: number },
+  to: { x: number; y: number },
+  arcLiftPx = -90,
+  arcSidePx = 0
+): { x: number; y: number } => {
+  const t = Math.max(0, Math.min(1, progress));
+  const inv = 1 - t;
+  const ctrlX = (from.x + to.x) * 0.5 + arcSidePx;
+  const ctrlY = Math.min(from.y, to.y) + arcLiftPx;
+  return {
+    x: inv * inv * from.x + 2 * inv * t * ctrlX + t * t * to.x,
+    y: inv * inv * from.y + 2 * inv * t * ctrlY + t * t * to.y,
+  };
+};
+
+export interface LayeredOverlapResult {
+  shell: number;
+  canvas: number;
+  headline: number;
+  badge: number;
+}
+
+export const computeLayeredOverlap = (
+  frame: number,
+  startFrame: number,
+  fps: number,
+  stepOffsetSec = 0.06
+): LayeredOverlapResult => {
+  const step = sec(stepOffsetSec, fps);
+  return {
+    shell: spring({
+      frame: Math.max(0, frame - startFrame),
+      fps,
+      config: SPRING_SNAPPY,
+    }),
+    canvas: spring({
+      frame: Math.max(0, frame - (startFrame + step)),
+      fps,
+      config: SPRING_EDITORIAL,
+    }),
+    headline: spring({
+      frame: Math.max(0, frame - (startFrame + step * 2)),
+      fps,
+      config: SPRING_EDITORIAL,
+    }),
+    badge: spring({
+      frame: Math.max(0, frame - (startFrame + step * 3)),
+      fps,
+      config: SPRING_POP,
+    }),
+  };
+};
+
+export const computeTriggerOriginStyle = (
+  triggerX: number,
+  triggerY: number,
+  cardBox: { x: number; y: number; width: number; height: number }
+): string => {
+  const ox = Math.round(triggerX - cardBox.x);
+  const oy = Math.round(triggerY - cardBox.y);
+  return `${ox}px ${oy}px`;
+};
+
+export const enforceBeatCopyRestraint = (
+  headline: string,
+  maxWords = 4
+): string => {
+  const words = headline.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return words.join(" ");
+  return words.slice(0, maxWords).join(" ");
+};
+
+export type CanonicalMorphShapeId =
+  | "gemini-star"
+  | "circle-orb"
+  | "camera-aperture"
+  | "squircle-card"
+  | "compass-diamond"
+  | "map-pin";
+
+const MORPH_VERTEX_COUNT = 64;
+
+const sampleCanonicalShapeRadius = (
+  shape: CanonicalMorphShapeId,
+  theta: number
+): { r: number; yOffset?: number } => {
+  switch (shape) {
+    case "gemini-star": {
+      const c = Math.abs(Math.cos(theta));
+      const s = Math.abs(Math.sin(theta));
+      const astroid = Math.pow(Math.pow(c, 0.58) + Math.pow(s, 0.58), -1 / 0.58);
+      return { r: 22 + astroid * 78 };
+    }
+    case "circle-orb":
+      return { r: 84 };
+    case "camera-aperture":
+      return { r: 82 + Math.cos(theta * 8) * 5.5 };
+    case "squircle-card": {
+      const n = 4.2;
+      const denom = Math.pow(
+        Math.pow(Math.abs(Math.cos(theta)), n) + Math.pow(Math.abs(Math.sin(theta)), n),
+        1 / n
+      );
+      return { r: 82 / Math.max(0.001, denom) };
+    }
+    case "compass-diamond": {
+      const c = Math.abs(Math.cos(theta));
+      const s = Math.abs(Math.sin(theta));
+      return { r: 86 / (c + s) };
+    }
+    case "map-pin": {
+      const sinT = Math.sin(theta);
+      const pinch = sinT > 0 ? Math.pow(sinT, 2.2) * 28 : 0;
+      return { r: 74 + pinch, yOffset: -6 };
+    }
+  }
+};
+
+export const morphCanonicalSvgShapes = (
+  shapes: readonly CanonicalMorphShapeId[],
+  progress: number,
+  center = 100,
+  scale = 1
+): string => {
+  if (shapes.length === 0) return "";
+  if (shapes.length === 1) {
+    return morphCanonicalSvgShapes([shapes[0], shapes[0]], 0, center, scale);
+  }
+
+  const clamped = Math.max(0, Math.min(1, progress));
+  const scaled = clamped * (shapes.length - 1);
+  const idx = Math.min(shapes.length - 2, Math.floor(scaled));
+  const localT = scaled - idx;
+  const shapeA = shapes[idx];
+  const shapeB = shapes[idx + 1];
+
+  const pts: Array<{ x: number; y: number }> = [];
+  for (let i = 0; i < MORPH_VERTEX_COUNT; i++) {
+    const theta = -Math.PI / 2 + (i / MORPH_VERTEX_COUNT) * Math.PI * 2;
+    const a = sampleCanonicalShapeRadius(shapeA, theta);
+    const b = sampleCanonicalShapeRadius(shapeB, theta);
+    const r = (a.r + (b.r - a.r) * localT) * scale;
+    const yOff = ((a.yOffset ?? 0) + ((b.yOffset ?? 0) - (a.yOffset ?? 0)) * localT) * scale;
+    pts.push({
+      x: center + Math.cos(theta) * r,
+      y: center + Math.sin(theta) * r + yOff,
+    });
+  }
+
+  return (
+    pts
+      .map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`)
+      .join(" ") + " Z"
+  );
+};
+
 // ============================================================================
 // 5. Race-Free Deterministic Webfont Loader
 // ============================================================================
