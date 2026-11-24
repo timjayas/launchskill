@@ -14,7 +14,7 @@ Encoding flags, X re-encoder defense, and the mandatory **Hero + Cut-Boundary Co
 | **Codec** | `H.264` (`--codec=h264`) | Universal compatibility with X ingest pipeline |
 | **Pixel Format** | `yuv420p` (`--pixel-format=yuv420p`) | Prevents black frames or color shift on iOS/Android |
 | **Quality (CRF)** | `16 – 18` (`--crf=18`) | Near-lossless master so X's transcode starts from crisp pixels |
-| **Audio** | AAC, `48 kHz`, `192 kbps`, `-14 LUFS` | Video must read 100% muted; run `scripts/generate-dsp-sfx.mjs` + `scripts/generate-dsp-music.mjs` (Tier-1 100% license-free studio DSP foley & music bed) or optional `scripts/generate-ai-sfx.mjs` / real track + `scripts/master-audio.mjs` (`-14 LUFS`, `-1.5 dBTP`) |
+| **Audio** | AAC, `48 kHz`, `192 kbps`, `-14 LUFS` | Video must read 100% muted; run `scripts/generate-dsp-sfx.mjs` (Tier-1 100% offline procedural DSP foley default) or optional `scripts/generate-ai-sfx.mjs` / BYO `.mp3` (`scripts/analyze-music.mjs`) + `scripts/master-audio.mjs` (`-14 LUFS`, `-1.5 dBTP`) |
 
 ---
 
