@@ -8,21 +8,21 @@ Brand-agnostic creative-coding **Agent Skill** for building **10–30 second 16:
 
 Works across AI coding agents supporting the open [Agent Skills](https://agentskills.io) spec (Claude Code, Cursor, Codex, Antigravity, Windsurf, Copilot, and more).
 
-> **Beta (`v0.5`):** LaunchSkill is in active beta. Expect **1 prompt** to generate a full, playable base cut, plus **2–3 short directing prompts** to dial in pacing, framing, and polish.
+> **Beta (`v0.5`):** LaunchSkill is in active beta. Expect **1 prompt** to generate a full, playable base cut, plus **3–5 short directing prompts** to dial in pacing, framing, and polish.
 
 ---
 
 ## Concept Demos
 
-> *(Built with LaunchSkill in Remotion — drag and drop the `.mp4` files below in GitHub's README editor to embed them.)*
+> *(Unofficial concept demos built with LaunchSkill in Remotion to showcase brand-adaptive motion across two completely different aesthetics.)*
 
 ### Spotify Concept Launch
-<!-- DRAG & DROP: Spotify concept demo .mp4 here on GitHub -->
-`[ https://github.com/user-attachments/assets/54215e09-77d9-49b4-bbdf-cc76593e05fb ]`
+
+https://github.com/user-attachments/assets/54215e09-77d9-49b4-bbdf-cc76593e05fb
 
 ### T3Code Concept Launch
-<!-- DRAG & DROP: T3Code concept demo .mp4 here on GitHub -->
-`[ https://github.com/user-attachments/assets/01b5fcde-ebb4-4e84-b500-23a6b59a50a6 ]`
+
+https://github.com/user-attachments/assets/01b5fcde-ebb4-4e84-b500-23a6b59a50a6
 
 ---
 
@@ -109,37 +109,11 @@ LaunchSkill ships **100% offline and license-free by default**—zero bundled co
 ## Explore Locally
 
 ```bash
-git clone https://github.com/timjayas/launchskill.git
+git clone [https://github.com/timjayas/launchskill.git](https://github.com/timjayas/launchskill.git)
 cd launchskill/demo
 npm install
 node ../skills/launchskill/scripts/generate-dsp-sfx.mjs --out public/sfx
 npm run studio
-```
-
-Open [`lab/index.html`](./lab/index.html) directly in any browser (100% offline) to scrub the **18-pattern Interactive Motion Lab** frame-by-frame (`← / →`).
-
----
-
-## Repository Structure
-
-```text
-launchskill/
-├── README.md
-├── LICENSE                                     # MIT License
-├── SECURITY.md                                 # Script audit, offline defaults & disclosure policy
-├── .cursorrules                                # Optional motion engineering rules
-├── skills/launchskill/                         # Canonical Agent Skill (`npx skills add`)
-│   ├── SKILL.md                                # Brand-first playbook & Stage 0 gate
-│   ├── styles/                                 # 4 isolated Technique Playbooks
-│   ├── references/                             # Universal laws, QA critic, physics, audio & X export
-│   ├── templates/                              # Creative-coding primitives, motion.ts, widgets & scenes
-│   ├── scripts/                                # Offline DSP SFX, beat sync, Motion DNA, QA & -14 LUFS mastering
-│   ├── assets/sfx/                             # 14-slot studio foley manifest & DSP guide
-│   └── examples/                               # Reference Remotion compositions
-├── demo/                                       # Runnable Remotion 4 demo workspace
-├── lab/ & patterns/                            # Zero-build offline 18-pattern Interactive Motion Lab
-├── analysis/                                   # Empirical motion & BPM breakdowns
-└── practice/drills.md                          # Progressive motion drills & critique rubric
 ```
 
 ---
