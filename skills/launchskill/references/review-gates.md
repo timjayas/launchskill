@@ -40,7 +40,8 @@ Before approving any render, switch completely out of author mode into **Blind A
 - [ ] **Static Slide-Deck Pacing**: Disconnected full-screen fades/slides with identical beat cadence, dead static holds with zero living craft, or no persistent visual thread linking opening to finale.
 - [ ] **Recycled Brand Costume (Anti-Template Violation)**: Defaulting to Anthropic parchment/terracotta (`#F4F1EA` + `#D97757`), generic Swiss monochrome, or purple-blue SaaS gradients when the user's real product/brand has a different identity.
 - [ ] **Generic AI Slop Tropes**: Sparkle icons (`✨`), blurred neon/radial glow orbs behind copy, gray skeleton-loader bars, fake `97 SCORE` radial rings, or wireframe CAD grid wallpaper.
-- [ ] **Mobile Feed Failure**: Unreadable sub-28px micro-copy, low-contrast text, clipped strokes/glyphs, or essential visuals spilling outside `120px × 90px` safe margins.
+- [ ] **Mobile Feed Failure & Macro Edge Clipping**: Unreadable sub-28px micro-copy, low-contrast text, clipped strokes/glyphs, macro focal objects exceeding `92%` viewport width (`elementW * macroZoom > 0.92 * W` unless intentional edge bleed), or essential visuals spilling outside `120px × 90px` safe margins.
+- [ ] **Fade-to-Blank Peel Seams & DOM 3D Lag**: Fading an outgoing scene to blank solid color before a wipe/peel (always overlap and peel real pixels directly), or mounting `> 30` simultaneous `preserve-3d` DOM nodes that tank Studio playback FPS (use SVG `<clipPath>` masks for crisp geometric transitions or WebGL/Three `InstancedMesh` for dense 3D grids).
 
 > **Zero-Tolerance Rule:** If **even ONE** checklist item triggers, the verdict is **`BLOCK`**. Fix the architectural root cause (never a cosmetic patch), re-run [scripts/qa-frames.mjs](../scripts/qa-frames.mjs), and re-audit blindly until zero items trigger.
 

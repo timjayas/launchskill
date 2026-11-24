@@ -173,6 +173,17 @@ export const interpolateBoxGeometry = (
 });
 
 /**
+ * Computes the exact incoming camera zoom so an incoming element (`targetWidth`)
+ * matches the rendered pixel width of an outgoing element (`sourceWidth * sourceZoom`)
+ * across a 0-frame Portal Zoom-Through Match Cut (zero 1-frame size jump).
+ */
+export const computePortalCatchZoom = (
+  sourceWidth: number,
+  sourceZoom: number,
+  targetWidth: number
+): number => (sourceWidth * sourceZoom) / Math.max(1, targetWidth);
+
+/**
  * Rauno Freiberg "school-of-fish" non-linear harmonic stagger (in frames).
  * Compresses later delays (`idx^0.8`) so cascades accelerate naturally rather
  * than ticking like a robotic linear loop.

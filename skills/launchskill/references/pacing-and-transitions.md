@@ -217,4 +217,13 @@ const swipeX = interpolate(frame, [cutFrame - half, cutFrame, cutFrame + half], 
 ```
 
 ### H. Peak-Velocity Scale-Through Match-Cut
-Accelerate a framed UI preview card outward using `EASE_IN_EXPO` (`scale: 1 → 4.5`), cut at the **steepest velocity frame** into a full-bleed brand/CTA layer sharing the exact same background hue, and decelerate smoothly into `scale: 1.0` with `EASE_OUT_EXPO`. Never slow down before the cut!
+Accelerate a framed UI control or card outward using `EASE_IN_EXPO` (`scale: 1 → 4.5`) with the camera pivot pinned to the element's exact `(wx, wy)` center (keep `opacity: 1`—never fade to washed-out gray before the cut). Catch the incoming scene's matching element at `incomingZoom = computePortalCatchZoom(sourceW, sourceZoom, targetW)` centered on its own `(wx, wy)`, then decelerate cleanly to `1.0×` with `EASE_OUT_EXPO`.
+
+### I. Direct Overlapping SVG `<clipPath>` Peel (Zero Fade-to-Blank Seam)
+Never fade an outgoing scene's content to a blank solid color before running a curtain or slat wipe—that reads like two disconnected scenes. Instead, mount the incoming `<Sequence>` **underneath** the outgoing `<Sequence>` for the `12–20f` transition window, keep the outgoing scene 100% solid, and peel its actual pixels away with a single GPU-light SVG `<clipPath>` (e.g., `6–8` staggered `<rect>` slats retracting with `EASE_IN_OUT_QUINT`, with optional leading edge lines when the brand's aesthetic calls for crisp architectural seams). When exiting copy ahead of a hard cut or container dock, finish outgoing copy fades **`10–15f` before the cut** so zero ghosted text lingers on the `cut - 1` splice frame.
+
+### J. Zero-Seam Infinite Loop Contract (X Auto-Replay)
+When designing a seamless loop from Finale → Frame 0:
+1. Export one shared geometry constant (positions, dimensions, border-radii, zoom) used by both the Finale's end state and Frame 0.
+2. Morph Finale elements into Frame 0's exact state over the final `0.8–1.0s` while resetting any background/cyclorama pan back to `(0, 0)`.
+3. Open Frame 0 already landed in that exact state and immediately trigger a staggered pulse or motion impulse (`f2+`) so the loop seam is invisible.

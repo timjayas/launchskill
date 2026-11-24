@@ -1,6 +1,18 @@
 import React from "react";
 import { Composition } from "remotion";
 import {
+  SpotifyMusicLaunch,
+  defaultSpotifyMusicLaunchProps,
+  spotifyMusicLaunchSchema,
+  getSpotifyMusicTotalFrames,
+} from "./compositions/SpotifyMusicLaunch";
+import {
+  T3CodeEditorLaunch,
+  defaultT3CodeEditorLaunchProps,
+  t3CodeEditorLaunchSchema,
+  getT3CodeEditorTotalFrames,
+} from "./compositions/T3CodeEditorLaunch";
+import {
   T3CodeLaunch,
   defaultT3CodeLaunchProps,
   t3CodeLaunchSchema,
@@ -236,6 +248,32 @@ export const defaultWaterBottleLaunchProps: WaterBottleLaunchProps = {
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="SpotifyMusicLaunch"
+        component={SpotifyMusicLaunch}
+        width={1920}
+        height={1080}
+        fps={FPS}
+        durationInFrames={getSpotifyMusicTotalFrames(defaultSpotifyMusicLaunchProps.bpm, FPS)}
+        schema={spotifyMusicLaunchSchema}
+        defaultProps={defaultSpotifyMusicLaunchProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getSpotifyMusicTotalFrames(props.bpm, FPS),
+        })}
+      />
+      <Composition
+        id="T3CodeEditorLaunch"
+        component={T3CodeEditorLaunch}
+        width={1920}
+        height={1080}
+        fps={FPS}
+        durationInFrames={getT3CodeEditorTotalFrames(defaultT3CodeEditorLaunchProps.bpm, FPS)}
+        schema={t3CodeEditorLaunchSchema}
+        defaultProps={defaultT3CodeEditorLaunchProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getT3CodeEditorTotalFrames(props.bpm, FPS),
+        })}
+      />
       <Composition
         id="T3CodeLaunch"
         component={T3CodeLaunch}
