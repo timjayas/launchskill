@@ -1,11 +1,11 @@
-# Studio Sound Design, Procedural DSP Foley & Optional BYO Music Sync
+# Studio Sound Design, Matching Real Music & Procedural DSP Foley
 
-X timelines auto-play muted, so every launch video **must read 100% clearly without sound**. When viewers tap unmute, studio polish comes from **crisp, sample-0 accurate tactile SFX** (never code-generated background music loops!) and optional user-supplied `.mp3` music sync.
+X timelines auto-play muted, so every launch video **must read 100% clearly without sound**. When viewers tap unmute, studio polish comes from **real, matching background music beat-synced to the cut + crisp, sample-0 accurate procedural DSP SFX**, ducked cleanly and mastered to `-14 LUFS`.
 
-> **Audio Quality Law (SFX-Only Default · Zero Code-Generated Music):**
+> **Audio Quality Law (Real Matching Music + Crisp SFX · Zero Code-Generated Music):**
 > 1. **NEVER synthesize code-generated background music beds or JS synth/chiptune loops.** Generated music sounds artificial and cheapens high-craft motion design.
-> 2. **Default to crisp Procedural DSP SFX Only** via [scripts/generate-dsp-sfx.mjs](../scripts/generate-dsp-sfx.mjs) — tactile mechanical clicks, swept pink-noise air whooshes, pitch-enveloped sub-drops, 1s risers, and soft felt-marimba resolve chimes, mastered cleanly.
-> 3. **Optional BYO Music (`.mp3`)**: Only include background music if the user drops their own licensed `.mp3` / `.wav` into `public/audio/` (e.g., `demo/public/audio/`). When present, run [scripts/analyze-music.mjs](../scripts/analyze-music.mjs) to lock cuts to its BPM and primary drop; otherwise render **SFX-only**.
+> 2. **Source Real Matching Background Music (Standard Expectation):** Check `public/audio/` or the workspace first; if no track is present, actively source (or guide/ask the user to provide) a **real, license-cleared `.mp3` / `.wav`** whose genre, tempo (`110–134 BPM` sweet spot), and energy arc genuinely match the product's world (royalty-free / Creative Commons / licensed library). Run [scripts/analyze-music.mjs](../scripts/analyze-music.mjs) to lock every cut and climax drop to the real song. *(Only fall back to SFX-only when the user explicitly requests SFX-only or while awaiting a licensed track.)*
+> 3. **Layer Procedural DSP SFX + Music Ducking:** Run [scripts/generate-dsp-sfx.mjs](../scripts/generate-dsp-sfx.mjs) for tactile mechanical clicks, swept pink-noise air whooshes, pitch-enveloped sub-drops, 1s risers, and warm felt-marimba resolves—automatically ducking the music bed `-4 to -6 dB` under hero hits (`duckMusic: true`) and mastering the combined mix via [scripts/master-audio.mjs](../scripts/master-audio.mjs).
 
 ---
 
@@ -34,9 +34,12 @@ node skills/launchskill/scripts/generate-ai-sfx.mjs --pack studio --out public/s
 
 ---
 
-## 2. Optional BYO Music Sync (Only When User Supplies Their Own `.mp3`)
+## 2. Sourcing & Beat-Syncing Real Matching Music (`analyze-music.mjs`)
 
-If — and **only** if — the user drops their own real produced track into `public/audio/` (e.g. `demo/public/audio/track.mp3`), run [scripts/analyze-music.mjs](../scripts/analyze-music.mjs) to extract the exact tempo, first-beat phase offset, and primary bass drop:
+Real produced music gives a launch film emotional momentum and rhythmic cohesion that bare SFX cannot match:
+
+1. **Match the Product's World:** Pick a real, license-cleared instrumental track (royalty-free / CC0 / user-licensed library) whose sonic texture matches the brand—e.g., crisp minimalist electronic/IDM pulse for a devtool, warm tactile percussion/indie grooves for a creative app, tight kinetic house/breakbeat for a high-energy showcase. Avoid generic corporate ukulele, cheesy epic trailer horns, or vocal tracks that fight on-screen copy.
+2. **Extract Exact Tempo, Phase & Drop:** Drop the track into `public/audio/track.mp3` (or `.wav`) and run [scripts/analyze-music.mjs](../scripts/analyze-music.mjs):
 
 ```bash
 node skills/launchskill/scripts/analyze-music.mjs \
@@ -45,7 +48,10 @@ node skills/launchskill/scripts/analyze-music.mjs \
   --fps 30
 ```
 
-Pass the detected `bpm` and `firstBeatSec` directly into `createBeatGrid(bpm, fps, firstBeatSec)` from [templates/motion.ts](../templates/motion.ts), and align your climax or hero reveal directly to `dropFrame`. **If no user track is provided, omit `musicTrack` completely and render with crisp SFX only.**
+3. **Lock Cuts & Infinite-Loop Boundary to the Music Grid:**
+   - Pass the detected `bpm` and `firstBeatSec` directly into `createBeatGrid(bpm, fps, firstBeatSec)` from [templates/motion.ts](../templates/motion.ts), and align your climax or hero reveal directly to `dropFrame`.
+   - Size the composition duration to a clean musical bar boundary (e.g., `8`, `12`, or `16` bars at `bpm`) and apply loop-safe fades (`fadeInSec={0.2}`, `fadeOutSec={0.35}` — roughly `6f` in / `10f` out at `30fps`) so the seamless infinite loop back to Frame 0 never clicks or cuts mid-bar.
+   - *(If the user explicitly requests SFX-only—or no licensed track is available yet—omit `musicTrack` and keep crisp SFX only.)*
 
 ---
 
@@ -69,28 +75,35 @@ const cues: SfxCue[] = [
   ),
   { frame: confirmFrame, src: "sfx/click-01.wav", volume: 0.42 },
   { peakAtFrame: pullBackFrame, peakOffsetSec: 0.16, src: "sfx/whoosh-fast.wav", volume: 0.34 },
-  { frame: pullBackFrame, src: "sfx/sub-hit-soft.wav", volume: 0.34 },
+  { frame: pullBackFrame, src: "sfx/sub-hit-soft.wav", volume: 0.34, duckMusic: true },
   { peakAtFrame: climaxFrame, peakOffsetSec: 1.0, src: "sfx/riser-1s.wav", volume: 0.28 },
-  { frame: climaxFrame, src: "sfx/sub-hit-heavy.wav", volume: 0.44 },
-  { frame: finaleConfirmFrame, src: "sfx/resolve-warm.wav", volume: 0.26 },
+  { frame: climaxFrame, src: "sfx/sub-hit-heavy.wav", volume: 0.44, duckMusic: true },
+  { frame: finaleConfirmFrame, src: "sfx/resolve-warm.wav", volume: 0.26, duckMusic: true },
 ];
 
-// Default SFX-only (omit musicTrack unless user dropped their own .mp3 in public/audio/)
-<SoundTrackLayer cues={cues} />;
+// Standard production mix: real beat-synced music bed + ducked procedural DSP SFX
+<SoundTrackLayer
+  musicTrack="audio/track.mp3"
+  musicVolume={0.25}
+  musicStartFromSec={audioBeats.firstBeatSec}
+  fadeInSec={0.2}
+  fadeOutSec={0.35}
+  cues={cues}
+/>;
 ```
 
-### Mix Discipline & Level Targets (SFX-Only Default)
-Aim for **10–18 crisp, purposeful cues** across a 15–30s edit (leave breathing silence so every transient feels tactile and physical):
+### Mix Discipline & Level Targets (Music + SFX Production Mix)
+Aim for **10–18 crisp, purposeful SFX cues** layered cleanly over the music bed so every transition, click, and climax hits with physical weight without muddying the track:
 
-| Role | Typical Volume (SFX-Only) | Timing Rule |
+| Role | Typical Volume | Timing Rule |
 | :--- | :---: | :--- |
+| **Matching real music bed (`.mp3` / `.wav`)** | `0.22 – 0.28` | Beat-synced via `analyze-music.mjs`; bar-aligned duration + `6f/10f` loop-safe fades; auto-ducks (`-4 to -6 dB`) under hero impacts |
 | **UI keystrokes / micro-pops** | `0.18 – 0.28` | Always round-robin + `pitchSpread: 0.05` synced to exact character frames |
 | **Confirm clicks / snaps** | `0.34 – 0.46` | Exact visual snap frame (`0f` offset) |
 | **Swept pink-noise whooshes** | `0.26 – 0.38` | Use `peakAtFrame: cutFrame` + `peakOffsetSec` (`0.16s` fast / `0.32s` deep) |
-| **Sub-bass cut impacts** | `0.32 – 0.46` | Exact `cutFrame` (`0f` offset) for major camera pull-backs & polarity hits |
+| **Sub-bass cut impacts** | `0.32 – 0.46` | Exact `cutFrame` (`0f` offset) with `duckMusic: true` for major pull-backs & polarity hits |
 | **1s Risers** | `0.24 – 0.32` | Use `peakAtFrame: climaxFrame`, `peakOffsetSec: 1.0` |
-| **CTA warm felt resolve** | `0.22 – 0.30` | `+0.05s` after final confirm click — warm closure, never a harsh bell |
-| **Optional BYO `.mp3` bed** | `0.22 – 0.26` | Only when user supplies a real audio file; auto-ducks under impacts |
+| **CTA warm felt resolve** | `0.22 – 0.30` | `+0.05s` after final confirm click (`duckMusic: true`) — warm closure, never a harsh bell |
 
 ---
 

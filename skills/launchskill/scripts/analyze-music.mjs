@@ -41,7 +41,7 @@ function parseArgs(argv) {
   return opts;
 }
 
-/** Decode any audio format to mono Float32 PCM at ANALYSIS_RATE via FFmpeg */
+/** Decode any audio format to mono Float32 PCM at ANALYSIS_RATE via FFmpeg (WAV s16le for Remotion-bundled FFmpeg compatibility) */
 function decodeWithFfmpeg(ffmpeg, inputPath) {
   const res = spawnSync(
     ffmpeg.bin,
@@ -55,8 +55,10 @@ function decodeWithFfmpeg(ffmpeg, inputPath) {
       "1",
       "-ar",
       String(ANALYSIS_RATE),
+      "-acodec",
+      "pcm_s16le",
       "-f",
-      "f32le",
+      "wav",
       "pipe:1",
     ],
     { maxBuffer: 256 * 1024 * 1024, env: ffmpeg.env, shell: false }
@@ -65,9 +67,21 @@ function decodeWithFfmpeg(ffmpeg, inputPath) {
     throw new Error(`FFmpeg failed to decode ${inputPath}: ${res.stderr?.toString("utf8")}`);
   }
   const buf = res.stdout;
-  const count = Math.floor(buf.length / 4);
+  // Locate the WAV 'data' chunk (handles standard 44-byte headers or extra LIST/INFO chunks)
+  let offset = 12;
+  let dataStart = 44;
+  while (offset + 8 <= buf.length) {
+    const id = buf.toString("ascii", offset, offset + 4);
+    const size = buf.readUInt32LE(offset + 4);
+    if (id === "data") {
+      dataStart = offset + 8;
+      break;
+    }
+    offset += 8 + size + (size % 2);
+  }
+  const count = Math.floor((buf.length - dataStart) / 2);
   const out = new Float32Array(count);
-  for (let i = 0; i < count; i++) out[i] = buf.readFloatLE(i * 4);
+  for (let i = 0; i < count; i++) out[i] = buf.readInt16LE(dataStart + i * 2) / 32768;
   return { samples: out, sampleRate: ANALYSIS_RATE };
 }
 

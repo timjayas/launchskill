@@ -438,11 +438,15 @@ export const interpolateBoxGeometry = (
 
 ## 6. The Ultimate Pre-Ship "Is This Alive or Is This Slop?" Self-Critique Rubric
 
-Before accepting any generated video, look at the rendered hero and cut-boundary stills and ask these **6 ruthless questions**:
+Before accepting any generated video, **watch the actual exported `.mp4` end-to-end** (never judge from static QA stills alone!) alongside the contact sheet and ask these **10 ruthless questions**:
 
 1. **The Cross-Product Clone Test:** If I hide the text and logo, does this look like a reskinned clone of `T3CodeLaunch` or a generic B2B SaaS template? *(If yes → redesign the staging, world polarity, and camera choreography to match the product's unique medium!)*
-2. **The Clipart Ban Test:** Did I draw any real-world objects (coffee grinders, cars, hands, rooms) using raw inline `<svg>` geometric shapes that look like wireframe clip-art? *(If yes → replace immediately with rich layered UI cards, interactive maps/passes/schedules, topographic/data shaders, or real media assets!)*
-3. **The Object Permanence Test:** Do at least 3 scene transitions physically morph, zoom through a portal, or velocity-match-cut a shared focal object—or is the video just 6 separate `<Sequence>` slides cutting on hard boundaries?
-4. **The Depth & Perspective Test:** Is there true 3-layer Z-depth (background typography/environment, 2.5D tilted hero device/window with specular light response, and exploded foreground UI cards popping out toward the camera)?
-5. **The Contextual Origin Test:** Does every modal, answer card, and action sheet expand from the exact coordinate of the control that triggered it?
-6. **The Living Hold Test:** During readability windows, is the focal copy rock-solid while the 3D camera, glass sheen, and ambient data keep breathing?
+2. **The HUD / Telemetry Chrome & Corner-Counter Purge Test:** Are there ANY uppercase monospace kickers (`— NE · 10 RELEASE`), dot-separated metadata captions (`NE · 10 · 7 / 7 RECEIPTS VERIFIED`), rounded glowing-dot pills (`• RECEIPT 03 / 07`), labeled percentage/voltage bars, or top-right/corner counters (`01 / 07`) cluttering the frame? *(If yes → delete them completely!)*
+3. **The Clipart Ban Test:** Did I draw any real-world objects (coffee grinders, cars, hands, rooms) using raw inline `<svg>` geometric shapes that look like wireframe clip-art? *(If yes → replace immediately with rich layered UI cards, interactive maps/passes/schedules, topographic/data shaders, or real media assets!)*
+4. **The Varied Transition & Object Permanence Test:** Do at least 3–4 transitions use **distinct** spatial mechanics (container morph, portal zoom-through, overlapping `<clipPath>` peel, velocity match-cut)—with zero consecutive repeats—or is the video repeating one transition across disconnected `<Sequence>` slides?
+5. **The Physically Driven Finale Test:** Does the penultimate scene's actual geometry, hero object, or camera move **physically drive and assemble** the final brand lockup—or does it hard-cut to a static centered flexbox ending (logo stacked over tagline stacked over URL pill)?
+6. **The Seamless Infinite Loop Test:** Does the finale bridge cleanly back into Frame 0's exact geometry, camera state, polarity, and bar-aligned audio—making the X auto-replay loop feel invisible?
+7. **The Matching Music + Mastered SFX Test:** Is real, matching, license-cleared background music beat-synced to the cuts and mastered with ducked procedural DSP SFX (`-14 LUFS`, zero code-generated synth beds)?
+8. **The End-to-End MP4 Playback Test:** Did I watch the actual rendered `.mp4` from `0:00` through the loop wrap to verify real perceived pacing, zero mid-transition overlaps, and fluid motion flow (rather than trusting static PNG stills)?
+9. **The Depth & Contextual Origin Test:** Do modals, cards, and hero interactions unfold from their real trigger coordinates with crisp figure-ground contrast and spatial depth where motivated?
+10. **The Living Hold Test:** During readability windows, is the focal copy rock-solid while subtle camera drift, light sheen, or live product motion keeps the frame breathing?

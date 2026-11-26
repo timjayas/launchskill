@@ -27,6 +27,10 @@ export const createBeatGrid = (bpm: number, fps: number) => {
 - **Never stack 5+ rapid cuts without a focal hold**—viewers on mobile X need `1.5–2.2s` to read a real product interaction.
 - **Frame 0 is already alive**: At `frame = 0`, typography is mid-arrival (`progress >= 0.35`) or the product visual is cleanly framed. Never fade up from black.
 
+### Varied Spatial Choreography & Physically Driven Finale Rule
+- **Zero Repetitive Transitions:** Never reuse the exact same transition mechanic on consecutive cuts (and never rely on uniform fade/slide swaps). Plan **3–4 genuinely distinct spatial transitions** across the edit—varying camera scale (`>= 1.5×`), entry axis, polarity, and mechanics (e.g., macro push/pull-out → portal zoom-through → direct overlapping `<clipPath>` peel → shared-element container morph → directional whip-pan).
+- **No Static Centered Flexbox Endings:** Never end a film by hard-cutting to a disconnected `flex-direction: column; align-items: center` stack (logo over tagline over URL pill fading in from thin air). The **penultimate scene's active object, UI cards, camera trajectory, or kinetic peel MUST physically drive, assemble, morph, or unfold into the final brand lockup**, then bridge seamlessly back into Frame 0.
+
 ---
 
 ## 2. Proven Multi-Shot Blueprints (15s – 45s)
@@ -40,16 +44,16 @@ export const createBeatGrid = (bpm: number, fps: number) => {
 | **4. System Payoff** | `20 → 26` | `3.0s` | Camera pulls back (`1.75 → 1.0×`) revealing live generated multi-card result | Anchor theme-flip |
 | **5. Dark Chapter** | `26 → 36` | `5.0s` | **Palette inverts to `#09090B`**; tabular proof metric + 3 crisp staggered rows | Beat-locked hard cut |
 | **6. Statement Reset** | `36 → 40` | `2.0s` | Full-bleed light punchline statement with inline visual reflow pop | Hard cut |
-| **7. Brand Lockup CTA** | `40 → 48` | `4.0s` | Centered mark + 1-line positioning + high-contrast URL pill (calm hold) | Clean loop back to frame 0 |
+| **7. Physically Driven Lockup** | `40 → 48` | `4.0s` | Inline visual reflow/card geometry physically morphs & collapses into the brand mark + URL anchor (never a disconnected centered flexbox stack) | Seamless loop bridge into Frame 0 |
 
 ### Blueprint B: Precision DevTool Feature Drop (`18s` / `36–38 beats @ 125 BPM`)
 | Shot | Beats | Duration | Visual & Compositional Shift | Transition Out |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. Tension Hook** | `0 → 4` | `1.9s` | Obsidian canvas, tight 4-word claim + version badge | Hard beat-cut |
+| **1. Tension Hook** | `0 → 4` | `1.9s` | Obsidian canvas, tight 4-word claim + clean product mark (zero mono telemetry kickers or corner counters) | Hard beat-cut |
 | **2. `⌘K` Trigger** | `4 → 12` | `3.8s` | Command palette centered; realistic typing + execution trigger | Continuous zoom |
 | **3. Macro Execution** | `12 → 20` | `3.8s` | Camera zooms into live step progress / code diff resolving | `clip-path` wipe |
-| **4. Impact Metric** | `20 → 27` | `3.4s` | Oversized `tabular-nums` stat (`4.6 hrs`, `< 40ms`) + crisp 1-line proof | Hard beat-cut |
-| **5. CTA Lockup** | `27 → 37` | `4.8s` | Minimal wordmark + command/URL pill | Clean hold |
+| **4. Impact Metric** | `20 → 27` | `3.4s` | Oversized `tabular-nums` stat (`4.6 hrs`, `< 40ms`) + crisp 1-line proof | Portal zoom / container morph |
+| **5. Physically Driven Lockup** | `27 → 37` | `4.8s` | Command bar / active container physically collapses into wordmark + URL anchor | Seamless loop bridge into Frame 0 |
 
 ### Blueprint C: Physical Hardware / 3D Product Reveal (`16s–24s`)
 | Shot | Beats | Duration | Visual & Compositional Shift | Transition Out |
@@ -57,8 +61,8 @@ export const createBeatGrid = (bpm: number, fps: number) => {
 | **1. Silhouette Hook** | `0 → 5` | `2.5s` | Gallery cyclorama, product framed on right third, editorial two-tone hook left | Smooth rig glide |
 | **2. Centered Reveal** | `5 → 11` | `3.0s` | Product glides to hero showcase; specs line reveals cleanly | Continuous macro push |
 | **3. Macro Detail** | `11 → 19` | `4.0s` | Camera pushes `1.85–2.2×` onto key mechanical detail + `1px` SVG leader line | Pull-out + theme-flip |
-| **4. Dark Tech Proof** | `19 → 29` | `5.0s` | Studio shifts to obsidian + rim light; hardware architecture + spec bar | Theme-flip to light |
-| **5. Studio Lockup** | `29 → 38` | `4.5s` | Clean light cyclorama, brand mark + pre-order URL | Calm hold |
+| **4. Dark Tech Proof** | `19 → 29` | `5.0s` | Studio shifts to obsidian + rim light; hardware architecture + real visual callout | Theme-flip to light |
+| **5. Studio Lockup** | `29 → 38` | `4.5s` | Hardware orbit physically sweeps/aligns into the brand mark + URL lockup | Seamless loop bridge into Frame 0 |
 
 ### Blueprint D: Kinetic Studio Showcase (`24s` / `53 beats @ 132 BPM` — Archetype 1)
 | Shot | Beats | Duration | Visual & Compositional Shift | Transition Out |
@@ -69,7 +73,7 @@ export const createBeatGrid = (bpm: number, fps: number) => {
 | **4. Live Cursor Slider + Chain** | `24 → 33` | `4.1s` | Tactile cursor scrubs `"Live"` forward & back → horizontal whip-pan into 3-node daisy-chain | Chromatic gradient swipe |
 | **5. Wired Node Dataflow** | `33 → 40` | `3.2s` | Moody brand color-block chapter; `Input Node → Bezier Wire + Signal Pulse → Synced Output` | Hard beat-cut to white |
 | **6. 2D Canvas Glide → Match-Cut** | `40 → 47` | `3.2s` | 2 velocity camera hops across node grid → focal lock onto hero node → peak-velocity scale-through CTA | Geometric iris wipe |
-| **7. Brand Mark + URL Caret** | `47 → 53` | `2.7s` | Centered vector emblem (`1.0s` hold) → caret-typed URL calm hold | Clean loop |
+| **7. Driven Mark + Caret Loop** | `47 → 53` | `2.7s` | Scale-through iris directly carves vector emblem → caret unfolds URL → snaps back into Frame 0 caret | Seamless loop bridge into Frame 0 |
 
 ### Blueprint E: Editorial Brand Punch (`28s` / `54 beats @ 116 BPM` — Archetype 2)
 | Shot | Beats | Duration | Visual & Compositional Shift | Transition Out |
@@ -102,18 +106,18 @@ Built for mid-length commercial showcases that sustain retention across 40–45s
 | **6. Interstitial #3 → In-Place Reference Transmutation** | `24.0–28.5s` | `4.5s` | Dark (`1.0s`) → Dot-Grid (`3.5s`) | `"Use any ad as a reference"` → 3 competitor reference ads fan onto dot-grid → cursor tap → staggered brand shimmer transmutes all 3 **in-place** preserving 1:1 layout skeletons | Hard cut to dark reset |
 | **7. Interstitial #4 → Static-to-Motion Side-by-Side** | `28.5–34.5s` | `6.0s` | Dark (`1.25s`) → Dot-Grid (`4.75s`) | `"Create static and motion ads"` → static `4:5` source left + docked `Animation` prompt bar spawns glowing companion artboard right playing live kinetic type + hero product motion | `<SpatialCameraRig>` zoom into full-bleed ad |
 | **8. Canvas Panorama Masonry Sweep** | `34.5–37.2s` | `2.7s` | Dark Climax Wall | Seamless full-bleed ad payoff → edge-to-edge masonry wall of `15+` multi-aspect finished ads pulsing on `0.25s` beat cadence | Beat-locked hard cut |
-| **9. Brand Lockup + CTA URL Hold** | `37.2–42.0s` | `4.8s` | Dark Stage | Mark→wordmark lockup snaps in `<= 0.9s` + **calm `2.8–3.2s` CTA URL hold** (replaces empty fade-to-black tail) | Clean loop back to Frame 0 |
+| **9. Driven Lockup + Loop Bridge** | `37.2–42.0s` | `4.8s` | Dark Stage | Masonry wall converges/collapses into the brand mark → wordmark + URL hold (`2.4–2.8s`) → physically blooms back into Frame 0 mark state | Seamless loop bridge into Frame 0 |
 
 ### Blueprint H: Kinetic Type Manifesto & Architectural Archive (`22s` / `44 beats @ 120 BPM` — `architectural-archive`)
-Proves you can hold X retention for 20–25s **without leaning on chat bars or fake dashboards** — built from stark kinetic typography slates, `<ViewfinderFrame />` real media/UI captures, hairline spec tables, and `<RollingOdometer />` proof:
+Proves you can hold X retention for 20–25s **without leaning on chat bars, corner counters, or decorative HUD chrome** — built from stark kinetic typography slates, clean `<ViewfinderFrame />` real media/UI captures, hairline proof rows, and `<RollingOdometer />` product metrics:
 
 | Shot | Beats | Duration | Visual & Compositional Shift | Transition Out |
 | :--- | :--- | :--- | :--- | :--- |
 | **1. Stark Kinetic Type Slate** | `0 → 6` | `3.0s` | `#FAFAFA` hairline architectural grid with `+` intersection crosshairs; huge concrete 4–6 word claim (`>= 108px`, alive at frame 0) | Beat-locked hard cut |
-| **2. `<ViewfinderFrame>` Product Proof** | `6 → 16` | `5.0s` | Centered `0px`-corner `<ViewfinderFrame indexLabel="0001 / 0004">` framing real `<OffthreadVideo>` / crisp UI with `<SpatialCameraRig>` macro push (`1.0 → 1.75×`) | Architectural `clip-path` wipe |
-| **3. Hairline Spec / Comparison Rows** | `16 → 24` | `4.0s` | Full-bleed hairline-separated uppercase mono key/value rows snapping in at `0.04s` stagger (`CATEGORY`, `SPEED`, `WORKFLOW`) + live `<RollingOdometer />` hero number | Anchor Light→Dark inversion |
-| **4. Dark Chapter Tactile Proof** | `24 → 34` | `5.0s` | Pure `#09090B` Zinc inversion: real device / flat-lay or second focal `<ViewfinderFrame>` interaction proving end-to-end payoff | Beat-locked hard cut to light |
-| **5. Index Lockup & CTA Hold** | `34 → 44` | `5.0s` | `#FAFAFA` grid canvas: rolling index finishes (`0004 / 0004`), razor wordmark + 1-line concrete promise + sharp `0px` high-contrast URL bar (`2.8s` calm hold) | Clean loop back to Frame 0 |
+| **2. `<ViewfinderFrame>` Product Proof** | `6 → 16` | `5.0s` | Centered `0px`-corner `<ViewfinderFrame>` (clean L-brackets, zero decorative corner counter) framing real `<OffthreadVideo>` / crisp UI with `<SpatialCameraRig>` macro push (`1.0 → 1.75×`) | Architectural `clip-path` wipe |
+| **3. Hairline Proof Rows** | `16 → 24` | `4.0s` | Full-bleed hairline-separated concrete proof rows snapping in at `0.04s` stagger + live `<RollingOdometer />` product metric (zero decorative percentage/voltage bars) | Anchor Light→Dark inversion |
+| **4. Dark Chapter Tactile Proof** | `24 → 34` | `5.0s` | Pure `#09090B` Zinc inversion: real device / flat-lay or second focal `<ViewfinderFrame>` interaction proving end-to-end payoff | Direct overlapping `<clipPath>` peel to light |
+| **5. Driven Lockup & Loop Bridge** | `34 → 44` | `5.0s` | `#FAFAFA` grid canvas: `<ViewfinderFrame>` brackets physically contract into the razor wordmark + URL bar (`2.4s` hold), then expand back into Frame 0's hairline slate | Seamless loop bridge into Frame 0 |
 
 ---
 
@@ -222,8 +226,10 @@ Accelerate a framed UI control or card outward using `EASE_IN_EXPO` (`scale: 1 �
 ### I. Direct Overlapping SVG `<clipPath>` Peel (Zero Fade-to-Blank Seam)
 Never fade an outgoing scene's content to a blank solid color before running a curtain or slat wipe—that reads like two disconnected scenes. Instead, mount the incoming `<Sequence>` **underneath** the outgoing `<Sequence>` for the `12–20f` transition window, keep the outgoing scene 100% solid, and peel its actual pixels away with a single GPU-light SVG `<clipPath>` (e.g., `6–8` staggered `<rect>` slats retracting with `EASE_IN_OUT_QUINT`, with optional leading edge lines when the brand's aesthetic calls for crisp architectural seams). When exiting copy ahead of a hard cut or container dock, finish outgoing copy fades **`10–15f` before the cut** so zero ghosted text lingers on the `cut - 1` splice frame.
 
-### J. Zero-Seam Infinite Loop Contract (X Auto-Replay)
-When designing a seamless loop from Finale → Frame 0:
-1. Export one shared geometry constant (positions, dimensions, border-radii, zoom) used by both the Finale's end state and Frame 0.
-2. Morph Finale elements into Frame 0's exact state over the final `0.8–1.0s` while resetting any background/cyclorama pan back to `(0, 0)`.
-3. Open Frame 0 already landed in that exact state and immediately trigger a staggered pulse or motion impulse (`f2+`) so the loop seam is invisible.
+### J. Zero-Seam Infinite Loop Contract (Mandatory Default for X Auto-Replay)
+Every LaunchSkill film should loop seamlessly from the ending back into Frame 0 (unless the user explicitly requests a non-looping ending):
+1. **Shared Loop Anchor Constant:** Export one shared geometry/camera/polarity constant (`LOOP_ANCHOR`: positions, dimensions, border-radii, zoom, surface polarity) consumed by **both** Frame 0 and the Finale's bridge-out state.
+2. **Physically Driven Finale → Bridge Out:** First let the penultimate scene's motion physically drive/assemble the brand lockup (never cut to a static centered flexbox stack), hold clearly (`1.8–2.6s`) so the brand & URL register, then over the final **`0.6–1.0s`** physically morph, wipe, or zoom the lockup back into `LOOP_ANCHOR` while resetting background/cyclorama pan to `(0, 0)`.
+3. **Zero-Jump Frame 0 Entry:** Open Frame 0 already landed on `LOOP_ANCHOR` and immediately trigger a kinetic impulse (`f1–f4+`) so the `duration - 1 → 0` boundary feels continuous rather than a hard reset.
+4. **Bar-Aligned Loop Audio:** Trim or align the composition duration to a clean musical bar/beat boundary from `analyze-music.mjs` with a short loop-clean audio crossfade/fade (`6f` in / `10f` out) so X auto-replay never clicks or stumbles rhythmically.
+5. **Verify the Seam:** Inspect `loop-end.png` (`duration - 1`) vs. `loop-start.png` (`0`) in `qa-frames.mjs` AND watch the rendered `.mp4` wrap from the final second back into `0:00`.

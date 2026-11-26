@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-black)](https://agentskills.io)
 
-Brand-agnostic creative-coding **Agent Skill** for building **10–30 second 16:9 product launch films** in Remotion 100% in code, tuned for X (Twitter).
+Opinionated, brand-adaptive **Agent Skill** for building **15–45 second 16:9 premium product showcase & clean UI motion launch films** in Remotion—100% in code, tuned for X (Twitter).
 
 Works across AI coding agents supporting the open [Agent Skills](https://agentskills.io) spec (Claude Code, Cursor, Codex, Antigravity, Windsurf, Copilot, and more).
 
@@ -67,19 +67,19 @@ LaunchSkill is designed like working with a motion director, not a 1-click templ
 
 ---
 
-## Audio: SFX-Only by Default + BYO `.mp3`
+## Audio: Matching Real Music + Procedural DSP SFX
 
-LaunchSkill ships **100% offline and license-free by default**—zero bundled copyrighted music, zero required API keys, and zero synthetic JS music beds:
+LaunchSkill never ships bundled copyrighted music or cheap code-generated synth loops—instead, its standard production pipeline pairs a **real, license-cleared matching music track** with offline procedural studio SFX:
 
-- **Procedural DSP SFX *(default, offline)*:** Synthesizes crisp clicks, whooshes, thuds, and tactile foley locally as 48 kHz WAVs (`generate-dsp-sfx.mjs`).
-- **BYO Licensed `.mp3` / `.wav` *(optional, offline)*:** Drop your own licensed music track into `public/audio/` and run `analyze-music.mjs` to detect BPM, first beat, and bass drop for frame-accurate cuts.
+- **Matching Real Music *(beat-synced, offline analysis)*:** Source a real, license-cleared `.mp3` / `.wav` matching the product's mood and tempo (`public/audio/`), then run `analyze-music.mjs` to lock cuts, drops, and loop boundaries to the real song.
+- **Procedural DSP SFX *(offline, license-free)*:** Synthesizes crisp clicks, whooshes, thuds, and tactile foley locally as 48 kHz WAVs (`generate-dsp-sfx.mjs`), automatically ducking the music bed under hero impacts.
 - **Broadcast Mastering *(offline, FFmpeg)*:** `master-audio.mjs` applies two-pass linear EBU R128 mastering (`-14 LUFS`, `-1.5 dBTP`) while copying the video stream untouched (`-c:v copy`).
 - **AI Foley *(optional, opt-in)*:** Set `ELEVENLABS_API_KEY` to generate bespoke foley with auto sample-0 transient trimming (`generate-ai-sfx.mjs`).
 
 | Mode | Command | Requirement |
 | :--- | :--- | :---: |
-| **Procedural DSP SFX** *(default)* | `node skills/launchskill/scripts/generate-dsp-sfx.mjs --out public/sfx` | Offline (Node only) |
-| **BYO `.mp3` Beat Sync** *(optional)* | `node skills/launchskill/scripts/analyze-music.mjs --in public/audio/track.mp3 --out src/audio-beats.json --fps 30` | Offline (FFmpeg for `.mp3`) |
+| **Matching Music Beat Sync** *(recommended)* | `node skills/launchskill/scripts/analyze-music.mjs --in public/audio/track.mp3 --out src/audio-beats.json --fps 30` | Offline (FFmpeg for `.mp3`) |
+| **Procedural DSP SFX** *(always layered)* | `node skills/launchskill/scripts/generate-dsp-sfx.mjs --out public/sfx` | Offline (Node only) |
 | **Broadcast Mastering (`-14 LUFS`)** | `node skills/launchskill/scripts/master-audio.mjs --in out/launch.mp4 --out out/launch-mastered.mp4` | Offline (FFmpeg) |
 | **ElevenLabs AI Foley** *(optional)* | `ELEVENLABS_API_KEY=... node skills/launchskill/scripts/generate-ai-sfx.mjs --pack studio --out public/sfx` | Opt-in API key |
 
@@ -87,14 +87,10 @@ LaunchSkill ships **100% offline and license-free by default**—zero bundled co
 
 ## What's Inside
 
-- **Brand-First Stage 0 Gate (`DIRECTION.md`):** Extracts palette, typography (`@remotion/google-fonts`), and visual metaphors from your repo or brief before writing any `.tsx`.
-- **4 Isolated Technique Playbooks (`skills/launchskill/styles/`):**
-  - `editorial-morph.md` — Continuous `interpolatePaths` SVG morphs, metaball merges, `12fps` tactile boil.
-  - `single-line-kinetic.md` — Unbroken `CameraTrackedStroke` across a `2×–3×` world canvas.
-  - `paper-cutout.md` — Stepped `12fps` physical cutouts over a smooth `30fps` parallax camera.
-  - `product-cinema.md` — `<SpatialCameraRig>` macro UI zooms, 2.5D device stages, and real product proof widgets.
-- **Deterministic Primitives (`skills/launchskill/templates/`):** 100% frame-clock driven (`useCurrentFrame`, `interpolate`, `spring`)—zero `Math.random()`, `Date.now()`, or CSS transitions.
-- **Visual QA Contact Sheet (`qa-frames.mjs`):** Renders hero stills + `cut - 1 / cut / cut + 2` boundary triplets into `contact-sheet.html` and audits against the 5 Universal Laws (`references/review-gates.md`).
+- **Brand-First Stage 0 Gate (`DIRECTION.md`):** Extracts palette, typography (`@remotion/google-fonts`), and surface polarity from your repo or brief before writing any `.tsx`—zero recycled templates, zero AI-slop HUD/telemetry chrome, and zero corner counters (`01 / 07`).
+- **Opinionated Product Cinema Craft (`skills/launchskill/styles/product-cinema.md`):** Varied spatial choreography (no repetitive transitions), `<SpatialCameraRig>` macro UI dives (`1.0× ↔ 1.6–2.2×`), pixel-locked portal match cuts (`computePortalCatchZoom`), direct overlapping SVG `<clipPath>` peels, physically driven finale lockups (no static centered flexbox endings), and seamless infinite loops back into Frame 0.
+- **Deterministic Motion Foundation (`skills/launchskill/templates/`):** 100% frame-clock driven (`useCurrentFrame`, `interpolate`, `spring`)—zero `Math.random()`, `Date.now()`, or CSS transitions.
+- **Two-Stage Visual & Playback QA (`qa-frames.mjs` + End-to-End `.mp4` Review):** Renders hero stills, `cut - 1 / cut / cut + 2` triplets, and `loop-end / loop-start` seam frames into `contact-sheet.html` as a pre-check, followed by mandatory end-to-end review of the exported mastered `.mp4` against the 5 Universal Laws + Blind Adversarial Critic (`references/review-gates.md`).
 
 ---
 
@@ -102,9 +98,9 @@ LaunchSkill ships **100% offline and license-free by default**—zero bundled co
 
 - **Not 1-shot perfection:** The first generation gives you a strong, structured base cut; plan on 2–3 short directing prompts to nail exact rhythm, copy restraint, and visual taste.
 - **16:9 landscape first:** Pacing, safe zones, and camera rigs are tuned for `1920×1080` X/Twitter launch videos. Vertical (`9:16`) and square (`1:1`) formats require manual reframing.
-- **SFX-only out of the box:** No music tracks are bundled for licensing reasons—bring your own `.mp3`/`.wav` if you want a full soundtrack.
+- **Bring or source your own licensed music:** No copyrighted music tracks are bundled—source a matching royalty-free/licensed `.mp3`/`.wav` for `public/audio/` (or explicitly opt into SFX-only).
 - **Local Chromium / WebGL rendering:** Remotion renders depend on local Chromium + `--gl=angle` (or `swiftshader` on headless machines); heavy 3D (`@remotion/three`) scenes render slower without GPU acceleration.
-- **Visual QA still benefits from human eyes:** `qa-frames.mjs` catches cut-boundary glitches and layout issues, but final pacing and emotional punch are best verified by scrubbing in Remotion Studio.
+- **Always watch the exported `.mp4` end-to-end:** `qa-frames.mjs` catches cut-boundary and loop-seam frame issues upfront, but real pacing, overlaps, and motion flow must always be verified on the rendered `.mp4`.
 
 ---
 

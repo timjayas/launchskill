@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 /**
- * Motion-Boundary + Contact-Sheet Visual QA Script (Zero External Dependencies)
+ * Motion-Boundary & Loop-Seam Contact-Sheet Pre-Check Script (Zero External Dependencies)
  *
  * Renders:
- *   1) 5 Strategic Hero Stills (Hook, Product, Macro, Midpoint/Chapter, CTA)
- *   2) Cut-Boundary Triplets (`cut - 1`, `cut`, `cut + 2`) for every major edit boundary
+ *   1) 5 Strategic Hero Stills (Hook, Product, Macro, Midpoint/Chapter, Finale Lockup)
+ *   2) Loop-Seam Pair (`duration - 1` -> `0`) to verify seamless infinite loop continuity
+ *   3) Cut-Boundary Triplets (`cut - 1`, `cut`, `cut + 2`) for every major edit boundary
  *      to catch ghosting, snap-pops, unloaded fonts, or stray blur on hard cuts.
- *   3) An HTML contact sheet (`contact-sheet.html`) for rapid visual inspection.
+ *   4) An HTML contact sheet (`contact-sheet.html`) for rapid pre-export inspection.
+ *
+ * NOTE: Static stills are ONLY a structural pre-check. Always export and watch the actual
+ * rendered `.mp4` end-to-end to verify real pacing, overlaps, motion flow, and loop continuity.
  *
  * Usage:
  *   node scripts/qa-frames.mjs --comp SaasLaunch --fps 30 --duration 720 --cuts 75,390,540,600
@@ -65,6 +69,11 @@ function buildPlan(opts) {
           { id: "hero-05-cta", label: "05 CTA End-Card (~90%)", frame: clamp(opts.duration * 0.9), group: "hero" },
         ];
 
+  const loopFrames = [
+    { id: "loop-end", label: "Loop Seam: Final Frame (duration - 1)", frame: maxFrame, group: "loop" },
+    { id: "loop-start", label: "Loop Seam: Frame 0", frame: 0, group: "loop" },
+  ];
+
   const boundaryFrames = [];
   opts.cuts.forEach((cut, idx) => {
     const tag = `cut-${String(idx + 1).padStart(2, "0")}`;
@@ -83,7 +92,7 @@ function buildPlan(opts) {
     }
   });
 
-  return [...heroFrames, ...boundaryFrames];
+  return [...heroFrames, ...loopFrames, ...boundaryFrames];
 }
 
 const SAFE_COMP_RE = /^[A-Za-z0-9_-]+$/;
@@ -137,14 +146,15 @@ function writeContactSheet(outDir, comp, fps, items) {
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 18px; }
     .card { margin: 0; background: #141418; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; }
     .card.boundary { border-color: rgba(56,189,248,0.32); }
+    .card.loop { border-color: rgba(52,211,153,0.45); }
     .card img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
     figcaption { padding: 10px 14px; display: flex; justify-content: space-between; font-size: 13px; color: #e4e4e7; }
     figcaption span { font-family: ui-monospace, monospace; color: #a1a1aa; }
   </style>
 </head>
 <body>
-  <h1>Motion-Boundary Visual QA — ${safeComp}</h1>
-  <p>Inspect hero frames for fonts, 360px legibility, and safe zones; inspect blue-bordered triplets (cut-1, cut, cut+2) for ghosting, snap-pops, or stray rest blur.</p>
+  <h1>Motion-Boundary &amp; Loop-Seam Pre-Check — ${safeComp}</h1>
+  <p>Inspect hero frames for fonts, zero AI-slop HUD/corner counters, 360px legibility, and safe zones; green-bordered frames (duration-1 &rarr; 0) for seamless loop continuity; blue-bordered triplets (cut-1, cut, cut+2) for ghosting or stray blur. <strong>Static stills are a pre-check only — always watch the rendered .mp4 end-to-end for pacing, overlaps, and motion flow.</strong></p>
   <div class="grid">${cards}</div>
 </body>
 </html>`;
@@ -223,6 +233,7 @@ function main() {
 
   writeContactSheet(outDir, opts.comp, opts.fps, plan);
   console.log(`\n✓ Contact sheet ready: ${path.join(outDir, "contact-sheet.html")}`);
+  console.log("  REMINDER: Stills are a pre-check only — render and watch the exported .mp4 end-to-end for pacing, overlaps, motion flow, and loop continuity.");
 }
 
 main();

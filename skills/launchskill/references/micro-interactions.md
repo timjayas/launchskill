@@ -321,9 +321,9 @@ Never leave generated creatives trapped tiny inside tool chrome—bridge tool pr
 
 ## 25. Architectural `<ViewfinderFrame>` & `<RollingOdometer>` (`architectural-archive`)
 
-When a product calls for technical authority rather than bubbly SaaS cards, frame demos with sharp `0px` viewfinder geometry and mechanical rolling counters from [templates/StudioPrimitives.tsx](../templates/StudioPrimitives.tsx):
-- **Viewfinder Reticles**: Wrap real `<OffthreadVideo>`, screenshots, or crisp UI inside `<ViewfinderFrame indexLabel="0001 / 0004" metaLabel="LIVE CAPTURE">` — adds four L-shaped corner brackets and a hairline mono metadata header with zero rounded clutter.
-- **Rolling Digit Reels**: Replace plain incrementing strings with `<RollingOdometer value={3326} startFrame={g.beat(16)} durationSec={0.65} />` so each digit place rolls vertically on its own `0.045s`-staggered `EASE_OUT_EXPO` reel with rock-solid `tabular-nums`.
+When a product calls for technical authority rather than bubbly SaaS cards, frame demos with sharp `0px` viewfinder geometry and mechanical rolling numbers from [templates/StudioPrimitives.tsx](../templates/StudioPrimitives.tsx):
+- **Clean Viewfinder Reticles (Zero Corner Counters / Telemetry Chrome):** Wrap real `<OffthreadVideo>`, screenshots, or crisp UI inside `<ViewfinderFrame>` — adds four crisp L-shaped corner brackets with zero rounded clutter. **Leave `indexLabel` and `metaLabel` omitted by default** so you never introduce decorative `01 / 07` corner counters, `LIVE CAPTURE` pills, or AI-slop HUD telemetry bars.
+- **Rolling Digit Reels (Product-Native Metrics Only):** Replace plain incrementing strings with `<RollingOdometer value={3326} startFrame={g.beat(16)} durationSec={0.65} />` strictly for real product metrics—never as decorative scene counters.
 
 ---
 

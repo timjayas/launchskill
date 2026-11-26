@@ -38,7 +38,7 @@ Before selecting an archetype or writing a single component, derive these **5 br
 | DevTools, APIs, CLI, infra, databases, observability | **`precision-devtool`** | Pure 2D + Macro Camera Rig (zero floating 3D primitives) | Obsidian canvas, `1px` silver hairlines, monospace precision |
 | Physical hardware, wearables, industrial consumer goods | **`hardware-studio`** | Persistent `@remotion/three` + Offline Studio PMREM IBL | Cyclorama studio, brushed metal reflections, macro leader lines |
 | Consumer social, mobile apps, productivity, indie tools | **`expressive-consumer`** | 2D-first + tactile cards / real UI recordings | Warm alabaster canvas, confident color blocks, crisp spring snaps |
-| Design systems, directories, research tools, Swiss-editorial launches | **`architectural-archive`** | Pure 2D + `0px` Viewfinder Grid + Rolling Odometers (`30p`) | Crisp `0px` corners, `1px` full-bleed hairline grids, `+` crosshairs, L-corner brackets, zero-padded mono indices (`0001 / 3326`), monochrome Zinc polarity |
+| Design systems, directories, research tools, Swiss-editorial launches | **`architectural-archive`** | Pure 2D + `0px` Viewfinder Grid + Rolling Odometers (`30p`) | Crisp `0px` corners, `1px` full-bleed hairline grids, `+` crosshairs, clean L-corner brackets (zero corner counters), monochrome Zinc polarity |
 
 ### Proven X Hook Copy Law (Distilled From 3,300+ Curated Launches on What Ships)
 High-retention X launches skip vague slogans (*"The future of productivity"*) and lead with a **concrete 4–7 word mechanism**:
@@ -259,7 +259,7 @@ export const HERA_AD_CANVAS_THEME = {
 
 ## 9. `architectural-archive` (Sharp `0px` Swiss Viewfinder Grid — What Ships Grammar)
 
-Inspired by modern technical-archive & Swiss editorial launches (`whatships.com`, Dieter Rams / editorial index design). Stands sharply apart from rounded SaaS pills by committing 100% to **`0px` razor corners**, **`1px` structural grid lines**, **L-shaped viewfinder corner brackets**, **`+` grid intersection crosshairs**, and **zero-padded monospace counters (`0001 / 3326`)**.
+Inspired by modern technical-archive & Swiss editorial launches (`whatships.com`, Dieter Rams / editorial index design). Stands sharply apart from rounded SaaS pills by committing 100% to **`0px` razor corners**, **`1px` structural grid lines**, **L-shaped viewfinder corner brackets**, and **`+` grid intersection crosshairs** (keeping the frame clean—no decorative `01 / 07` corner counters or HUD telemetry kickers).
 
 ```ts
 export const ARCHITECTURAL_ARCHIVE_THEME = {
@@ -285,22 +285,24 @@ export const ARCHITECTURAL_ARCHIVE_THEME = {
 };
 ```
 
-- **Typography Pairing**: Geometric Sans (`Inter` / `Geist`, 600–700, `-0.04em`) for stark kinetic headlines + **`JetBrains Mono` / `IBM Plex Mono`** (500, uppercase, `+0.06em` tracking, strict `tabular-nums`) for hairline key/value spec rows, index counters (`0001 / 0005`), and timestamps.
+- **Typography Pairing**: Geometric Sans (`Inter` / `Geist`, 600–700, `-0.04em`) for stark kinetic headlines + **`JetBrains Mono` / `IBM Plex Mono`** (500, strict `tabular-nums`) strictly for real product-native code/metrics—never decorative uppercase mono kickers (`— BRAND · 10 RELEASE`), dot-separated metadata captions, or corner counters (`01 / 07`).
 - **Signature Visual Grammar**:
-  - Mount focal demos inside `<ViewfinderFrame />` with L-shaped corner reticles and hairline metadata bars instead of macOS traffic-light windows.
-  - Pair stark off-white kinetic type slates with `<RollingOdometer />` counters and crisp `40ms` staggered structural reveals (`taut-mechanical` temperament).
-  - Zero decorative gradients, zero rounded bubbles, zero background glow orbs.
+  - Mount focal demos inside a clean `<ViewfinderFrame />` with L-shaped corner reticles (omit decorative `indexLabel`/`metaLabel` HUD bars by default).
+  - Pair stark off-white kinetic type slates with `<RollingOdometer />` for genuine product numbers and crisp `40ms` staggered structural reveals (`taut-mechanical` temperament).
+  - Zero decorative gradients, zero rounded glowing-dot pills, zero background glow orbs.
 
 ---
 
 ## Universal Anti-Cliché Checklist (Applies to ALL Presets)
 
 Never generate these telltale "AI template" artifacts:
-1. **Unloaded system fonts** (declaring `'Inter'` without loading it so headless Chromium falls back to Segoe UI / DejaVu Sans).
-2. **Cloned reference colors/props** (defaulting to Fuser pink `#EC4899` borders or `#F97316` cursors on unrelated products).
-3. **Floating decorative 3D primitives** (spinning wireframe toruses, random octahedrons) behind 2D SaaS UI.
-4. **Blurred circular background glows / radial ambient orbs** (`radial-gradient` haze circles, `filter: blur(...)` colored backdrop blobs), neon purple-to-cyan rainbow gradient headlines, or heavy glowing outer drop shadows.
-5. **Defaulting to dark themes** when the user did not explicitly request dark mode — always lead with crisp `#FFFFFF` / `#F7F7F5` light gallery polarity.
-6. **Fake static KPI bar charts, gray skeleton-loader bars, or washed-out white-on-white code windows** — when showing a code editor or devtool on a light cyclorama, stage it inside **Dark-Mode macOS chrome (`#0D0D10`)** with **real multi-token syntax highlighting**, **authentic official brand SVGs**, and **zero empty blank-gap diff holes** (`opacity: 0` lines leaving broken whitespace).
-7. **Text-wall pitch decks / dense 30-line spec tables** — keep typographic beats to **2–5 words** with generous negative space, continuous living momentum (zero parked idle seconds), and one focal object per beat.
-8. **Sparkle icons (`✨`)**, glitch RGB-split wipes, 3D cube-flip transitions, or muddy opacity crossfades.
+1. **AI-slop HUD/telemetry chrome & corner counters**: Zero uppercase monospace kickers (`— NE · 10 RELEASE`), zero dot-separated metadata captions (`NE · 10 · 7 / 7 RECEIPTS VERIFIED`), zero rounded glowing-dot pills (`• RECEIPT 03 / 07`), zero labeled percentage/voltage bars, and **zero corner counters (`01 / 07`)**.
+2. **Static centered flexbox endings & repetitive transitions**: Never repeat the same transition consecutively or end on a disconnected centered column of logo + tagline + URL pill—physically drive the lockup from the penultimate scene and bridge seamlessly back into Frame 0.
+3. **Unloaded system fonts** (declaring `'Inter'` without loading it so headless Chromium falls back to Segoe UI / DejaVu Sans).
+4. **Cloned reference colors/props** (defaulting to Fuser pink `#EC4899` borders or `#F97316` cursors on unrelated products).
+5. **Floating decorative 3D primitives** (spinning wireframe toruses, random octahedrons) behind 2D SaaS UI.
+6. **Blurred circular background glows / radial ambient orbs** (`radial-gradient` haze circles, `filter: blur(...)` colored backdrop blobs), neon purple-to-cyan rainbow gradient headlines, or heavy glowing outer drop shadows.
+7. **Defaulting to dark themes** when the user did not explicitly request dark mode — always lead with crisp `#FFFFFF` / `#F7F7F5` light gallery polarity.
+8. **Fake static KPI bar charts, gray skeleton-loader bars, or washed-out white-on-white code windows** — when showing a code editor or devtool on a light cyclorama, stage it inside **Dark-Mode macOS chrome (`#0D0D10`)** with **real multi-token syntax highlighting**, **authentic official brand SVGs**, and **zero empty blank-gap diff holes** (`opacity: 0` lines leaving broken whitespace).
+9. **Text-wall pitch decks / dense 30-line spec tables** — keep typographic beats to **2–5 words** with generous negative space, continuous living momentum (zero parked idle seconds), and one focal object per beat.
+10. **Sparkle icons (`✨`)**, glitch RGB-split wipes, 3D cube-flip transitions, or muddy opacity crossfades.

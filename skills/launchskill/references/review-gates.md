@@ -1,69 +1,59 @@
 # Objective Pass/Block Review Gates & Blind Adversarial Critic
 
-Approval of a generated launch film must be **earned, never assumed**. Whenever auditing a composition or inspecting a rendered `.mp4` + `out/qa/contact-sheet.html`, adopt a **"Default to Flagging"** posture: if **any** shot violates one of the **5 Universal Laws**, triggers any item on the **Blind Adversarial Critic Checklist**, or breaks the locked style pack's rules, issue a **`BLOCK`** verdict until remediated.
+Approval of a generated launch film must be **earned, never assumed**. Whenever auditing a composition or inspecting `out/qa/contact-sheet.html` AND **watching the exported `.mp4` end-to-end**, adopt a **"Default to Flagging"** posture: if **any** shot violates one of the **5 Universal Laws**, triggers any item on the **Blind Adversarial Critic Checklist**, or fails the **UI Craft Gates** in [styles/product-cinema.md](../styles/product-cinema.md), issue a **`BLOCK`** verdict until remediated.
 
 ---
 
-## 1. Two-Layer Audit Architecture
-
-1. **Universal Layer (This Document — Mandatory for ALL 4 Style Packs)**: The **5 Universal Laws** and the **Blind Adversarial Critic Checklist** apply identically to every film (`editorial-morph`, `single-line-kinetic`, `paper-cutout`, and `product-cinema`).
-2. **Style-Pack Layer (Isolated — Load ONLY Your Locked Pack)**:
-   - Software/hardware UI demos (card entrance scale floors `>= 0.90`, micro-UI vs. camera spring mass proportionality, dark macOS chrome contrast on light cycloramas, zero dead-frame holds, and UI benchmarks) are governed exclusively by [product-cinema.md](../styles/product-cinema.md).
-   - Abstract creative-coding films are governed exclusively by their locked style pack: [editorial-morph.md](../styles/editorial-morph.md), [single-line-kinetic.md](../styles/single-line-kinetic.md), or [paper-cutout.md](../styles/paper-cutout.md).
-
----
-
-## 2. The 5 Universal Laws (All Style Packs)
+## 1. The 5 Universal Laws
 
 | # | Universal Law | Hard Pass Criteria | Immediate `BLOCK` Trigger |
 | :-: | :--- | :--- | :--- |
 | **L1** | **The 15-Second Stranger Test (Unmistakable Clarity)** | Complete 3-sentence story (`Hook → Proof → CTA`) reads unmistakably muted in one watch; Frame 0 is alive and establishes the world immediately; every beat directly serves this product's real proposition. | Confusing or vague story, blank/fade-from-black Frame 0, cutting into unrelated fake products or random vanity numbers (`40ms`, `10x`) just to hit a motion effect, or prose paragraphs that force reading instead of watching. |
-| **L2** | **Zero Internal Dev/QA Jargon On Screen** | 100% viewer-facing, brand-authentic visuals and copy across every single rendered frame. | Any internal debug label, frame counter, fake `97 SCORE` badge/ring, `const res = await` filler code, `CAMERA / TYPE / AUDIO` meta-labels, gate IDs, rubric scores, or template placeholder strings visible in any frame. |
-| **L3** | **Anti-Template Originality & Kinetic Craft** | Brand-authentic visual world derived from the real product (never recycled Anthropic parchment/terracotta, generic Swiss monochrome, or purple-blue SaaS costumes), genuine spatial choreography, scale/rhythm contrast, generous calm negative space, and single-playbook cohesion. | Recycled default brand costume unrelated to the product, PowerPoint / "Magic Move" uniform centred box resizing every 3–4s, static slide-deck pacing, widget buffets stacking 3+ unrelated elements, dangling wires pointing into empty air, or mixing incompatible techniques in one film. |
-| **L4** | **Frame-Clock Determinism + Verified Font Loading** | 100% driven by `useCurrentFrame()`, `interpolate()`, and `spring()`; clean `npx tsc --noEmit`; every display/body/mono webfont loaded deterministically via `@remotion/google-fonts` (or awaited `document.fonts.load`) and visually verified in stills. | Any `Math.random()`, `Date.now()`, `useFrame` delta drift, CSS `@keyframes`, CSS `transition`, TypeScript compiler error, or silent fallback to Times New Roman, Georgia, Arial, or system sans/serif on any rendered frame. |
-| **L5** | **SFX-Only / BYO Audio Discipline** | Crisp offline procedural DSP SFX ([generate-dsp-sfx.mjs](../scripts/generate-dsp-sfx.mjs)) as default—or user-supplied licensed `.mp3` synced via [analyze-music.mjs](../scripts/analyze-music.mjs)—mastered via [master-audio.mjs](../scripts/master-audio.mjs) to `-14.0 LUFS ± 1.5` (`truePeak <= -1.0 dBTP`) with peak-aligned cuts. | Any code-generated synth/chiptune music bed, harsh raw sine-wave beeps, piercing treble chimes, clipping (`> -1.0 dBTP`), or unmastered loudness (`< -18 LUFS` or `> -11 LUFS`). |
+| **L2** | **Zero Dev/QA Jargon, HUD Telemetry Chrome, or Corner Counters** | 100% viewer-facing, distraction-free, brand-authentic visuals and copy across every single rendered frame. | Any internal debug label, fake `97 SCORE` badge/ring, `const res = await` filler code, gate IDs, template placeholders, **AI-slop HUD/telemetry chrome** (uppercase monospace kickers like `— NE · 10 RELEASE`, dot-separated metadata captions like `NE · 10 · 7 / 7 RECEIPTS VERIFIED`, rounded glowing-dot pills like `• RECEIPT 03 / 07`, labeled percentage/voltage/progress bars), or **corner slide/step counters (`01 / 07`)** anywhere in the frame. |
+| **L3** | **Anti-Template Originality, Varied Choreography & Physically Driven Loop** | Brand-authentic visual world derived from the real product, varied spatial choreography (zero consecutive repetitive transitions), `70%+` calm negative space, a **finale whose motion physically drives the lockup**, and a **seamless infinite loop bridge** back into Frame 0. | Recycled default brand costume, repetitive transitions, PowerPoint/"Magic Move" uniform centred box resizing, **static centered flexbox endings** (logo + tagline + URL pill stacked in a disconnected column), unbridged ending → Frame 0 loop seam, widget buffets, dangling wires, or abstract ink-blob/paper-cutout filler. |
+| **L4** | **Frame-Clock Determinism + Verified Font Loading** | 100% driven by `useCurrentFrame()`, `interpolate()`, and `spring()`; clean `npx tsc --noEmit`; every display/body/mono webfont loaded deterministically via `@remotion/google-fonts` (or awaited `document.fonts.load`) and visually verified in stills and video. | Any `Math.random()`, `Date.now()`, `useFrame` delta drift, CSS `@keyframes`, CSS `transition`, TypeScript compiler error, or silent fallback to Times New Roman, Georgia, Arial, or system sans/serif on any rendered frame. |
+| **L5** | **Matching Real Music + Procedural SFX Discipline** | Real, license-cleared background music matching the product's mood and tempo—beat-synced via [analyze-music.mjs](../scripts/analyze-music.mjs) with bar-aligned loop-clean fades—layered with crisp offline procedural DSP SFX ([generate-dsp-sfx.mjs](../scripts/generate-dsp-sfx.mjs)) and music ducking, mastered via [master-audio.mjs](../scripts/master-audio.mjs) to `-14.0 LUFS ± 1.5` (`truePeak <= -1.0 dBTP`). *(SFX-only allowed only when explicitly requested or awaiting a licensed track.)* | Any code-generated synth/chiptune music bed, mismatched/off-beat music, dry SFX-only cut delivered without attempting/prompting for matching real music, harsh raw sine-wave beeps, piercing treble chimes, audible loop-seam click, clipping (`> -1.0 dBTP`), or unmastered loudness (`< -18 LUFS` or `> -11 LUFS`). |
 
 ---
 
-## 3. Blind Adversarial Critic Checklist (Pre-Export Rejection Gate)
+## 2. Blind Adversarial Critic Checklist (Pre-Export & End-to-End MP4 Rejection Gate)
 
 Before approving any render, switch completely out of author mode into **Blind Adversarial Critic** mode:
 
-1. **Inspect Rendered Frames Blindly**: Open `out/qa/contact-sheet.html`, the rendered PNG stills, and the `.mp4` **without** trusting `DIRECTION.md` intentions or code comments. Judge strictly what lands in the pixels at both full `1080p` and `360px` mobile X feed width.
-2. **Apply the "Smells Like a React CSS Demo" Rejection Test**: Immediately **`BLOCK`** the film if **ANY** single item below is visible on screen:
+1. **Inspect Stills Pre-Check AND Watch the Exported `.mp4` End-to-End**: Use `out/qa/contact-sheet.html` and rendered PNG stills only as a fast structural pre-check (fonts, cut boundaries, loop-seam frames). **ALWAYS watch/inspect the actual exported mastered `.mp4` end-to-end** (including looping from the final second back into Frame 0) without trusting `DIRECTION.md` intentions or code comments. Stills alone cannot reveal real pacing, mid-transition overlaps, easing feel, motion flow, or audio-visual beat sync.
+2. **Apply the Rejection Checklist**: Immediately **`BLOCK`** the film if **ANY** single item below is visible or audible:
 
-- [ ] **React / Tailwind Box Smell**: Rounded-corner `<div>` cards with subtle borders, drop shadows, pill chips, or generic SaaS container chrome pretending to be a launch film (especially fatal in abstract style packs).
-- [ ] **Landing-Page Flexbox Stack**: Centred headline stacked vertically over a subtitle stacked over a card/button (`flex-direction: column; align-items: center`) that looks like a static web page hero rather than directed motion cinema.
-- [ ] **Linear CSS Box Resizing ("Magic Move" Slop)**: Containers or rectangles smoothly growing/shrinking in place at one uniform medium speed instead of real SVG path morphing, live tracked strokes, stepped stop-motion parallax, or focal-locked camera choreography.
+- [ ] **AI-Slop HUD / Telemetry Chrome**: Uppercase monospace kickers (`— NE · 10 RELEASE`, `// PHASE 02`), dot-separated metadata captions (`NE · 10 · 7 / 7 RECEIPTS VERIFIED`), rounded glowing-dot status pills (`• RECEIPT 03 / 07`, `• LIVE`), or labeled percentage/voltage/progress bars decorating the frame.
+- [ ] **Corner Counter Distraction**: Any persistent or per-scene corner counter (`01 / 07`, `0001 / 0004`, `3/7`) sitting in the top-right or frame corners.
+- [ ] **Static Centered Flexbox Ending & Landing-Page Stacks**: Any shot—especially the **finale**—that hard-cuts into a disconnected `flex-direction: column; align-items: center` stack (logo stacked over subtitle over URL pill) instead of letting the penultimate scene's spatial choreography physically drive, morph, or assemble the brand lockup.
+- [ ] **Repetitive Transitions & Linear CSS Box Resizing ("Magic Move" Slop)**: Repeating the same transition mechanic consecutively across beats, or smoothly resizing centered boxes in place at one uniform medium speed instead of varied spatial camera choreography, portal match cuts, direct peels, and container morphs.
+- [ ] **Unwatched `.mp4` / Motion-Flow & Overlap Defects**: Approving from static QA stills alone, OR letting the end-to-end `.mp4` exhibit sluggish/rushed pacing, mid-transition text/element overlaps, jerky velocity handoffs, or off-beat audio-visual cuts.
+- [ ] **Broken Infinite Loop Seam**: Ending scene cuts harshly or jumps back into Frame 0 instead of physically bridging its geometry, polarity, camera state, and music tail seamlessly back into Frame 0.
 - [ ] **Fallback System Typography**: Unloaded webfonts silently falling back to Times New Roman, Arial, or mismatched system fonts in DOM or SVG `<text>` nodes.
-- [ ] **Cross-Pack Contamination / UI Chrome Leakage**: Generic progress bars, audio waveforms, NLE timelines, terminal titlebars, macOS traffic lights, chat prompt inputs, or KPI dashboards leaking into an abstract film (`editorial-morph`, `single-line-kinetic`, `paper-cutout`).
-- [ ] **Static Slide-Deck Pacing**: Disconnected full-screen fades/slides with identical beat cadence, dead static holds with zero living craft, or no persistent visual thread linking opening to finale.
 - [ ] **Recycled Brand Costume (Anti-Template Violation)**: Defaulting to Anthropic parchment/terracotta (`#F4F1EA` + `#D97757`), generic Swiss monochrome, or purple-blue SaaS gradients when the user's real product/brand has a different identity.
-- [ ] **Generic AI Slop Tropes**: Sparkle icons (`✨`), blurred neon/radial glow orbs behind copy, gray skeleton-loader bars, fake `97 SCORE` radial rings, or wireframe CAD grid wallpaper.
+- [ ] **Generic AI Slop Tropes**: Chat bubbles typing 15-word sentences, sparkle icons (`✨`), blurred neon/radial glow orbs behind copy, gray skeleton-loader bars, fake `97 SCORE` radial rings, or wireframe CAD grid wallpaper.
 - [ ] **Mobile Feed Failure & Macro Edge Clipping**: Unreadable sub-28px micro-copy, low-contrast text, clipped strokes/glyphs, macro focal objects exceeding `92%` viewport width (`elementW * macroZoom > 0.92 * W` unless intentional edge bleed), or essential visuals spilling outside `120px × 90px` safe margins.
 - [ ] **Fade-to-Blank Peel Seams & DOM 3D Lag**: Fading an outgoing scene to blank solid color before a wipe/peel (always overlap and peel real pixels directly), or mounting `> 30` simultaneous `preserve-3d` DOM nodes that tank Studio playback FPS (use SVG `<clipPath>` masks for crisp geometric transitions or WebGL/Three `InstancedMesh` for dense 3D grids).
 
-> **Zero-Tolerance Rule:** If **even ONE** checklist item triggers, the verdict is **`BLOCK`**. Fix the architectural root cause (never a cosmetic patch), re-run [scripts/qa-frames.mjs](../scripts/qa-frames.mjs), and re-audit blindly until zero items trigger.
+> **Zero-Tolerance Rule:** If **even ONE** checklist item triggers—in stills OR during end-to-end `.mp4` playback—the verdict is **`BLOCK`**. Fix the architectural root cause (never a cosmetic patch), re-run [scripts/qa-frames.mjs](../scripts/qa-frames.mjs), re-render, and watch the updated `.mp4` end-to-end until zero items trigger.
 
 ---
 
-## 4. Supplemental Style-Pack Gates
+## 3. UI Craft Gates
 
-After clearing Sections 2 and 3, apply **ONLY** the supplemental gates for your film's locked style pack:
-- **Software UI / Hardware Demos**: Load [../styles/product-cinema.md](../styles/product-cinema.md) for UI-specific pass/block gates (entrance scale floors, micro-UI vs. 2.5D spring durations, dark macOS chrome contrast, zero dead-frame holds, and quantitative UI benchmarks).
-- **Abstract Launch Films**: Load your locked pack ([../styles/editorial-morph.md](../styles/editorial-morph.md), [../styles/single-line-kinetic.md](../styles/single-line-kinetic.md), or [../styles/paper-cutout.md](../styles/paper-cutout.md)) and verify 100% adherence to its palette, shot grammar, copy cap, and ban list.
+After clearing Sections 1 and 2, verify all 10 UI-specific quantitative gates (`UI-1` through `UI-10`) in [styles/product-cinema.md](../styles/product-cinema.md).
 
 ---
 
-## 5. Mandatory Audit Output Format (Findings Table + Verdict)
+## 4. Mandatory Audit Output Format (Findings Table + Verdict)
 
 Format every pre-export review or self-improvement loop audit strictly as:
 
 ```markdown
 | File / Shot | Frame Window | Law / Critic Check | Why It Fails Craft | Concrete Remediation |
 | :--- | :---: | :---: | :--- | :--- |
-| `Film.tsx` (Beat 2) | `f90–f180` | **Critic: React CSS Demo** | Rounded bordered `<div>` card resizing linearly in centre of canvas | Replace box with continuous `<MorphingShape />` silhouette transition on the brand's derived canvas |
-| `Film.tsx` (Beat 1) | `f0–f60` | **L4 (Font Loading)** | SVG `<text>` rendered in fallback Times New Roman instead of the brand's display font | Load via `@remotion/google-fonts/<BrandFont>` and pass exact `fontFamily` token |
+| `Film.tsx` (Beat 2) | `f90–f180` | **Critic: Fade-to-Blank Peel** | Outgoing headline fades to blank solid color before the slat wipe begins | Overlap Beat 3 underneath Beat 2 and peel Beat 2's actual pixels via SVG `<clipPath>` |
+| `Film.tsx` (Beat 1) | `f0–f60` | **L4 (Font Loading)** | Typography rendered in fallback Arial instead of the brand's display font | Load via `@remotion/google-fonts/<BrandFont>` and pass exact `fontFamily` token |
 
-**Verdict:** `BLOCK` (issue `APPROVE` only when 0 Universal Law violations, 0 Blind Critic triggers, and 0 locked Style-Pack violations remain)
+**Verdict:** `BLOCK` (issue `APPROVE` only when 0 Universal Law violations, 0 Blind Critic triggers, and 0 UI Craft Gate violations remain)
 ```

@@ -505,8 +505,8 @@ export const SoundTrackLayer: React.FC<{
 
 // ============================================================================
 // 8. Architectural Archive Primitives (Inspired by What Ships Swiss Viewfinder Grid)
-//    - <ViewfinderFrame /> : Sharp 0px frame, L-shaped corner reticles, + crosshairs & index HUD
-//    - <RollingOdometer /> : Deterministic vertical rolling digit reels with strict tabular-nums
+//    - <ViewfinderFrame /> : Sharp 0px frame & L-shaped corner reticles (omit indexLabel/metaLabel by default — zero corner counters/HUD slop!)
+//    - <RollingOdometer /> : Deterministic vertical rolling digit reels with strict tabular-nums (product-native metrics only)
 // ============================================================================
 export const ViewfinderFrame: React.FC<{
   width?: number | string;

@@ -14,7 +14,7 @@ Encoding flags, X re-encoder defense, and the mandatory **Hero + Cut-Boundary Co
 | **Codec** | `H.264` (`--codec=h264`) | Universal compatibility with X ingest pipeline |
 | **Pixel Format** | `yuv420p` (`--pixel-format=yuv420p`) | Prevents black frames or color shift on iOS/Android |
 | **Quality (CRF)** | `16 – 18` (`--crf=18`) | Near-lossless master so X's transcode starts from crisp pixels |
-| **Audio** | AAC, `48 kHz`, `192 kbps`, `-14 LUFS` | Video must read 100% muted; run `scripts/generate-dsp-sfx.mjs` (Tier-1 100% offline procedural DSP foley default) or optional `scripts/generate-ai-sfx.mjs` / BYO `.mp3` (`scripts/analyze-music.mjs`) + `scripts/master-audio.mjs` (`-14 LUFS`, `-1.5 dBTP`) |
+| **Audio** | AAC, `48 kHz`, `192 kbps`, `-14 LUFS` | Video must read 100% muted AND hit hard unmuted: source a real matching music track (`scripts/analyze-music.mjs`), layer crisp offline procedural DSP SFX (`scripts/generate-dsp-sfx.mjs`) with music ducking, and master via `scripts/master-audio.mjs` (`-14 LUFS`, `-1.5 dBTP`) |
 
 ---
 
@@ -41,16 +41,16 @@ Bake these defenses into every composition:
 - **Dither gradients with fast tiled `2.2–2.8%` film grain** (`FilmGrainOverlay` in [templates/StudioPrimitives.tsx](../templates/StudioPrimitives.tsx)) so obsidian backgrounds and light cycloramas never turn into blocky color bands—without the 5–10× slowdown of full-HD `<feTurbulence>`.
 - **High-contrast legibility**: Keep primary copy contrast `>= 7:1` and muted copy `>= 4.5:1`.
 - **Crisp `1px` borders** (`rgba(10,10,10,0.09)` on light, `rgba(255,255,255,0.11)` on dark) around UI windows so edges survive mobile downscaling.
-- **Clean loop boundary**: End on a calm `2.5–3.2s` brand + URL lockup that cuts cleanly back to your bold Frame-0 hook for seamless X auto-replays.
+- **Seamless infinite loop bridge**: Physically drive the brand lockup from the penultimate scene, hold cleanly (`1.8–2.6s`), and bridge the final `0.6–1.0s` back into Frame 0's exact geometry, camera state, and polarity (with bar-aligned loop-safe audio fades) for an invisible X auto-replay.
 
 ---
 
-## 4. Mandatory Motion-Boundary + Contact-Sheet Visual QA Loop
+## 4. Mandatory Two-Stage QA: Stills Pre-Check + End-to-End Rendered `.mp4` Review
 
-Never stop at checking 5 calm midpoint frames—most Remotion visual bugs (crossfade ghosting, snap-pops, unloaded webfonts, or stray motion blur left on a resting frame) happen **right on cut boundaries**.
+**Never approve a video from static QA stills alone.** Stills catch font fallbacks and 1-frame cut glitches, but they **cannot** show real perceived pacing, mid-transition overlaps, easing jerkiness, motion flow, audio-visual beat sync, or whether the ending truly loops seamlessly back into Frame 0.
 
-### Automated QA Runner (`scripts/qa-frames.mjs`)
-Run the bundled zero-dependency QA script to render **5 strategic hero stills** PLUS **cut-boundary triplets (`cut - 1`, `cut`, `cut + 2`)** for every major edit boundary, and compile an inspectable `contact-sheet.html`:
+### Stage 4A — Fast Structural Pre-Check (`scripts/qa-frames.mjs`)
+Run the bundled zero-dependency QA script before full render to inspect **5 strategic hero stills**, **cut-boundary triplets (`cut - 1`, `cut`, `cut + 2`)**, AND the **loop-seam pair (`duration - 1` vs. `0`)** in `contact-sheet.html`:
 
 ```bash
 node skills/launchskill/scripts/qa-frames.mjs \
@@ -64,12 +64,16 @@ node skills/launchskill/scripts/qa-frames.mjs \
 
 Or run the equivalent Remotion CLI stills manually:
 ```bash
-# 5 Hero Stills (Hook, Product, Macro, Midpoint/Theme Flip, CTA)
+# 5 Hero Stills (Hook, Product, Macro, Midpoint/Theme Flip, Finale Lockup)
 npx remotion still <CompositionId> out/qa/hero-01-hook.png --frame=12 --gl=angle
 npx remotion still <CompositionId> out/qa/hero-02-product.png --frame=160 --gl=angle
 npx remotion still <CompositionId> out/qa/hero-03-macro.png --frame=300 --gl=angle
 npx remotion still <CompositionId> out/qa/hero-04-chapter.png --frame=460 --gl=angle
 npx remotion still <CompositionId> out/qa/hero-05-cta.png --frame=650 --gl=angle
+
+# Loop-Seam Pair (final frame -> Frame 0 continuity)
+npx remotion still <CompositionId> out/qa/loop-end.png --frame=719 --gl=angle
+npx remotion still <CompositionId> out/qa/loop-start.png --frame=0 --gl=angle
 
 # Cut-Boundary Triplet Example (for cutFrame = 390)
 npx remotion still <CompositionId> out/qa/cut-01-pre.png  --frame=389 --gl=angle
@@ -77,13 +81,21 @@ npx remotion still <CompositionId> out/qa/cut-01-on.png   --frame=390 --gl=angle
 npx remotion still <CompositionId> out/qa/cut-01-post.png --frame=392 --gl=angle
 ```
 
-### 8-Point Studio Inspection Rubric
-Open every rendered PNG (and `out/qa/contact-sheet.html`) and fix any failure before shipping:
-1. **Real Webfont Verification**: Confirm `Inter` / `Instrument Serif` / `JetBrains Mono` actually rendered—zero Segoe UI / Arial fallback.
-2. **Cut-Boundary Cleanliness (`cut - 1`, `cut`, `cut + 2`)**: Zero ghosting between outgoing/incoming text layers, zero 1-frame empty flashes, and zero abrupt pop-in before motion vectors align.
-3. **Zero Stray Blur at Rest**: Confirm `<DirectionalMotionBlur>` drops cleanly to `0` on every holding frame; directional streaks appear strictly along the travel axis during fast motion.
-4. **360px Mobile Squint Test**: Mentally shrink every hero frame to phone width. Can you read every headline, badge, counter, and URL effortlessly in under 1.5 seconds?
-5. **Optical Type & Safe Zones**: Verify `120px × 90px` safe margins (clearing X scrubber/mute UI), `tabular-nums` on every animated number, and hierarchical secondary settle on inner card elements.
-6. **Brand Authenticity (De-Cloning Check)**: Confirm accent colors, cursor styling, and motion temperament match the target product's brand—never leaked `#EC4899` or `#F97316` reference defaults.
-7. **Surface & 3D IBL Craft**: If using `<ThreeCanvas>`, confirm smooth studio softbox reflections (`RoomEnvironment`) and clean Gaussian contact shadows with zero banding.
-8. **Light-First, Dark macOS Contrast & Anti-Slop Audit**: Confirm crisp light/white (`#FFFFFF` / `#F9F9F8` / `#F7F7F5`) `<StudioCyclorama />` primary polarity (unless dark theme was explicitly requested) with camera-coupled spatial depth; verify any code editor/devtool on a light canvas uses **Dark-Mode macOS chrome (`#0D0D10`, real traffic lights, multi-token syntax highlighting, zero blank-gap diff fade-ins)**; confirm official vector brand SVGs, **zero blurred circular/radial background glow blobs**, zero gray skeleton-loader bars, zero dense text-wall spec tables, zero parked idle seconds, zero floating wireframe rings, zero sparkle icons (`✨`), zero rainbow text, zero incomplete agent checklists, and zero empty fade-to-black tails.
+### Stage 4B — MANDATORY End-to-End Exported `.mp4` Watch Review
+After exporting and mastering `out/launch-video-mastered.mp4`, **watch/inspect the actual rendered `.mp4` end-to-end** (including looping from the final second back into `0:00`) before handoff:
+- **Pacing & Rhythm:** Does any beat drag, rush, or repeat the same cadence? Are cuts locked to the real music track's beats and drop?
+- **Overlaps & Motion Flow:** Do any outgoing/incoming elements collide or overlap awkwardly mid-transition? Are consecutive transitions varied instead of repetitive?
+- **Finale & Loop Continuity:** Does the penultimate scene physically drive the lockup (never a static centered flexbox stack), and does the ending bridge cleanly back into Frame 0 without a visual or audio jump?
+
+### 10-Point Studio Inspection Rubric (Stills + End-to-End `.mp4`)
+Verify every point below across BOTH `out/qa/contact-sheet.html` and full `.mp4` playback before shipping:
+1. **End-to-End `.mp4` Playback Verified**: Actual rendered mastered `.mp4` watched completely (not judged from PNG stills alone) for real pacing, overlaps, motion flow, and beat sync.
+2. **Zero AI-Slop HUD/Telemetry Chrome & Zero Corner Counters**: Zero uppercase monospace kickers (`— NE · 10 RELEASE`), zero dot-separated metadata captions (`NE · 10 · 7 / 7 RECEIPTS VERIFIED`), zero rounded glowing-dot pills (`• RECEIPT 03 / 07`), zero labeled percentage/voltage bars, and **zero corner counters (`01 / 07`)**.
+3. **Varied Choreography & Physically Driven Finale**: No consecutive repeated transitions; the finale's active geometry/camera physically drives the brand lockup (zero static centered flexbox endings).
+4. **Seamless Infinite Loop (`duration - 1` → `0`)**: Ending bridges smoothly back into Frame 0's exact spatial state, polarity, and audio bar boundary with zero pop or jump.
+5. **Matching Real Music + Mastered SFX**: Real license-cleared track matching the product's mood/tempo, beat-synced via `analyze-music.mjs`, ducked cleanly under tactile DSP SFX, and mastered to `-14 LUFS` / `-1.5 dBTP` (zero code-generated synth beds).
+6. **Real Webfont Verification**: Confirm `@remotion/google-fonts` faces actually rendered—zero Segoe UI / Arial / Times New Roman fallback.
+7. **Cut-Boundary Cleanliness (`cut - 1`, `cut`, `cut + 2`)**: Zero ghosting between outgoing/incoming text layers, zero 1-frame empty flashes, zero fade-to-blank peel seams, and zero stray `<DirectionalMotionBlur>` on resting frames.
+8. **360px Mobile Squint Test & Safe Zones**: Every headline, UI label, and URL reads effortlessly at phone width inside `120px × 90px` safe margins (`tabular-nums` on every animated number).
+9. **Brand Authenticity (De-Cloning Check)**: Surface polarity, accents, radius, typography, and motion temperament match the target product's real brand—never leaked reference defaults.
+10. **Clean Surface & Anti-Slop Contrast**: High-contrast figure-ground separation (e.g., Dark-Mode macOS chrome `#0D0D10` with real multi-token syntax highlighting and zero blank-gap diff holes when staging code editors on light canvases), official vector brand SVGs, zero blurred circular background glow blobs, zero gray skeleton-loader bars, zero sparkle icons (`✨`), and zero empty fade-to-black tails.
